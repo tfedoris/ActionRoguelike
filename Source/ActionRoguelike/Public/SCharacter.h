@@ -8,6 +8,8 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class USInteractionComponent;
+class UAnimMontage;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASCharacter : public ACharacter
@@ -17,6 +19,11 @@ class ACTIONROGUELIKE_API ASCharacter : public ACharacter
 protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category = "Attack")
+	UAnimMontage* AttackAnim;
+
+	FTimerHandle TimerHandle_PrimaryAttack;
 
 public:
 	// Sets default values for this character's properties
@@ -31,6 +38,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	FName PrimaryAttackSocketName;
+
+	UPROPERTY(VisibleAnywhere)
+	USInteractionComponent* InteractionComp;
 	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -38,10 +48,12 @@ protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void PrimaryAttack();
+	void PrimaryInteract();
+	void PrimaryAttack_TimeElapsed();
 	
 	void VisualizePlayerRotation() const;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
