@@ -39,8 +39,7 @@ void AExplosiveBarrel::BeginPlay()
 	MeshComp->OnComponentHit.AddDynamic(this, &AExplosiveBarrel::OnComponentHit);
 }
 
-void AExplosiveBarrel::OnComponentHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void AExplosiveBarrel::Explode()
 {
 	if (ExplodedMaterial)
 	{
@@ -53,6 +52,12 @@ void AExplosiveBarrel::OnComponentHit(UPrimitiveComponent* HitComponent, AActor*
 	}
 	
 	RadialForceComp->FireImpulse();
+}
+
+void AExplosiveBarrel::OnComponentHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
+                                      UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	Explode();
 }
 
 // Called every frame

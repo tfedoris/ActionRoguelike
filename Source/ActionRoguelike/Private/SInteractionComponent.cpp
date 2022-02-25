@@ -5,6 +5,7 @@
 
 #include "DrawDebugHelpers.h"
 #include "SGameplayInterface.h"
+#include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
 
 // Sets default values for this component's properties
 USInteractionComponent::USInteractionComponent()
@@ -37,6 +38,7 @@ void USInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void USInteractionComponent::PrimaryInteract()
 {
+	AActionRoguelikeGameModeBase* GameMode = GetWorld()->GetAuthGameMode<AActionRoguelikeGameModeBase>();
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 
@@ -74,11 +76,18 @@ void USInteractionComponent::PrimaryInteract()
 			{
 				APawn* MyPawn = Cast<APawn>(MyOwner);
 				ISGameplayInterface::Execute_Interact(HitActor, MyPawn);
-				DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 32, LineColor, false, 2.f);
+
+				if (GameMode && GameMode->bShowDebugLines)
+				{
+					DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 32, LineColor, false, 2.f);
+				}
 				break;
 			}
 		}
 	}
 	
-	DrawDebugLine(GetWorld(), EyeLocation, End, LineColor, false, 2.f, 0, 2.f);
+	if (GameMode && GameMode->bShowDebugLines)
+	{
+		DrawDebugLine(GetWorld(), EyeLocation, End, LineColor, false, 2.f, 0, 2.f);	
+	}
 }

@@ -3,3 +3,7 @@
 
 #include "ActionRoguelikeGameModeBase.h"
 
+void AActionRoguelikeGameModeBase::ShowDebugLines(uint8 Flag)
+{
+	bShowDebugLines = Flag;
+}

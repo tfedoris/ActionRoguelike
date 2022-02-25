@@ -13,5 +13,10 @@ UCLASS()
 class ACTIONROGUELIKE_API AActionRoguelikeGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	uint8 bShowDebugLines = 0;
+
+	UFUNCTION(Exec, Category = "Commands")
+	void ShowDebugLines(uint8 Flag);
 };
