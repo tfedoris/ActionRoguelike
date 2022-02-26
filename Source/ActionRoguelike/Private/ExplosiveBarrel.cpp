@@ -31,12 +31,10 @@ AExplosiveBarrel::AExplosiveBarrel()
 	ExplosionEffectScaleVector = FVector(1.0f, 1.0f, 1.0f);
 }
 
-// Called when the game starts or when spawned
-void AExplosiveBarrel::BeginPlay()
+void AExplosiveBarrel::PostInitializeComponents()
 {
-	Super::BeginPlay();
-
-	MeshComp->OnComponentHit.AddDynamic(this, &AExplosiveBarrel::OnComponentHit);
+	Super::PostInitializeComponents();
+	MeshComp->OnComponentHit.AddDynamic(this, &AExplosiveBarrel::OnActorHit);
 }
 
 void AExplosiveBarrel::Explode()
@@ -54,7 +52,7 @@ void AExplosiveBarrel::Explode()
 	RadialForceComp->FireImpulse();
 }
 
-void AExplosiveBarrel::OnComponentHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
+void AExplosiveBarrel::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
                                       UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	Explode();
