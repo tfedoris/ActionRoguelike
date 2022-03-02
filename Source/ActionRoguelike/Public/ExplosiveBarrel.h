@@ -27,7 +27,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	URadialForceComponent* RadialForceComp;
 
-	UPROPERTY(EditAnywhere, Category = "Effects");
+	UPROPERTY(EditAnywhere, Category = "Effects")
 	UMaterialInterface* ExplodedMaterial;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Effects")

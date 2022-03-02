@@ -3,7 +3,9 @@
 
 #include "ExplosiveBarrel.h"
 
+#include "DrawDebugHelpers.h"
 #include "SMagicProjectile.h"
+#include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "PhysicsEngine/RadialForceComponent.h"
 #include "Particles/ParticleSystem.h"
@@ -56,6 +58,20 @@ void AExplosiveBarrel::OnActorHit(UPrimitiveComponent* HitComponent, AActor* Oth
                                       UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	Explode();
+
+	AActionRoguelikeGameModeBase* GameMode = GetWorld()->GetAuthGameMode<AActionRoguelikeGameModeBase>();
+	if (GameMode->bShowDebugLines)
+	{
+		UE_LOG(LogTemp, Log, TEXT("OnActorHit in Explosive Barrel"));
+
+		// %s = string
+		// %f = float
+		// logs: "OtherActor: MyActor_1, at game time: 124.4"
+		UE_LOG(LogTemp, Warning, TEXT("OtherActor: %s, at game time: %f"), *GetNameSafe(OtherActor), GetWorld()->TimeSeconds);
+
+		FString CombinedString = FString::Printf(TEXT("Hit at location: %s"), *Hit.ImpactPoint.ToString());
+		DrawDebugString(GetWorld(), Hit.ImpactPoint, CombinedString, nullptr, FColor::Green, 2.f, true);
+	}
 }
 
 // Called every frame

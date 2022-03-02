@@ -10,6 +10,7 @@ class USpringArmComponent;
 class UCameraComponent;
 class USInteractionComponent;
 class UAnimMontage;
+class AActionRoguelikeGameModeBase;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASCharacter : public ACharacter
@@ -18,18 +19,25 @@ class ACTIONROGUELIKE_API ASCharacter : public ACharacter
 
 protected:
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> ProjectileClass;
+	TSubclassOf<AActor> PrimaryProjectileClass;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> SpecialProjectileClass;
 
 	UPROPERTY(EditAnywhere, Category = "Attack")
 	UAnimMontage* AttackAnim;
 
 	FTimerHandle TimerHandle_PrimaryAttack;
+	FTimerHandle TimerHandle_SpecialAttack;
 
 public:
 	// Sets default values for this character's properties
 	ASCharacter();
 
 protected:
+	UPROPERTY()
+	AActionRoguelikeGameModeBase* GameMode;
+	
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComp;
 
@@ -37,10 +45,12 @@ protected:
 	UCameraComponent* CameraComp;
 
 	UPROPERTY(VisibleAnywhere)
-	FName PrimaryAttackSocketName;
+	FName ProjectileAttackSocketName;
 
 	UPROPERTY(VisibleAnywhere)
 	USInteractionComponent* InteractionComp;
+
+	float AimRange;
 	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -48,8 +58,11 @@ protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void PrimaryAttack();
+	void SpecialAttack();
 	void PrimaryInteract();
-	void PrimaryAttack_TimeElapsed();
+
+	UFUNCTION()
+	void ProjectileAttack(TSubclassOf<AActor> ProjectileClass);
 	
 	void VisualizePlayerRotation() const;
 
