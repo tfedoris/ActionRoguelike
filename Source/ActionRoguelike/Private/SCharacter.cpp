@@ -86,6 +86,12 @@ void ASCharacter::PrimaryInteract()
 	}
 }
 
+void ASCharacter::MovementAbility()
+{
+	PlayAnimMontage(AttackAnim);
+	GetWorldTimerManager().SetTimer(TimerHandle_MovementAbility, [&](){ this->ProjectileAttack(MovementProjectileClass); }, 0.2f, false);
+}
+
 void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 {
 	FVector PrimaryAttackSpawnLocation = GetMesh()->GetSocketLocation(ProjectileAttackSocketName);
@@ -166,6 +172,7 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &ASCharacter::PrimaryAttack);
 	PlayerInputComponent->BindAction("SpecialAttack", IE_Pressed, this, &ASCharacter::SpecialAttack);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASCharacter::Jump);
+	PlayerInputComponent->BindAction("MovementAbility", IE_Pressed, this, &ASCharacter::MovementAbility);
 	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &ASCharacter::PrimaryInteract);
 }
 

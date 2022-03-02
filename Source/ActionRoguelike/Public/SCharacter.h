@@ -18,17 +18,21 @@ class ACTIONROGUELIKE_API ASCharacter : public ACharacter
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Attacks & Abilities")
 	TSubclassOf<AActor> PrimaryProjectileClass;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Attacks & Abilities")
 	TSubclassOf<AActor> SpecialProjectileClass;
+	
+	UPROPERTY(EditAnywhere, Category = "Attacks & Abilities")
+	TSubclassOf<AActor> MovementProjectileClass;
 
-	UPROPERTY(EditAnywhere, Category = "Attack")
+	UPROPERTY(EditAnywhere, Category = "Attacks & Abilities")
 	UAnimMontage* AttackAnim;
 
 	FTimerHandle TimerHandle_PrimaryAttack;
 	FTimerHandle TimerHandle_SpecialAttack;
+	FTimerHandle TimerHandle_MovementAbility;
 
 public:
 	// Sets default values for this character's properties
@@ -60,6 +64,7 @@ protected:
 	void PrimaryAttack();
 	void SpecialAttack();
 	void PrimaryInteract();
+	void MovementAbility();
 
 	UFUNCTION()
 	void ProjectileAttack(TSubclassOf<AActor> ProjectileClass);

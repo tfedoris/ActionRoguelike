@@ -17,6 +17,7 @@ ASProjectile::ASProjectile()
 
 	SphereComp = CreateDefaultSubobject<USphereComponent>("SphereComp");
 	SphereComp->SetCollisionProfileName("Projectile");
+	SphereComp->InitSphereRadius(16.0f);
 	RootComponent = SphereComp;
 
 	EffectComp = CreateDefaultSubobject<UParticleSystemComponent>("EffectComp");
@@ -26,14 +27,23 @@ ASProjectile::ASProjectile()
 	AudioComp->SetupAttachment(RootComponent);
 
 	MovementComp = CreateDefaultSubobject<UProjectileMovementComponent>("MovementComp");
+	MovementComp->ProjectileGravityScale = 0.0f;
+	MovementComp->InitialSpeed = 1000.0f;
+	MovementComp->bRotationFollowsVelocity = true;
+	MovementComp->bInitialVelocityInLocalSpace = true;
+}
 
+void ASProjectile::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	SphereComp->OnComponentHit.AddDynamic(this, &ASProjectile::OnActorHit);
+	SphereComp->IgnoreActorWhenMoving(GetInstigator(), true);
 }
 
 // Called when the game starts or when spawned
 void ASProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ASProjectile::ProjectileHit(FVector HitLocation)
@@ -44,6 +54,14 @@ void ASProjectile::ProjectileHit(FVector HitLocation)
 	}
 	
 	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
+}
+
+void ASProjectile::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	FVector NormalImpulse, const FHitResult& Hit)
+{
+	MovementComp->StopMovementImmediately();
+	ProjectileHit(Hit.ImpactPoint);
+	Destroy();
 }
 
 // Called every frame

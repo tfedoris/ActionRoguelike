@@ -33,7 +33,6 @@ ASBlackHoleProjectile::ASBlackHoleProjectile()
 void ASBlackHoleProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
