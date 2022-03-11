@@ -3,6 +3,7 @@
 
 #include "SProjectile.h"
 
+#include "SAttributeComponent.h"
 #include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -36,6 +37,7 @@ ASProjectile::ASProjectile()
 void ASProjectile::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
+	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASProjectile::OnActorOverlap);
 	SphereComp->OnComponentHit.AddDynamic(this, &ASProjectile::OnActorHit);
 	SphereComp->IgnoreActorWhenMoving(GetInstigator(), true);
 }
@@ -48,20 +50,35 @@ void ASProjectile::BeginPlay()
 
 void ASProjectile::ProjectileHit(FVector HitLocation)
 {
+	MovementComp->StopMovementImmediately();
+	
 	if (!HitEffect)
 	{
 		return;
 	}
 	
 	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
+	Destroy();
 }
 
 void ASProjectile::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
 	FVector NormalImpulse, const FHitResult& Hit)
 {
-	MovementComp->StopMovementImmediately();
 	ProjectileHit(Hit.ImpactPoint);
-	Destroy();
+}
+
+void ASProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor)
+	{
+		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
+		if (AttributeComp)
+		{
+			ProjectileHit(GetActorLocation());
+			AttributeComp->ApplyHealthChange(-20.0f);
+		}
+	}
 }
 
 // Called every frame

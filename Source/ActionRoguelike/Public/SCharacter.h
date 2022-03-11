@@ -11,6 +11,7 @@ class UCameraComponent;
 class USInteractionComponent;
 class UAnimMontage;
 class AActionRoguelikeGameModeBase;
+class USAttributeComponent;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASCharacter : public ACharacter
@@ -29,6 +30,12 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Attacks & Abilities")
 	UAnimMontage* AttackAnim;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	USAttributeComponent* AttributeComp;
+
+	FVector AimStart;
+	FVector AimEnd;
 
 	FTimerHandle TimerHandle_PrimaryAttack;
 	FTimerHandle TimerHandle_SpecialAttack;
@@ -61,6 +68,7 @@ protected:
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+	void GetAimStartAndEnd(FVector& Start, FVector& End);
 	void PrimaryAttack();
 	void SpecialAttack();
 	void PrimaryInteract();

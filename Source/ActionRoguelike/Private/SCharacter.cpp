@@ -4,6 +4,7 @@
 #include "SCharacter.h"
 
 #include "DrawDebugHelpers.h"
+#include "SAttributeComponent.h"
 #include "SInteractionComponent.h"
 #include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
 
@@ -26,13 +27,15 @@ ASCharacter::ASCharacter()
 
 	InteractionComp = CreateDefaultSubobject<USInteractionComponent>("InteractionComp");
 
+	AttributeComp = CreateDefaultSubobject<USAttributeComponent>("AttributeComp");
+
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	
 	bUseControllerRotationYaw = false;
 
 	ProjectileAttackSocketName = FName("Muzzle_01");
 
-	AimRange = 1000.f;
+	AimRange = 100000.f;
 }
 
 // Called when the game starts or when spawned
@@ -66,15 +69,32 @@ void ASCharacter::MoveRight(float Value)
 	AddMovementInput(RightVector, Value);
 }
 
+void ASCharacter::GetAimStartAndEnd(FVector& Start, FVector& End)
+{
+	FVector CameraLocation;
+	FRotator CameraRotation;
+	GetController()->GetPlayerViewPoint(CameraLocation, CameraRotation);
+	FVector Target = CameraLocation + (CameraRotation.Vector() * AimRange);
+
+	Start = CameraLocation;
+	End = Target;
+}
+
 void ASCharacter::PrimaryAttack()
 {
+	GetAimStartAndEnd(AimStart, AimEnd);
+	
 	PlayAnimMontage(AttackAnim);
+	
 	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(PrimaryProjectileClass); }, 0.2f, false);
 }
 
 void ASCharacter::SpecialAttack()
 {
+	GetAimStartAndEnd(AimStart, AimEnd);
+	
 	PlayAnimMontage(AttackAnim);
+	
 	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(SpecialProjectileClass); }, 0.2f, false);
 }
 
@@ -88,7 +108,10 @@ void ASCharacter::PrimaryInteract()
 
 void ASCharacter::MovementAbility()
 {
+	GetAimStartAndEnd(AimStart, AimEnd);
+	
 	PlayAnimMontage(AttackAnim);
+	
 	GetWorldTimerManager().SetTimer(TimerHandle_MovementAbility, [&](){ this->ProjectileAttack(MovementProjectileClass); }, 0.2f, false);
 }
 
@@ -96,28 +119,28 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 {
 	FVector PrimaryAttackSpawnLocation = GetMesh()->GetSocketLocation(ProjectileAttackSocketName);
 
-	FVector CameraLocation;
-	FRotator CameraRotation;
-	GetController()->GetPlayerViewPoint(CameraLocation, CameraRotation);
-	FVector End = CameraLocation + (CameraRotation.Vector() * AimRange);
-
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+	ObjectQueryParams.AddObjectTypesToQuery(ECC_PhysicsBody);
 
 	FHitResult Hit;
-	bool bBlockingHit = GetWorld()->LineTraceSingleByObjectType(Hit, CameraLocation, End, ObjectQueryParams);
+	bool bBlockingHit = GetWorld()->LineTraceSingleByObjectType(Hit, AimStart, AimEnd, ObjectQueryParams);
 	
 	if (bBlockingHit)
 	{
-		End = Hit.ImpactPoint;
+		AimEnd = Hit.ImpactPoint;
+		if (GameMode->bShowDebugLines)
+		{
+			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 60.0f, 32, FColor::Green, false, 2.0f);
+		}
 	}
 	
-	FRotator RotateTowards = FRotationMatrix::MakeFromX(End - PrimaryAttackSpawnLocation).Rotator();
+	FRotator RotateTowards = FRotationMatrix::MakeFromX(AimEnd - PrimaryAttackSpawnLocation).Rotator();
 	
 	if (GameMode->bShowDebugLines)
 	{
-		DrawDebugLine(GetWorld(), PrimaryAttackSpawnLocation, End, FColor::Red, false, 4.f, 0, 2.f);
+		DrawDebugLine(GetWorld(), PrimaryAttackSpawnLocation, AimEnd, FColor::Red, false, 4.f, 0, 2.f);
 	}
 	
 	FTransform SpawnTM = FTransform(RotateTowards, PrimaryAttackSpawnLocation);

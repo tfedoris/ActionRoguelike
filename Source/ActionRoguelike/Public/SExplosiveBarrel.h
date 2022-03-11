@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ExplosiveBarrel.generated.h"
+#include "SExplosiveBarrel.generated.h"
 
 class UStaticMeshComponent;
 class URadialForceComponent;
@@ -12,13 +12,13 @@ class UParticleSystem;
 class UMaterialInterface;
 
 UCLASS()
-class ACTIONROGUELIKE_API AExplosiveBarrel : public AActor
+class ACTIONROGUELIKE_API ASExplosiveBarrel : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AExplosiveBarrel();
+	ASExplosiveBarrel();
 
 protected:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -37,6 +37,7 @@ protected:
 	float ExplosionEffectScale;
 
 	FVector ExplosionEffectScaleVector;
+	bool bExploded;
 
 	virtual void PostInitializeComponents() override;
 
