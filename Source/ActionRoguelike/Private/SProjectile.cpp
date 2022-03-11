@@ -29,7 +29,7 @@ ASProjectile::ASProjectile()
 
 	MovementComp = CreateDefaultSubobject<UProjectileMovementComponent>("MovementComp");
 	MovementComp->ProjectileGravityScale = 0.0f;
-	MovementComp->InitialSpeed = 1000.0f;
+	MovementComp->InitialSpeed = 8000.0f;
 	MovementComp->bRotationFollowsVelocity = true;
 	MovementComp->bInitialVelocityInLocalSpace = true;
 }
@@ -51,6 +51,7 @@ void ASProjectile::BeginPlay()
 void ASProjectile::ProjectileHit(FVector HitLocation)
 {
 	MovementComp->StopMovementImmediately();
+	SetActorEnableCollision(false);
 	
 	if (!HitEffect)
 	{

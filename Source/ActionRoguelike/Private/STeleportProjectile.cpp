@@ -3,12 +3,15 @@
 
 #include "STeleportProjectile.h"
 
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 ASTeleportProjectile::ASTeleportProjectile()
 {
 	ProjectileDuration = 0.2f;
 	TeleportDelay = 0.2f;
+
+	MovementComp->InitialSpeed = 6000.0f;
 }
 
 void ASTeleportProjectile::BeginPlay()
@@ -19,8 +22,11 @@ void ASTeleportProjectile::BeginPlay()
 
 void ASTeleportProjectile::ProjectileHit(FVector HitLocation)
 {
-	Super::ProjectileHit(HitLocation);
-
+	MovementComp->StopMovementImmediately();
+	SetActorEnableCollision(false);
+	
+	GetWorldTimerManager().ClearTimer(TimerHandle_ProjectileDuration);
+	
 	if (PortalExitEffect)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), PortalExitEffect, GetInstigator()->GetActorLocation(), GetInstigator()->GetActorRotation());
@@ -41,7 +47,7 @@ void ASTeleportProjectile::OnProjectileDurationElapsed()
 
 void ASTeleportProjectile::OnTeleportDelayEnd()
 {
-	GetInstigator()->TeleportTo(GetActorLocation(), GetInstigator()->GetActorRotation());
+	TeleportInstigator();
 
 	if (PortalExitEffect)
 	{
@@ -54,4 +60,13 @@ void ASTeleportProjectile::OnTeleportDelayEnd()
 	}
 	
 	Destroy();
+}
+
+void ASTeleportProjectile::TeleportInstigator()
+{
+	AActor* ActorToTeleport = GetInstigator();
+	if (ensure(ActorToTeleport))
+	{
+		ActorToTeleport->TeleportTo(GetActorLocation(), ActorToTeleport->GetActorRotation());
+	}
 }

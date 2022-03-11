@@ -123,11 +123,12 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_PhysicsBody);
+	ObjectQueryParams.AddObjectTypesToQuery(ECC_Pawn);
 
 	FHitResult Hit;
 	bool bBlockingHit = GetWorld()->LineTraceSingleByObjectType(Hit, AimStart, AimEnd, ObjectQueryParams);
 	
-	if (bBlockingHit)
+	if (bBlockingHit && Hit.GetActor() != this)
 	{
 		AimEnd = Hit.ImpactPoint;
 		if (GameMode->bShowDebugLines)

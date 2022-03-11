@@ -40,4 +40,5 @@ protected:
 	virtual void ProjectileHit(FVector HitLocation) override;
 	void OnProjectileDurationElapsed();
 	void OnTeleportDelayEnd();
+	void TeleportInstigator();
 };
