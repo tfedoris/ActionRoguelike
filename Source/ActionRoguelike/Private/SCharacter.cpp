@@ -45,6 +45,13 @@ void ASCharacter::BeginPlay()
 	GameMode = GetWorld()->GetAuthGameMode<AActionRoguelikeGameModeBase>();
 }
 
+void ASCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	AttributeComp->OnHealthChanged.AddDynamic(this, &ASCharacter::OnHealthChanged);
+}
+
 void ASCharacter::MoveForward(float Value)
 {
 	FRotator ControlRot = GetControlRotation();
@@ -153,6 +160,16 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 
 	MoveIgnoreActorAdd(SpawnedActor);
+}
+
+void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
+	float Delta)
+{
+	if (NewHealth <= 0.0f && Delta < 0.0f)
+	{
+		APlayerController* PlayerController = Cast<APlayerController>(GetController());
+		DisableInput(PlayerController);
+	}
 }
 
 void ASCharacter::VisualizePlayerRotation() const

@@ -32,6 +32,8 @@ ASProjectile::ASProjectile()
 	MovementComp->InitialSpeed = 8000.0f;
 	MovementComp->bRotationFollowsVelocity = true;
 	MovementComp->bInitialVelocityInLocalSpace = true;
+
+	BaseDamage = 20.0f;
 }
 
 void ASProjectile::PostInitializeComponents()
@@ -77,7 +79,7 @@ void ASProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 		if (AttributeComp)
 		{
 			ProjectileHit(GetActorLocation());
-			AttributeComp->ApplyHealthChange(-20.0f);
+			AttributeComp->ApplyHealthChange(-BaseDamage);
 		}
 	}
 }

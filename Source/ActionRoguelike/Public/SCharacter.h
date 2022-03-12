@@ -66,6 +66,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void PostInitializeComponents() override;
+
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void GetAimStartAndEnd(FVector& Start, FVector& End);
@@ -76,6 +78,9 @@ protected:
 
 	UFUNCTION()
 	void ProjectileAttack(TSubclassOf<AActor> ProjectileClass);
+
+	UFUNCTION()
+	void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float Delta);
 	
 	void VisualizePlayerRotation() const;
 

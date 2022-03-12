@@ -38,6 +38,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
 	UAudioComponent* AudioComp;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Damage")
+	float BaseDamage;
+
 	virtual void PostInitializeComponents() override;
 	
 	// Called when the game starts or when spawned
