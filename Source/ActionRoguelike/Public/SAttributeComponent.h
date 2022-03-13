@@ -19,10 +19,21 @@ public:
 	// Sets default values for this component's properties
 	USAttributeComponent();
 
+	float GetCurrentHealth() const
+	{
+		return Health;
+	}
+
+	float GetMaxHealth() const
+	{
+		return MaxHealth;
+	}
+
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
 	float Health;
 
+protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
 	float MaxHealth;
 
