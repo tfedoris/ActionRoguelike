@@ -23,7 +23,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
 	float Health;
 
-	// TODO: HealthMax, Stamina, Strength
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
+	float MaxHealth;
+
+	// TODO: Stamina, Strength
 
 public:
 	UFUNCTION(BlueprintCallable)
