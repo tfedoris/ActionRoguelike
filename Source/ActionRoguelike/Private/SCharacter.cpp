@@ -165,6 +165,12 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
 	float Delta)
 {
+	if (Delta < 0.0f)
+	{
+		GetMesh()->SetScalarParameterValueOnMaterials("TimeToHit", GetWorld()->TimeSeconds);
+		GetMesh()->SetVectorParameterValueOnMaterials("HitFlashColor", FVector(1.0f, 0.0f, 0.0f));
+	}
+	
 	if (NewHealth <= 0.0f && Delta < 0.0f)
 	{
 		APlayerController* PlayerController = Cast<APlayerController>(GetController());

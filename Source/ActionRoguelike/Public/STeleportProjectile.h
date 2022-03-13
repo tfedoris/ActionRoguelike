@@ -32,6 +32,12 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Effects")
 	UParticleSystem* PortalCloseEffect;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	USoundCue* PortalEnterSoundCue;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	USoundCue* PortalExitSoundCue;
 	
 	FTimerHandle TimerHandle_ProjectileDuration;
 	FTimerHandle TimerHandle_TeleportDelay;

@@ -55,12 +55,16 @@ void ASProjectile::ProjectileHit(FVector HitLocation)
 	MovementComp->StopMovementImmediately();
 	SetActorEnableCollision(false);
 	
-	if (!HitEffect)
+	if (HitEffect)
 	{
-		return;
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
+	}
+
+	if (ImpactSoundCue)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), ImpactSoundCue, HitLocation);
 	}
 	
-	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
 	Destroy();
 }
 

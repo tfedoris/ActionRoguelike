@@ -31,6 +31,11 @@ void ASTeleportProjectile::ProjectileHit(FVector HitLocation)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), PortalExitEffect, GetInstigator()->GetActorLocation(), GetInstigator()->GetActorRotation());
 	}
+
+	if (PortalEnterSoundCue)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), PortalEnterSoundCue, GetInstigator()->GetActorLocation());
+	}
 	
 	if (PortalOpenEffect)
 	{
@@ -57,6 +62,11 @@ void ASTeleportProjectile::OnTeleportDelayEnd()
 	if (PortalCloseEffect)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), PortalCloseEffect, GetActorLocation(), GetInstigator()->GetActorRotation());
+	}
+
+	if (PortalExitSoundCue)
+	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), PortalExitSoundCue, GetActorLocation());
 	}
 	
 	Destroy();
