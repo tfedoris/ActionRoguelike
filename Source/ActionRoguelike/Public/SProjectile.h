@@ -13,6 +13,7 @@ class UParticleSystem;
 class UParticleSystemComponent;
 class UAudioComponent;
 class USceneComponent;
+class UMatineeCameraShake;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASProjectile : public AActor
@@ -41,6 +42,15 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Audio")
 	USoundCue* ImpactSoundCue;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Camera Shake")
+	TSubclassOf<UMatineeCameraShake> ImpactShake;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Camera Shake")
+	float ImpactShakeInnerRadius;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Camera Shake")
+	float ImpactShakeOuterRadius;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Damage")
 	float BaseDamage;

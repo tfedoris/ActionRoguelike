@@ -9,6 +9,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "MatineeCameraShake.h"
 
 // Sets default values
 ASProjectile::ASProjectile()
@@ -34,6 +35,9 @@ ASProjectile::ASProjectile()
 	MovementComp->bInitialVelocityInLocalSpace = true;
 
 	BaseDamage = 20.0f;
+
+	ImpactShakeInnerRadius = 100.0f;
+	ImpactShakeOuterRadius = 2000.0f;
 }
 
 void ASProjectile::PostInitializeComponents()
@@ -54,16 +58,12 @@ void ASProjectile::ProjectileHit(FVector HitLocation)
 {
 	MovementComp->StopMovementImmediately();
 	SetActorEnableCollision(false);
-	
-	if (HitEffect)
-	{
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
-	}
 
-	if (ImpactSoundCue)
-	{
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), ImpactSoundCue, HitLocation);
-	}
+	UGameplayStatics::PlayWorldCameraShake(GetWorld(), ImpactShake, HitLocation, ImpactShakeInnerRadius, ImpactShakeOuterRadius);
+
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
+
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ImpactSoundCue, HitLocation);
 	
 	Destroy();
 }

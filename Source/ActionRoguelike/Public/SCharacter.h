@@ -12,6 +12,7 @@ class USInteractionComponent;
 class UAnimMontage;
 class AActionRoguelikeGameModeBase;
 class USAttributeComponent;
+class UParticleSystemComponent;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASCharacter : public ACharacter
@@ -49,17 +50,20 @@ protected:
 	UPROPERTY()
 	AActionRoguelikeGameModeBase* GameMode;
 	
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UCameraComponent* CameraComp;
 
-	UPROPERTY(VisibleAnywhere)
-	FName ProjectileAttackSocketName;
-
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USInteractionComponent* InteractionComp;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UParticleSystemComponent* CastParticleSystemComp;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Socket Names")
+	FName ProjectileAttackSocketName;
 
 	float AimRange;
 	

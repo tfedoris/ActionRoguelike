@@ -11,12 +11,19 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ASCharacter::ASCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	bUseControllerRotationYaw = false;
+
+	ProjectileAttackSocketName = FName("Muzzle_01");
+
+	AimRange = 100000.f;
 
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>("SpringArmComp");
 	SpringArmComp->bUsePawnControlRotation = true;
@@ -25,17 +32,15 @@ ASCharacter::ASCharacter()
 	CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
 	CameraComp->SetupAttachment(SpringArmComp);
 
+	CastParticleSystemComp = CreateDefaultSubobject<UParticleSystemComponent>("CastParticleSystemComp");
+	CastParticleSystemComp->SetAutoActivate(false);
+	CastParticleSystemComp->SetupAttachment(GetMesh(), ProjectileAttackSocketName);
+
 	InteractionComp = CreateDefaultSubobject<USInteractionComponent>("InteractionComp");
 
 	AttributeComp = CreateDefaultSubobject<USAttributeComponent>("AttributeComp");
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
-	
-	bUseControllerRotationYaw = false;
-
-	ProjectileAttackSocketName = FName("Muzzle_01");
-
-	AimRange = 100000.f;
 }
 
 // Called when the game starts or when spawned
@@ -90,7 +95,8 @@ void ASCharacter::GetAimStartAndEnd(FVector& Start, FVector& End)
 void ASCharacter::PrimaryAttack()
 {
 	GetAimStartAndEnd(AimStart, AimEnd);
-	
+
+	CastParticleSystemComp->Activate();
 	PlayAnimMontage(AttackAnim);
 	
 	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(PrimaryProjectileClass); }, 0.2f, false);
@@ -99,7 +105,8 @@ void ASCharacter::PrimaryAttack()
 void ASCharacter::SpecialAttack()
 {
 	GetAimStartAndEnd(AimStart, AimEnd);
-	
+
+	CastParticleSystemComp->Activate();
 	PlayAnimMontage(AttackAnim);
 	
 	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(SpecialProjectileClass); }, 0.2f, false);
@@ -116,7 +123,8 @@ void ASCharacter::PrimaryInteract()
 void ASCharacter::MovementAbility()
 {
 	GetAimStartAndEnd(AimStart, AimEnd);
-	
+
+	CastParticleSystemComp->Activate();
 	PlayAnimMontage(AttackAnim);
 	
 	GetWorldTimerManager().SetTimer(TimerHandle_MovementAbility, [&](){ this->ProjectileAttack(MovementProjectileClass); }, 0.2f, false);
@@ -124,6 +132,7 @@ void ASCharacter::MovementAbility()
 
 void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 {
+	CastParticleSystemComp->Deactivate();
 	FVector PrimaryAttackSpawnLocation = GetMesh()->GetSocketLocation(ProjectileAttackSocketName);
 
 	FCollisionObjectQueryParams ObjectQueryParams;
