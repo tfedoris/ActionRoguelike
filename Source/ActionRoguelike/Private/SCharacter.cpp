@@ -6,12 +6,11 @@
 #include "DrawDebugHelpers.h"
 #include "SAttributeComponent.h"
 #include "SInteractionComponent.h"
-#include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
-
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "SGameModeBase.h"
 
 // Sets default values
 ASCharacter::ASCharacter()
@@ -47,7 +46,7 @@ ASCharacter::ASCharacter()
 void ASCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	GameMode = GetWorld()->GetAuthGameMode<AActionRoguelikeGameModeBase>();
+	GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
 }
 
 void ASCharacter::PostInitializeComponents()

@@ -5,7 +5,7 @@
 
 #include "DrawDebugHelpers.h"
 #include "SGameplayInterface.h"
-#include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
+#include "SGameModeBase.h"
 
 // Sets default values for this component's properties
 USInteractionComponent::USInteractionComponent()
@@ -38,7 +38,7 @@ void USInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void USInteractionComponent::PrimaryInteract()
 {
-	AActionRoguelikeGameModeBase* GameMode = GetWorld()->GetAuthGameMode<AActionRoguelikeGameModeBase>();
+	ASGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 

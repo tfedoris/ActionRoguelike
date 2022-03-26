@@ -5,8 +5,6 @@
 
 #include "DrawDebugHelpers.h"
 #include "SAttributeComponent.h"
-#include "SMagicProjectile.h"
-#include "ActionRoguelike/ActionRoguelikeGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "PhysicsEngine/RadialForceComponent.h"
 #include "Particles/ParticleSystem.h"

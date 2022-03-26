@@ -10,7 +10,7 @@ class USpringArmComponent;
 class UCameraComponent;
 class USInteractionComponent;
 class UAnimMontage;
-class AActionRoguelikeGameModeBase;
+class ASGameModeBase;
 class USAttributeComponent;
 class UParticleSystemComponent;
 
@@ -47,8 +47,7 @@ public:
 	ASCharacter();
 
 protected:
-	UPROPERTY()
-	AActionRoguelikeGameModeBase* GameMode;
+	ASGameModeBase* GameMode;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
