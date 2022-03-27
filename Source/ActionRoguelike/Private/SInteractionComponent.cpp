@@ -38,7 +38,6 @@ void USInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void USInteractionComponent::PrimaryInteract()
 {
-	ASGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 
@@ -77,7 +76,7 @@ void USInteractionComponent::PrimaryInteract()
 				APawn* MyPawn = Cast<APawn>(MyOwner);
 				ISGameplayInterface::Execute_Interact(HitActor, MyPawn);
 
-				if (GameMode && GameMode->bShowDebugLines)
+				if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
 				{
 					DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 32, LineColor, false, 2.f);
 				}
@@ -86,7 +85,7 @@ void USInteractionComponent::PrimaryInteract()
 		}
 	}
 	
-	if (GameMode && GameMode->bShowDebugLines)
+	if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
 	{
 		DrawDebugLine(GetWorld(), EyeLocation, End, LineColor, false, 2.f, 0, 2.f);	
 	}

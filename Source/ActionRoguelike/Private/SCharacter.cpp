@@ -40,13 +40,15 @@ ASCharacter::ASCharacter()
 	AttributeComp = CreateDefaultSubobject<USAttributeComponent>("AttributeComp");
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+	TimeToHitParamName = "TimeToHit";
+	HitFlashColorParamName = "HitFlashColor";
 }
 
 // Called when the game starts or when spawned
 void ASCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
 }
 
 void ASCharacter::PostInitializeComponents()
@@ -146,7 +148,7 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	if (bBlockingHit && Hit.GetActor() != this)
 	{
 		AimEnd = Hit.ImpactPoint;
-		if (GameMode->bShowDebugLines)
+		if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
 		{
 			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 60.0f, 32, FColor::Green, false, 2.0f);
 		}
@@ -154,7 +156,7 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	
 	FRotator RotateTowards = FRotationMatrix::MakeFromX(AimEnd - PrimaryAttackSpawnLocation).Rotator();
 	
-	if (GameMode->bShowDebugLines)
+	if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
 	{
 		DrawDebugLine(GetWorld(), PrimaryAttackSpawnLocation, AimEnd, FColor::Red, false, 4.f, 0, 2.f);
 	}
@@ -175,8 +177,8 @@ void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent*
 {
 	if (Delta < 0.0f)
 	{
-		GetMesh()->SetScalarParameterValueOnMaterials("TimeToHit", GetWorld()->TimeSeconds);
-		GetMesh()->SetVectorParameterValueOnMaterials("HitFlashColor", FVector(1.0f, 0.0f, 0.0f));
+		GetMesh()->SetScalarParameterValueOnMaterials(TimeToHitParamName, GetWorld()->TimeSeconds);
+		GetMesh()->SetVectorParameterValueOnMaterials(HitFlashColorParamName, FVector(1.0f, 0.0f, 0.0f));
 	}
 	
 	if (NewHealth <= 0.0f && Delta < 0.0f)

@@ -20,14 +20,17 @@ class ACTIONROGUELIKE_API ASGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-	uint8 bShowDebugLines = 0;
+	uint8 bShowDebugHelpers = 0;
 	
 	ASGameModeBase();
 	
 	virtual void StartPlay() override;
 
 	UFUNCTION(Exec, Category = "Commands")
-	void ShowDebugLines(uint8 Flag);
+	void ToggleDebugHelpers();
+
+	UFUNCTION(BlueprintCallable, Category = "Debug Helpers")
+	static bool ShowDebugHelpers(UWorld* World);
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")

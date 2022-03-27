@@ -83,7 +83,7 @@ void ASProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 		if (AttributeComp)
 		{
 			ProjectileHit(GetActorLocation());
-			AttributeComp->ApplyHealthChange(-BaseDamage);
+			AttributeComp->ApplyHealthChange(GetInstigator(), -BaseDamage);
 		}
 	}
 }

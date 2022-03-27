@@ -27,7 +27,7 @@ void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponen
 		if (AttributeComp && AttributeComp->GetCurrentHealth() < AttributeComp->GetMaxHealth())
 		{
 			PlayPickUpEffect();
-			AttributeComp->ApplyHealthChange(HealingValue);
+			AttributeComp->ApplyHealthChange(this, HealingValue);
 			SetActorHiddenInGame(true);
 			GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASHealthPotion::OnHiddenDurationElapsed, HiddenDuration);
 		}

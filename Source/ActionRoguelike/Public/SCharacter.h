@@ -47,8 +47,6 @@ public:
 	ASCharacter();
 
 protected:
-	ASGameModeBase* GameMode;
-	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
 
@@ -63,6 +61,12 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Socket Names")
 	FName ProjectileAttackSocketName;
+
+	UPROPERTY(VisibleAnywhere, Category = "Effects")
+	FName TimeToHitParamName;
+
+	UPROPERTY(VisibleAnywhere, Category = "Effects")
+	FName HitFlashColorParamName;
 
 	float AimRange;
 	
