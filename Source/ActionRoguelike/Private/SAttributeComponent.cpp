@@ -31,6 +31,11 @@ bool USAttributeComponent::IsActorAlive(AActor* Actor)
 	return false;
 }
 
+bool USAttributeComponent::Kill(AActor* InstigatorActor)
+{
+	return ApplyHealthChange(InstigatorActor, -GetMaxHealth());
+}
+
 bool USAttributeComponent::IsAlive() const
 {
 	return Health > 0.0f;
@@ -38,6 +43,11 @@ bool USAttributeComponent::IsAlive() const
 
 bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delta)
 {
+	if (!GetOwner()->CanBeDamaged()) // God-Mode is enabled
+	{
+		return false;
+	}
+	
 	float PrevHealth = Health;
 
 	Health = FMath::Clamp(Health += Delta, 0.0f, MaxHealth);

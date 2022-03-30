@@ -32,6 +32,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Debug Helpers")
 	static bool ShowDebugHelpers(UWorld* World);
 
+	UFUNCTION(Exec)
+	void KillAll();
+
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 	TSubclassOf<AActor> MinionClass;

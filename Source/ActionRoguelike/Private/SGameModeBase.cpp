@@ -33,6 +33,20 @@ bool ASGameModeBase::ShowDebugHelpers(UWorld* World)
 	return World->GetAuthGameMode<ASGameModeBase>()->bShowDebugHelpers == 1;
 }
 
+void ASGameModeBase::KillAll()
+{
+	for (TActorIterator<ASAICharacter> It(GetWorld()); It; ++It)
+	{
+		ASAICharacter* Bot = *It;
+		
+		USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(Bot);
+		if (ensure(AttributeComp) && AttributeComp->IsAlive())
+		{
+			AttributeComp->Kill(this); // TODO: maybe pass in player for kill credit?
+		}
+	}
+}
+
 void ASGameModeBase::SpawnBotTimerElapsed()
 {
 	int32 NumAliveBots = 0;
