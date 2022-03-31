@@ -5,6 +5,7 @@
 
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/Character.h"
 
 void USBTService_CheckAttackRange::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
@@ -20,17 +21,19 @@ void USBTService_CheckAttackRange::TickNode(UBehaviorTreeComponent& OwnerComp, u
 			AAIController* Controller = OwnerComp.GetAIOwner();
 			if (ensure(Controller))
 			{
-				APawn* AIPawn = Controller->GetPawn();
+				ACharacter* AIPawn = Cast<ACharacter>(Controller->GetPawn());
 				if (ensure(AIPawn))
 				{
 					float DistanceTo = FVector::Distance(TargetActor->GetActorLocation(), AIPawn->GetActorLocation());
 					
 					bool bWithinRange = DistanceTo < 2000.f;
 
+					FVector ViewPoint = AIPawn->GetMesh()->GetSocketLocation(PrimaryAttackSocketName);
+
 					bool bHasLOS = false;
 					if (bWithinRange)
 					{
-						bHasLOS = Controller->LineOfSightTo(TargetActor);
+						bHasLOS = Controller->LineOfSightTo(TargetActor, ViewPoint);
 					}
 
 					BlackboardComp->SetValueAsBool(AttackRangeKey.SelectedKeyName, (bWithinRange && bHasLOS));

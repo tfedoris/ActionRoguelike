@@ -11,6 +11,7 @@
 USBTTask_RangedAttack::USBTTask_RangedAttack()
 {
 	MaxBulletSpread = 2.0f;
+	PrimaryAttackSocketName = "Muzzle_01";
 }
 
 EBTNodeResult::Type USBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -29,7 +30,7 @@ EBTNodeResult::Type USBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& O
 		return EBTNodeResult::Failed;
 	}
 
-	FVector MuzzleLocation = MyPawn->GetMesh()->GetSocketLocation("Muzzle_01");
+	const FVector MuzzleLocation = MyPawn->GetMesh()->GetSocketLocation(PrimaryAttackSocketName);
 
 	AActor* TargetActor = Cast<AActor>(OwnerComp.GetBlackboardComponent()->GetValueAsObject("TargetActor"));
 	if (!TargetActor)
