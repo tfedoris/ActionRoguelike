@@ -6,12 +6,19 @@
 #include "DrawDebugHelpers.h"
 #include "EngineUtils.h"
 #include "SAttributeComponent.h"
+#include "SCharacter.h"
 #include "AI/SAICharacter.h"
 #include "EnvironmentQuery/EnvQueryManager.h"
+
+// Prefix 'su' here is just specifying our own category, in this case it stands for "Stanford University"
+// Marking this with the ECVF_Cheat flag will exclude it from the release build
+static TAutoConsoleVariable<bool> CVarSpawnBots(TEXT("su.SpawnBots"), true, TEXT("Enable spawning of bots via timer."), ECVF_Cheat);
+static TAutoConsoleVariable<bool> CVarDebugDrawGameMode(TEXT("su.GameModeDebugDraw"), false, TEXT("Enable Debug Lines for Game Mode functionality."), ECVF_Cheat);
 
 ASGameModeBase::ASGameModeBase()
 {
 	SpawnTimerInterval = 2.0f;
+	RespawnDelay = 2.0f;
 }
 
 void ASGameModeBase::StartPlay()
@@ -21,16 +28,6 @@ void ASGameModeBase::StartPlay()
 	// Continuous timer to spawn in more bots.
 	// Actual amount of bots and whether it's allowed to spawn is determined by spawn logic later in the chain...
 	GetWorldTimerManager().SetTimer(TimerHandle_SpawnBots, this, &ASGameModeBase::SpawnBotTimerElapsed, SpawnTimerInterval, true);
-}
-
-void ASGameModeBase::ToggleDebugHelpers()
-{
-	bShowDebugHelpers = !bShowDebugHelpers;
-}
-
-bool ASGameModeBase::ShowDebugHelpers(UWorld* World)
-{
-	return World->GetAuthGameMode<ASGameModeBase>()->bShowDebugHelpers == 1;
 }
 
 void ASGameModeBase::KillAll()
@@ -47,8 +44,30 @@ void ASGameModeBase::KillAll()
 	}
 }
 
+void ASGameModeBase::OnActorKilled(AActor* VictimActor, AActor* KillerActor)
+{
+	ASCharacter* Player = Cast<ASCharacter>(VictimActor);
+	if (Player)
+	{
+		FTimerHandle TimerHandle_RespawnDelay;
+
+		FTimerDelegate Delegate;
+		Delegate.BindUFunction(this, "RespawnPlayerElapsed", Player->GetController());
+		
+		GetWorldTimerManager().SetTimer(TimerHandle_RespawnDelay, Delegate, RespawnDelay, false);
+	}
+
+	UE_LOG(LogTemp, Log, TEXT("OnActorKilled: Victim: %s, Killer: %s"), *GetNameSafe(VictimActor), *GetNameSafe(KillerActor));
+}
+
 void ASGameModeBase::SpawnBotTimerElapsed()
 {
+	if (!CVarSpawnBots.GetValueOnGameThread())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Bot spawning disabled via cvar 'CVarSpawnBots'."));
+		return;
+	}
+	
 	int32 NumAliveBots = 0;
 	for (TActorIterator<ASAICharacter> It(GetWorld()); It; ++It)
 	{
@@ -100,9 +119,20 @@ void ASGameModeBase::OnQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryIn
 	{
 		GetWorld()->SpawnActor<AActor>(MinionClass, Locations[0], FRotator::ZeroRotator);
 
-		if (bShowDebugHelpers)
+		if (CVarDebugDrawGameMode.GetValueOnGameThread())
 		{
 			DrawDebugSphere(GetWorld(), Locations[0], 50.0f, 20, FColor::Blue, false, 60.0f);
 		}
 	}
+}
+
+void ASGameModeBase::RespawnPlayerElapsed(AController* Controller)
+{
+	if(!ensure(Controller))
+	{
+		return;
+	}
+
+	Controller->UnPossess();
+	RestartPlayer(Controller);
 }

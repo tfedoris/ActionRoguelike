@@ -20,20 +20,14 @@ class ACTIONROGUELIKE_API ASGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-	uint8 bShowDebugHelpers = 0;
-	
 	ASGameModeBase();
 	
 	virtual void StartPlay() override;
 
-	UFUNCTION(Exec, Category = "Commands")
-	void ToggleDebugHelpers();
-
-	UFUNCTION(BlueprintCallable, Category = "Debug Helpers")
-	static bool ShowDebugHelpers(UWorld* World);
-
 	UFUNCTION(Exec)
 	void KillAll();
+
+	virtual void OnActorKilled(AActor* VictimActor, AActor* KillerActor);
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
@@ -50,9 +44,15 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 	float SpawnTimerInterval;
 
+	UPROPERTY(EditAnywhere, Category = "Player")
+	float RespawnDelay;
+
 	UFUNCTION()
 	void SpawnBotTimerElapsed();
 
 	UFUNCTION()
 	void OnQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
+
+	UFUNCTION()
+	void RespawnPlayerElapsed(AController* Controller);
 };

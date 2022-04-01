@@ -10,6 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "MatineeCameraShake.h"
+#include "SGameplayFunctionLibrary.h"
 
 // Sets default values
 ASProjectile::ASProjectile()
@@ -77,14 +78,19 @@ void ASProjectile::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherAc
 void ASProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherActor)
+	// if (OtherActor)
+	// {
+	// 	USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
+	// 	if (AttributeComp)
+	// 	{
+	// 		ProjectileHit(GetActorLocation());
+	// 		AttributeComp->ApplyHealthChange(GetInstigator(), -BaseDamage);
+	// 	}
+	// }
+
+	if(USGameplayFunctionLibrary::ApplyDirectionalDamage(GetInstigator(), OtherActor, BaseDamage, SweepResult))
 	{
-		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
-		if (AttributeComp)
-		{
-			ProjectileHit(GetActorLocation());
-			AttributeComp->ApplyHealthChange(GetInstigator(), -BaseDamage);
-		}
+		ProjectileHit(GetActorLocation());
 	}
 }
 

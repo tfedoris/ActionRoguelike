@@ -3,6 +3,10 @@
 
 #include "SAttributeComponent.h"
 
+#include "SGameModeBase.h"
+
+static TAutoConsoleVariable<float> CVarDamageMultiplier(TEXT("su.DamageMultiplier"), 1.0f, TEXT("Global Damage Modifier for Attribute Component."), ECVF_Cheat);
+
 // Sets default values for this component's properties
 USAttributeComponent::USAttributeComponent()
 {
@@ -43,17 +47,34 @@ bool USAttributeComponent::IsAlive() const
 
 bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delta)
 {
-	if (!GetOwner()->CanBeDamaged()) // God-Mode is enabled
+	if (!GetOwner()->CanBeDamaged() && Delta < 0.0f) // God-Mode is enabled
 	{
 		return false;
 	}
-	
-	float PrevHealth = Health;
+
+	if (Delta < 0.0f)
+	{
+		const float DamageMultiplier = CVarDamageMultiplier.GetValueOnGameThread();
+
+		Delta *= DamageMultiplier;
+	}
+
+	const float PrevHealth = Health;
 
 	Health = FMath::Clamp(Health += Delta, 0.0f, MaxHealth);
 
-	float ActualDelta = Health - PrevHealth;
+	const float ActualDelta = Health - PrevHealth;
 	OnHealthChanged.Broadcast(InstigatorActor, this, Health, ActualDelta);
+
+	// Died
+	if (ActualDelta < 0.0f && Health == 0.0f)
+	{
+		ASGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
+		if (GameMode)
+		{
+			GameMode->OnActorKilled(GetOwner(), InstigatorActor);
+		}
+	}
 
 	return ActualDelta != 0;
 }

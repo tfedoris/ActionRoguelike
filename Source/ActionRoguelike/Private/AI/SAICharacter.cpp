@@ -10,6 +10,8 @@
 #include "SWorldUserWidget.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/CapsuleComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Perception/PawnSensingComponent.h"
 
 // Sets default values
@@ -20,6 +22,9 @@ ASAICharacter::ASAICharacter()
 	AttributeComp = CreateDefaultSubobject<USAttributeComponent>("AttributeComp");
 
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Ignore);
+	GetMesh()->SetGenerateOverlapEvents(true);
 	
 	TimeToHitParamName = "TimeToHit";
 	HitFlashColorParamName = "HitFlashColor";
@@ -61,7 +66,8 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 
 		GetMesh()->SetScalarParameterValueOnMaterials(TimeToHitParamName, GetWorld()->TimeSeconds);
 		GetMesh()->SetVectorParameterValueOnMaterials(HitFlashColorParamName, FVector(1.0f, 0.0f, 0.0f));
-		
+
+		// Died
 		if (NewHealth <= 0.0f)
 		{
 			// stop BT
@@ -74,6 +80,9 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 			// ragdoll
 			GetMesh()->SetAllBodiesSimulatePhysics(true);
 			GetMesh()->SetCollisionProfileName("RagDoll");
+
+			GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+			GetCharacterMovement()->DisableMovement();
 
 			// set lifespan
 			SetLifeSpan(10.0f);

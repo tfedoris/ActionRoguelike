@@ -12,6 +12,8 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "SGameModeBase.h"
 
+static TAutoConsoleVariable<bool> CVarDebugDrawCharacter(TEXT("su.CharacterDebugDraw"), false, TEXT("Enable Debug Lines for SCharacter."), ECVF_Cheat);
+
 // Sets default values
 ASCharacter::ASCharacter()
 {
@@ -84,12 +86,12 @@ void ASCharacter::MoveRight(float Value)
 
 void ASCharacter::GetAimStartAndEnd(FVector& Start, FVector& End)
 {
-	FVector CameraLocation;
-	FRotator CameraRotation;
-	GetController()->GetPlayerViewPoint(CameraLocation, CameraRotation);
-	FVector Target = CameraLocation + (CameraRotation.Vector() * AimRange);
+	FVector ViewPointLocation;
+	FRotator ViewPointRotation;
+	GetController()->GetPlayerViewPoint(ViewPointLocation, ViewPointRotation);
+	FVector Target = ViewPointLocation + (ViewPointRotation.Vector() * AimRange);
 
-	Start = CameraLocation;
+	Start = ViewPointLocation;
 	End = Target;
 }
 
@@ -148,7 +150,7 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	if (bBlockingHit && Hit.GetActor() != this)
 	{
 		AimEnd = Hit.ImpactPoint;
-		if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
+		if (CVarDebugDrawCharacter.GetValueOnGameThread())
 		{
 			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 60.0f, 32, FColor::Green, false, 2.0f);
 		}
@@ -156,7 +158,7 @@ void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
 	
 	FRotator RotateTowards = FRotationMatrix::MakeFromX(AimEnd - PrimaryAttackSpawnLocation).Rotator();
 	
-	if (ASGameModeBase::ShowDebugHelpers(GetWorld()))
+	if (CVarDebugDrawCharacter.GetValueOnGameThread())
 	{
 		DrawDebugLine(GetWorld(), PrimaryAttackSpawnLocation, AimEnd, FColor::Red, false, 4.f, 0, 2.f);
 	}
@@ -188,6 +190,11 @@ void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent*
 	}
 }
 
+FVector ASCharacter::GetPawnViewLocation() const
+{
+	return CameraComp->GetComponentLocation();
+}
+
 void ASCharacter::VisualizePlayerRotation() const
 {
 	// -- Rotation Visualization -- //
@@ -212,7 +219,10 @@ void ASCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	VisualizePlayerRotation();
+	if(CVarDebugDrawCharacter.GetValueOnGameThread())
+	{
+		VisualizePlayerRotation();
+	}
 }
 
 // Called to bind functionality to input
