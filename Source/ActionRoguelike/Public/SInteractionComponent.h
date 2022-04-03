@@ -19,6 +19,9 @@ public:
 	USInteractionComponent();
 
 protected:
+	UPROPERTY(EditDefaultsOnly, Category = "Properties")
+	float MaxInteractDistance;
+	
 	// Called when the game starts
 	virtual void BeginPlay() override;
 

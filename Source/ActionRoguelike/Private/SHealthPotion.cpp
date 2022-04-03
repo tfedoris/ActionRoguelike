@@ -12,18 +12,22 @@ ASHealthPotion::ASHealthPotion()
 	HiddenDuration = 10.0f;
 }
 
+void ASHealthPotion::Interact_Implementation(APawn* InstigatorPawn)
+{
+	HealActor(InstigatorPawn);
+}
+
 void ASHealthPotion::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASHealthPotion::OnActorBeginOverlap);
 }
 
-void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-                                         UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void ASHealthPotion::HealActor(AActor* ActorToHeal)
 {
-	if (OtherActor)
+	if (ActorToHeal)
 	{
-		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
+		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(ActorToHeal->GetComponentByClass(USAttributeComponent::StaticClass()));
 		if (AttributeComp && AttributeComp->GetCurrentHealth() < AttributeComp->GetMaxHealth())
 		{
 			PlayPickUpEffect();
@@ -32,4 +36,10 @@ void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponen
 			GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASHealthPotion::OnHiddenDurationElapsed, HiddenDuration);
 		}
 	}
+}
+
+void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+                                         UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	// HealActor(OtherActor);
 }

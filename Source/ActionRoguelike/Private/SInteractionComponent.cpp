@@ -16,7 +16,7 @@ USInteractionComponent::USInteractionComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	MaxInteractDistance = 500.0f;
 }
 
 
@@ -51,7 +51,7 @@ void USInteractionComponent::PrimaryInteract()
 	FRotator EyeRotation;
 	MyOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
 
-	FVector End = EyeLocation + (EyeRotation.Vector() * 1000);
+	FVector End = EyeLocation + (EyeRotation.Vector() * MaxInteractDistance);
 
 	/*
 	 * This block of code uses linear ray tracing to detect interactable object

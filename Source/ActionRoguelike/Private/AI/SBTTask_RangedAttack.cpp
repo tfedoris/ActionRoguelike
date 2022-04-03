@@ -11,7 +11,7 @@
 USBTTask_RangedAttack::USBTTask_RangedAttack()
 {
 	MaxBulletSpread = 2.0f;
-	PrimaryAttackSocketName = "Muzzle_01";
+	PrimaryAttackSocketName = "Muzzle_Front";
 }
 
 EBTNodeResult::Type USBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -54,6 +54,9 @@ EBTNodeResult::Type USBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& O
 	Params.Instigator = MyPawn;
 
 	AActor* NewProjectile = GetWorld()->SpawnActor<AActor>(ProjectileClass, MuzzleLocation, MuzzleRotation, Params);
+
+	MyPawn->MoveIgnoreActorAdd(NewProjectile);
+	MyPawn->GetMesh()->MoveIgnoreActors.AddUnique(NewProjectile);
 
 	return NewProjectile ? EBTNodeResult::Succeeded : EBTNodeResult::Failed;
 }
