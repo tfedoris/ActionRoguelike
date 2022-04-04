@@ -4,12 +4,13 @@
 #include "SHealthPotion.h"
 
 #include "SAttributeComponent.h"
+#include "SPlayerState.h"
 #include "Components/SphereComponent.h"
 
 ASHealthPotion::ASHealthPotion()
 {
 	HealingValue = 50.0f;
-	HiddenDuration = 10.0f;
+	CreditsCost = 100.0f;
 }
 
 void ASHealthPotion::Interact_Implementation(APawn* InstigatorPawn)
@@ -27,13 +28,23 @@ void ASHealthPotion::HealActor(AActor* ActorToHeal)
 {
 	if (ActorToHeal)
 	{
+		ASPlayerState* PlayerState = ASPlayerState::GetPlayerState(ActorToHeal);
+		if (!PlayerState)
+		{
+			return;
+		}
+		if (PlayerState->GetTotalCredits() < CreditsCost)
+		{
+			
+			return;
+		}
+		
 		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(ActorToHeal->GetComponentByClass(USAttributeComponent::StaticClass()));
 		if (AttributeComp && AttributeComp->GetCurrentHealth() < AttributeComp->GetMaxHealth())
 		{
-			PlayPickUpEffect();
+			HandlePickUp();
+			PlayerState->RemoveCredits(CreditsCost);
 			AttributeComp->ApplyHealthChange(this, HealingValue);
-			SetActorHiddenInGame(true);
-			GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASHealthPotion::OnHiddenDurationElapsed, HiddenDuration);
 		}
 	}
 }

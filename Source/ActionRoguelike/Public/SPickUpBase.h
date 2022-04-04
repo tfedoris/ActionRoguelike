@@ -29,12 +29,18 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
 	UAudioComponent* AudioComp;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
+	float RespawnDelay;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
+	float bCanRespawn;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Effects")
 	UParticleSystem* PickUpEffect;
 
 	FTimerHandle TimerHandle_HiddenDuration;
 
-	virtual void PlayPickUpEffect() const;
+	virtual void HandlePickUp();
 
 	virtual void OnHiddenDurationElapsed();
 	

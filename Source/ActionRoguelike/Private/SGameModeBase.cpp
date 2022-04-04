@@ -7,6 +7,8 @@
 #include "EngineUtils.h"
 #include "SAttributeComponent.h"
 #include "SCharacter.h"
+#include "SCoin.h"
+#include "SHealthPotion.h"
 #include "AI/SAICharacter.h"
 #include "EnvironmentQuery/EnvQueryManager.h"
 
@@ -19,11 +21,15 @@ ASGameModeBase::ASGameModeBase()
 {
 	SpawnTimerInterval = 2.0f;
 	RespawnDelay = 2.0f;
+	NumCoinsToSpawn = 10;
+	NumPotionsToSpawn = 5;
 }
 
 void ASGameModeBase::StartPlay()
 {
 	Super::StartPlay();
+
+	SpawnPickUps();
 
 	// Continuous timer to spawn in more bots.
 	// Actual amount of bots and whether it's allowed to spawn is determined by spawn logic later in the chain...
@@ -99,11 +105,11 @@ void ASGameModeBase::SpawnBotTimerElapsed()
 
 	if (ensure(QueryInstance))
 	{
-		QueryInstance->GetOnQueryFinishedEvent().AddDynamic(this, &ASGameModeBase::OnQueryCompleted);	
+		QueryInstance->GetOnQueryFinishedEvent().AddDynamic(this, &ASGameModeBase::OnSpawnBotQueryCompleted);	
 	}
 }
 
-void ASGameModeBase::OnQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance,
+void ASGameModeBase::OnSpawnBotQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance,
 	EEnvQueryStatus::Type QueryStatus)
 {
 	if (QueryStatus != EEnvQueryStatus::Success)
@@ -126,6 +132,42 @@ void ASGameModeBase::OnQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryIn
 	}
 }
 
+void ASGameModeBase::OnSpawnCoinQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance,
+	EEnvQueryStatus::Type QueryStatus)
+{
+	if (QueryStatus != EEnvQueryStatus::Success)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Spawn pick ups EQS Query failed!"));
+		return;
+	}
+	
+	TArray<FVector> Locations;
+	QueryInstance->GetQueryResultsAsLocations(Locations);
+
+	if (Locations.IsValidIndex(0))
+	{
+		GetWorld()->SpawnActor<AActor>(CoinClass, Locations[0], FRotator::ZeroRotator);
+	}
+}
+
+void ASGameModeBase::OnSpawnPotionQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance,
+	EEnvQueryStatus::Type QueryStatus)
+{
+	if (QueryStatus != EEnvQueryStatus::Success)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Spawn pick ups EQS Query failed!"));
+		return;
+	}
+	
+	TArray<FVector> Locations;
+	QueryInstance->GetQueryResultsAsLocations(Locations);
+
+	if (Locations.IsValidIndex(0))
+	{
+		GetWorld()->SpawnActor<AActor>(HealthPotionClass, Locations[0], FRotator::ZeroRotator);
+	}
+}
+
 void ASGameModeBase::RespawnPlayerElapsed(AController* Controller)
 {
 	if(!ensure(Controller))
@@ -135,4 +177,27 @@ void ASGameModeBase::RespawnPlayerElapsed(AController* Controller)
 
 	Controller->UnPossess();
 	RestartPlayer(Controller);
+}
+
+void ASGameModeBase::SpawnPickUps()
+{
+	UEnvQueryInstanceBlueprintWrapper* QueryInstance;
+	
+	for(int i = 0; i < NumCoinsToSpawn; i++)
+	{
+		QueryInstance = UEnvQueryManager::RunEQSQuery(this, SpawnPickUpsQuery, this, EEnvQueryRunMode::RandomBest25Pct, nullptr);
+		if (ensure(QueryInstance))
+		{
+			QueryInstance->GetOnQueryFinishedEvent().AddDynamic(this, &ASGameModeBase::OnSpawnCoinQueryCompleted);
+		}
+	}
+
+	for(int i = 0; i < NumPotionsToSpawn; i++)
+	{
+		QueryInstance = UEnvQueryManager::RunEQSQuery(this, SpawnPickUpsQuery, this, EEnvQueryRunMode::RandomBest25Pct, nullptr);
+		if (ensure(QueryInstance))
+		{
+			QueryInstance->GetOnQueryFinishedEvent().AddDynamic(this, &ASGameModeBase::OnSpawnPotionQueryCompleted);
+		}
+	}
 }

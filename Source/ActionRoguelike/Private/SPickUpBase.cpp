@@ -11,6 +11,8 @@
 ASPickUpBase::ASPickUpBase()
 {
 	SphereComp = CreateDefaultSubobject<USphereComponent>("SphereComp");
+	SphereComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	SphereComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 	RootComponent = SphereComp;
 	
 	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>("MeshComp");
@@ -19,19 +21,26 @@ ASPickUpBase::ASPickUpBase()
 	AudioComp = CreateDefaultSubobject<UAudioComponent>("AudioComp");
 	AudioComp->SetAutoActivate(false);
 	AudioComp->SetupAttachment(RootComponent);
+
+	RespawnDelay = 10.0f;
+	bCanRespawn = true;
 }
 
-void ASPickUpBase::PlayPickUpEffect() const
+void ASPickUpBase::HandlePickUp()
 {
+	SetActorHiddenInGame(true);
+	
 	if (PickUpEffect)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), PickUpEffect, GetActorLocation());
 	}
 
 	AudioComp->Play();
+	
+	GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASPickUpBase::OnHiddenDurationElapsed, RespawnDelay);
 }
 
 void ASPickUpBase::OnHiddenDurationElapsed()
 {
-	SetActorHiddenInGame(false);
+	bCanRespawn ? SetActorHiddenInGame(false) : Destroy();
 }

@@ -10,6 +10,7 @@
 class UEnvQuery;
 class UEnvQueryInstanceBlueprintWrapper;
 class UCurveFloat;
+class ASPickUpBase;
 
 /**
  * 
@@ -38,6 +39,21 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 	UCurveFloat* DifficultyCurve;
+
+	UPROPERTY(EditDefaultsOnly, Category = "PickUps")
+	UEnvQuery* SpawnPickUpsQuery;
+
+	UPROPERTY(EditDefaultsOnly, Category = "PickUps")
+	TSubclassOf<ASPickUpBase> CoinClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = "PickUps")
+	TSubclassOf<ASPickUpBase> HealthPotionClass;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "PickUps")
+	int NumCoinsToSpawn;
+
+	UPROPERTY(EditDefaultsOnly, Category = "PickUps")
+	int NumPotionsToSpawn;
 	
 	FTimerHandle TimerHandle_SpawnBots;
 
@@ -51,8 +67,17 @@ protected:
 	void SpawnBotTimerElapsed();
 
 	UFUNCTION()
-	void OnQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
+	void OnSpawnBotQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
 
 	UFUNCTION()
 	void RespawnPlayerElapsed(AController* Controller);
+
+	UFUNCTION()
+	void OnSpawnCoinQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
+
+	UFUNCTION()
+	void OnSpawnPotionQueryCompleted(UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus::Type QueryStatus);
+
+	UFUNCTION()
+	void SpawnPickUps();
 };

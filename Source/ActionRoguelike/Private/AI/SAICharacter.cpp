@@ -7,6 +7,7 @@
 #include "BrainComponent.h"
 #include "DrawDebugHelpers.h"
 #include "SAttributeComponent.h"
+#include "SPlayerState.h"
 #include "SWorldUserWidget.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/UserWidget.h"
@@ -14,6 +15,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Perception/PawnSensingComponent.h"
 
+class ASPlayerState;
 // Sets default values
 ASAICharacter::ASAICharacter()
 {
@@ -28,6 +30,8 @@ ASAICharacter::ASAICharacter()
 	
 	TimeToHitParamName = "TimeToHit";
 	HitFlashColorParamName = "HitFlashColor";
+
+	CreditsValue = 100;
 }
 
 void ASAICharacter::PostInitializeComponents()
@@ -70,6 +74,13 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 		// Died
 		if (NewHealth <= 0.0f)
 		{
+			// Grant Instigator Credits for the Kill
+			ASPlayerState* InstigatorState = ASPlayerState::GetPlayerState(InstigatorActor);
+			if (InstigatorState)
+			{
+				InstigatorState->AddCredits(CreditsValue);
+			}
+			
 			// stop BT
 			AAIController* AIController = Cast<AAIController>(GetController());
 			if (AIController)

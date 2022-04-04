@@ -21,11 +21,11 @@ public:
 	virtual void Interact_Implementation(APawn* InstigatorPawn) override;
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Healing Properties")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
 	float HealingValue;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
-	float HiddenDuration;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
+	float CreditsCost;
 	
 	virtual void PostInitializeComponents() override;
 
