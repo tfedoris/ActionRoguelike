@@ -10,7 +10,7 @@ ASPlayerState::ASPlayerState()
 
 ASPlayerState* ASPlayerState::GetPlayerState(AActor* FromActor)
 {
-	if (!FromActor)
+	if (!IsValid(FromActor) || !IsValid(FromActor->GetInstigatorController()))
 	{
 		return nullptr;
 	}

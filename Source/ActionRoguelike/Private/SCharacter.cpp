@@ -4,6 +4,7 @@
 #include "SCharacter.h"
 
 #include "DrawDebugHelpers.h"
+#include "SActionComponent.h"
 #include "SAttributeComponent.h"
 #include "SInteractionComponent.h"
 #include "Camera/CameraComponent.h"
@@ -22,10 +23,6 @@ ASCharacter::ASCharacter()
 
 	bUseControllerRotationYaw = false;
 
-	ProjectileAttackSocketName = FName("Muzzle_01");
-
-	AimRange = 100000.f;
-
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>("SpringArmComp");
 	SpringArmComp->bUsePawnControlRotation = true;
 	SpringArmComp->SetupAttachment(RootComponent);
@@ -33,13 +30,11 @@ ASCharacter::ASCharacter()
 	CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
 	CameraComp->SetupAttachment(SpringArmComp);
 
-	CastParticleSystemComp = CreateDefaultSubobject<UParticleSystemComponent>("CastParticleSystemComp");
-	CastParticleSystemComp->SetAutoActivate(false);
-	CastParticleSystemComp->SetupAttachment(GetMesh(), ProjectileAttackSocketName);
-
 	InteractionComp = CreateDefaultSubobject<USInteractionComponent>("InteractionComp");
 
 	AttributeComp = CreateDefaultSubobject<USAttributeComponent>("AttributeComp");
+	
+	ActionComp = CreateDefaultSubobject<USActionComponent>("ActionComp");
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
@@ -84,35 +79,29 @@ void ASCharacter::MoveRight(float Value)
 	AddMovementInput(RightVector, Value);
 }
 
-void ASCharacter::GetAimStartAndEnd(FVector& Start, FVector& End)
+void ASCharacter::SprintStart()
 {
-	FVector ViewPointLocation;
-	FRotator ViewPointRotation;
-	GetController()->GetPlayerViewPoint(ViewPointLocation, ViewPointRotation);
-	FVector Target = ViewPointLocation + (ViewPointRotation.Vector() * AimRange);
+	ActionComp->StartActionByName(this, "Sprint");
+}
 
-	Start = ViewPointLocation;
-	End = Target;
+void ASCharacter::SprintStop()
+{
+	ActionComp->StopActionByName(this, "Sprint");
 }
 
 void ASCharacter::PrimaryAttack()
 {
-	GetAimStartAndEnd(AimStart, AimEnd);
-
-	CastParticleSystemComp->Activate();
-	PlayAnimMontage(AttackAnim);
-	
-	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(PrimaryProjectileClass); }, 0.2f, false);
+	ActionComp->StartActionByName(this, "MagicProjectile");
 }
 
 void ASCharacter::SpecialAttack()
 {
-	GetAimStartAndEnd(AimStart, AimEnd);
+	ActionComp->StartActionByName(this, "BlackHoleProjectile");
+}
 
-	CastParticleSystemComp->Activate();
-	PlayAnimMontage(AttackAnim);
-	
-	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, [&](){ this->ProjectileAttack(SpecialProjectileClass); }, 0.2f, false);
+void ASCharacter::MovementAbility()
+{
+	ActionComp->StartActionByName(this, "TeleportProjectile");
 }
 
 void ASCharacter::PrimaryInteract()
@@ -121,57 +110,6 @@ void ASCharacter::PrimaryInteract()
 	{
 		InteractionComp->PrimaryInteract();
 	}
-}
-
-void ASCharacter::MovementAbility()
-{
-	GetAimStartAndEnd(AimStart, AimEnd);
-
-	CastParticleSystemComp->Activate();
-	PlayAnimMontage(AttackAnim);
-	
-	GetWorldTimerManager().SetTimer(TimerHandle_MovementAbility, [&](){ this->ProjectileAttack(MovementProjectileClass); }, 0.2f, false);
-}
-
-void ASCharacter::ProjectileAttack(TSubclassOf<AActor> ProjectileClass)
-{
-	CastParticleSystemComp->Deactivate();
-	FVector PrimaryAttackSpawnLocation = GetMesh()->GetSocketLocation(ProjectileAttackSocketName);
-
-	FCollisionObjectQueryParams ObjectQueryParams;
-	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
-	ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-	ObjectQueryParams.AddObjectTypesToQuery(ECC_PhysicsBody);
-	ObjectQueryParams.AddObjectTypesToQuery(ECC_Pawn);
-
-	FHitResult Hit;
-	bool bBlockingHit = GetWorld()->LineTraceSingleByObjectType(Hit, AimStart, AimEnd, ObjectQueryParams);
-	
-	if (bBlockingHit && Hit.GetActor() != this)
-	{
-		AimEnd = Hit.ImpactPoint;
-		if (CVarDebugDrawCharacter.GetValueOnGameThread())
-		{
-			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 60.0f, 32, FColor::Green, false, 2.0f);
-		}
-	}
-	
-	FRotator RotateTowards = FRotationMatrix::MakeFromX(AimEnd - PrimaryAttackSpawnLocation).Rotator();
-	
-	if (CVarDebugDrawCharacter.GetValueOnGameThread())
-	{
-		DrawDebugLine(GetWorld(), PrimaryAttackSpawnLocation, AimEnd, FColor::Red, false, 4.f, 0, 2.f);
-	}
-	
-	FTransform SpawnTM = FTransform(RotateTowards, PrimaryAttackSpawnLocation);
-
-	FActorSpawnParameters SpawnParams;
-	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	SpawnParams.Instigator = this;
-
-	AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
-
-	MoveIgnoreActorAdd(SpawnedActor);
 }
 
 void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
@@ -241,6 +179,8 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASCharacter::Jump);
 	PlayerInputComponent->BindAction("MovementAbility", IE_Pressed, this, &ASCharacter::MovementAbility);
 	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &ASCharacter::PrimaryInteract);
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ASCharacter::SprintStart);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ASCharacter::SprintStop);
 }
 
 void ASCharacter::HealSelf(float Amount /* = 100 */)
