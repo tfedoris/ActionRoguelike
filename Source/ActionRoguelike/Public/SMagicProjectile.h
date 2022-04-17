@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SProjectile.h"
+#include "SParryableProjectile.h"
 #include "GameFramework/Actor.h"
 #include "SMagicProjectile.generated.h"
 
 UCLASS()
-class ACTIONROGUELIKE_API ASMagicProjectile : public ASProjectile
+class ACTIONROGUELIKE_API ASMagicProjectile : public ASParryableProjectile
 {
 	GENERATED_BODY()
 	
