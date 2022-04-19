@@ -40,7 +40,7 @@ protected:
 	TSubclassOf<UUserWidget> HealthBarWidgetClass;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Properties")
-	float CreditsValue;
+	int32 CreditsValue;
 	
 	USWorldUserWidget* ActiveHealthBar;
 

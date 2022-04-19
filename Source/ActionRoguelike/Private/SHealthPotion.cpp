@@ -10,7 +10,7 @@
 ASHealthPotion::ASHealthPotion()
 {
 	HealingValue = 50.0f;
-	CreditsCost = 100.0f;
+	CreditsCost = 100;
 }
 
 void ASHealthPotion::Interact_Implementation(APawn* InstigatorPawn)

@@ -18,13 +18,13 @@ ASPlayerState* ASPlayerState::GetPlayerState(AActor* FromActor)
 	return Cast<ASPlayerState>(FromActor->GetInstigatorController()->PlayerState);
 }
 
-void ASPlayerState::AddCredits(const int Credits)
+void ASPlayerState::AddCredits(const int32 Credits)
 {
 	TotalCredits += Credits;
 	OnCreditsChanged.Broadcast(TotalCredits, Credits);
 }
 
-void ASPlayerState::RemoveCredits(const int Credits)
+void ASPlayerState::RemoveCredits(const int32 Credits)
 {
 	TotalCredits -= Credits;
 	TotalCredits = FMath::Max(0, TotalCredits);

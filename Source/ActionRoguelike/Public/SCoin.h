@@ -18,7 +18,7 @@ class ACTIONROGUELIKE_API ASCoin : public ASPickUpBase
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
-	int CreditValue;
+	int32 CreditValue;
 	
 	virtual void PostInitializeComponents() override;
 

@@ -23,17 +23,17 @@ public:
 	static ASPlayerState* GetPlayerState(AActor* FromActor);
 
 	UFUNCTION(BlueprintCallable)
-	int GetTotalCredits() const
+	int32 GetTotalCredits() const
 	{
 		return TotalCredits;
 	}
 
-	void AddCredits(int Credits);
-	void RemoveCredits(int Credits);
+	void AddCredits(int32 Credits);
+	void RemoveCredits(int32 Credits);
 
 	UPROPERTY(BlueprintAssignable)
 	FOnCreditsChanged OnCreditsChanged;
 
 protected:
-	int TotalCredits;
+	int32 TotalCredits;
 };

@@ -25,7 +25,7 @@ protected:
 	float HealingValue;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
-	float CreditsCost;
+	int32 CreditsCost;
 	
 	virtual void PostInitializeComponents() override;
 
