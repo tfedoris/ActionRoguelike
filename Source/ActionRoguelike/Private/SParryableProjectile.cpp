@@ -22,6 +22,6 @@ void ASParryableProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedCompon
 	// Apply Damage & Impulse
 	if(USGameplayFunctionLibrary::ApplyDirectionalDamage(GetInstigator(), OtherActor, BaseDamage, SweepResult))
 	{
-		ProjectileHit(GetActorLocation());
+		ProjectileHit(OtherActor, GetActorLocation());
 	}
 }

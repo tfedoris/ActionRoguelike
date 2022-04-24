@@ -7,6 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "SMagicProjectile.generated.h"
 
+class USActionEffect;
+
 UCLASS()
 class ACTIONROGUELIKE_API ASMagicProjectile : public ASParryableProjectile
 {
@@ -17,8 +19,13 @@ public:
 	ASMagicProjectile();
 
 protected:
+	UPROPERTY(EditDefaultsOnly, Category = "Damage")
+	TSubclassOf<USActionEffect> BurningActionClass;
+	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	virtual void HandleImpactEffects(AActor* OtherActor, FVector HitLocation) override;
 
 public:	
 	// Called every frame

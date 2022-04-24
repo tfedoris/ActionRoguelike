@@ -2,9 +2,8 @@
 
 
 #include "SMagicProjectile.h"
-
-#include "GameFramework/ProjectileMovementComponent.h"
-#include "Particles/ParticleSystemComponent.h"
+#include "SActionEffect.h"
+#include "SActionComponent.h"
 
 // Sets default values
 ASMagicProjectile::ASMagicProjectile()
@@ -18,6 +17,22 @@ void ASMagicProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void ASMagicProjectile::HandleImpactEffects(AActor* OtherActor, FVector HitLocation)
+{
+	Super::HandleImpactEffects(OtherActor, HitLocation);
+
+	if (!OtherActor)
+	{
+		return;
+	}
+	
+	USActionComponent* ActionComp = USActionComponent::GetActionComponent(OtherActor);
+	if (BurningActionClass && ActionComp)
+	{
+		ActionComp->AddAction(GetInstigator(), BurningActionClass);
+	}
 }
 
 // Called every frame

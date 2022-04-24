@@ -20,7 +20,7 @@ void ASTeleportProjectile::BeginPlay()
 	GetWorldTimerManager().SetTimer(TimerHandle_ProjectileDuration, this, &ASTeleportProjectile::OnProjectileDurationElapsed, ProjectileDuration);
 }
 
-void ASTeleportProjectile::ProjectileHit(FVector HitLocation)
+void ASTeleportProjectile::ProjectileHit(AActor* OtherActor, FVector HitLocation)
 {
 	MovementComp->StopMovementImmediately();
 	SetActorEnableCollision(false);
@@ -47,7 +47,7 @@ void ASTeleportProjectile::ProjectileHit(FVector HitLocation)
 
 void ASTeleportProjectile::OnProjectileDurationElapsed()
 {
-	ProjectileHit(GetActorLocation());
+	ProjectileHit(nullptr, GetActorLocation());
 }
 
 void ASTeleportProjectile::OnTeleportDelayEnd()

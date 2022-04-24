@@ -55,16 +55,12 @@ void ASProjectile::BeginPlay()
 	Super::BeginPlay();
 }
 
-void ASProjectile::ProjectileHit(FVector HitLocation)
+void ASProjectile::ProjectileHit(AActor* OtherActor, FVector HitLocation)
 {
 	MovementComp->StopMovementImmediately();
 	SetActorEnableCollision(false);
 
-	UGameplayStatics::PlayWorldCameraShake(GetWorld(), ImpactShake, HitLocation, ImpactShakeInnerRadius, ImpactShakeOuterRadius);
-
-	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
-
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ImpactSoundCue, HitLocation);
+	HandleImpactEffects(OtherActor, HitLocation);
 	
 	Destroy();
 }
@@ -72,7 +68,7 @@ void ASProjectile::ProjectileHit(FVector HitLocation)
 void ASProjectile::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
 	FVector NormalImpulse, const FHitResult& Hit)
 {
-	ProjectileHit(Hit.ImpactPoint);
+	ProjectileHit(OtherActor, Hit.ImpactPoint);
 }
 
 void ASProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -86,6 +82,15 @@ void ASProjectile::ChangeInstigator(AActor* NewInstigator)
 	SphereComp->ClearMoveIgnoreActors();
 	SetInstigator(Cast<APawn>(NewInstigator));
 	SphereComp->IgnoreActorWhenMoving(GetInstigator(), true);
+}
+
+void ASProjectile::HandleImpactEffects(AActor* OtherActor, FVector HitLocation)
+{
+	UGameplayStatics::PlayWorldCameraShake(GetWorld(), ImpactShake, HitLocation, ImpactShakeInnerRadius, ImpactShakeOuterRadius);
+
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitEffect, HitLocation, GetActorRotation());
+
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), ImpactSoundCue, HitLocation);
 }
 
 // Called every frame

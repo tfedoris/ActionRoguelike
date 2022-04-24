@@ -43,7 +43,7 @@ protected:
 	FTimerHandle TimerHandle_TeleportDelay;
 
 	virtual void BeginPlay() override;
-	virtual void ProjectileHit(FVector HitLocation) override;
+	virtual void ProjectileHit(AActor* OtherActor, FVector HitLocation) override;
 	void OnProjectileDurationElapsed();
 	void OnTeleportDelayEnd();
 	void TeleportInstigator();

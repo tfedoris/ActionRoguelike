@@ -61,7 +61,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
-	virtual void ProjectileHit(FVector HitLocation);
+	virtual void ProjectileHit(AActor* OtherActor, FVector HitLocation);
 
 	UFUNCTION()
 	void OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
@@ -71,6 +71,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Properties")
 	virtual void ChangeInstigator(AActor* NewInstigator);
+
+	UFUNCTION(BlueprintCallable)
+	virtual void HandleImpactEffects(AActor* OtherActor, FVector HitLocation);
 
 public:	
 	// Called every frame
