@@ -41,6 +41,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
 	float AimRange;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+	float RageCost;
+
 	UFUNCTION()
 	void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 

@@ -40,6 +40,8 @@ ASCharacter::ASCharacter()
 
 	TimeToHitParamName = "TimeToHit";
 	HitFlashColorParamName = "HitFlashColor";
+
+	RageMultiplier = 2.0f;
 }
 
 // Called when the game starts or when spawned
@@ -113,15 +115,17 @@ void ASCharacter::PrimaryInteract()
 }
 
 void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
-	float Delta)
+	float ActualDelta, float Delta)
 {
-	if (Delta < 0.0f)
+	if (ActualDelta < 0.0f)
 	{
 		GetMesh()->SetScalarParameterValueOnMaterials(TimeToHitParamName, GetWorld()->TimeSeconds);
 		GetMesh()->SetVectorParameterValueOnMaterials(HitFlashColorParamName, FVector(1.0f, 0.0f, 0.0f));
+
+		OwningComp->ApplyRageChange(FMath::Abs(ActualDelta) * RageMultiplier);
 	}
 	
-	if (NewHealth <= 0.0f && Delta < 0.0f)
+	if (NewHealth <= 0.0f && ActualDelta < 0.0f)
 	{
 		APlayerController* PlayerController = Cast<APlayerController>(GetController());
 		DisableInput(PlayerController);

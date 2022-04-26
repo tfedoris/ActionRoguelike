@@ -42,6 +42,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USActionComponent* ActionComp;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Attributes")
+	float RageMultiplier;
+
 public:
 	// Sets default values for this character's properties
 	ASCharacter();
@@ -69,7 +72,7 @@ protected:
 	void PrimaryInteract();
 	
 	UFUNCTION()
-	void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float Delta);
+	void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float ActualDelta, float Delta);
 
 	virtual FVector GetPawnViewLocation() const override;
 	

@@ -4,6 +4,7 @@
 #include "SAction_ProjectileAttack.h"
 
 #include "CollisionDebugDrawingPublic.h"
+#include "SAttributeComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -14,15 +15,25 @@ USAction_ProjectileAttack::USAction_ProjectileAttack()
 	CastSocketName = FName("Muzzle_01");
 	AttackAnimDelay = 0.2f;
 	AimRange = 5000.f;
+	RageCost = 0.0f;
 }
 
 void USAction_ProjectileAttack::StartAction_Implementation(AActor* Instigator)
 {
-	Super::StartAction_Implementation(Instigator);
-
 	ACharacter* Character = Cast<ACharacter>(Instigator);
 	if (Character)
 	{
+		if (RageCost > 0.0f)
+		{
+			USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(Character);
+			if (!AttributeComp || !AttributeComp->ApplyRageChange(-RageCost))
+			{
+				return;
+			}
+		}
+
+		Super::StartAction_Implementation(Instigator);
+		
 		Character->PlayAnimMontage(AttackAnim);
 		UGameplayStatics::SpawnEmitterAttached(CastingEffect, Character->GetMesh(), CastSocketName, FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::SnapToTarget);
 

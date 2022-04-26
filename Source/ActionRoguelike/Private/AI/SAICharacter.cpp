@@ -51,9 +51,9 @@ void ASAICharacter::OnPawnSeen(APawn* Pawn)
 }
 
 void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
-	float Delta)
+	float ActualDelta, float Delta)
 {
-	if (Delta < 0.0f)
+	if (ActualDelta < 0.0f)
 	{
 		if (InstigatorActor != this)
 		{

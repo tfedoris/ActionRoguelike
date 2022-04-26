@@ -11,6 +11,8 @@ static TAutoConsoleVariable<float> CVarDamageMultiplier(TEXT("su.DamageMultiplie
 USAttributeComponent::USAttributeComponent()
 {
 	MaxHealth = 100.0f;
+	MaxRage = 100.0f;
+	Rage = 0.0f;
 	Health = MaxHealth;
 }
 
@@ -64,7 +66,7 @@ bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delt
 	Health = FMath::Clamp(Health += Delta, 0.0f, MaxHealth);
 
 	const float ActualDelta = Health - PrevHealth;
-	OnHealthChanged.Broadcast(InstigatorActor, this, Health, ActualDelta);
+	OnHealthChanged.Broadcast(InstigatorActor, this, Health, ActualDelta, Delta);
 
 	// Died
 	if (ActualDelta < 0.0f && Health == 0.0f)
@@ -77,4 +79,17 @@ bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delt
 	}
 
 	return ActualDelta != 0;
+}
+
+bool USAttributeComponent::ApplyRageChange(float Delta)
+{
+	if (Rage + Delta < 0.0f )
+	{
+		return false;
+	}
+	
+	Rage = FMath::Clamp(Rage += Delta, 0.0f, MaxRage);
+	OnRageChanged.Broadcast(this, Rage);
+
+	return true;
 }
