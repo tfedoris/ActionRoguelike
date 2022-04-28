@@ -42,5 +42,12 @@ void ASPickUpBase::HandlePickUp()
 
 void ASPickUpBase::OnHiddenDurationElapsed()
 {
-	bCanRespawn ? SetActorHiddenInGame(false) : Destroy();
+	if (bCanRespawn)
+	{
+		SetActorHiddenInGame(false);
+	}
+	else
+	{
+		Destroy();
+	}
 }
