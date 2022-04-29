@@ -39,10 +39,14 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "UI")
 	TSubclassOf<UUserWidget> HealthBarWidgetClass;
 
+	UPROPERTY(EditDefaultsOnly, Category = "UI")
+	TSubclassOf<UUserWidget> PawnSeenIndicatorClass;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Properties")
 	int32 CreditsValue;
-	
+
 	USWorldUserWidget* ActiveHealthBar;
+	USWorldUserWidget* PawnSeenIndicator;
 
 	virtual void PostInitializeComponents() override;
 	

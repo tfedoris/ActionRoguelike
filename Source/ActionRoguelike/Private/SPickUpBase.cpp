@@ -26,7 +26,7 @@ ASPickUpBase::ASPickUpBase()
 	bCanRespawn = true;
 }
 
-void ASPickUpBase::HandlePickUp()
+void ASPickUpBase::HandlePickUp(AActor* OtherActor)
 {
 	SetActorHiddenInGame(true);
 	
@@ -50,4 +50,17 @@ void ASPickUpBase::OnHiddenDurationElapsed()
 	{
 		Destroy();
 	}
+}
+
+void ASPickUpBase::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASPickUpBase::OnActorBeginOverlap);
+}
+
+void ASPickUpBase::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+                                       UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	HandlePickUp(OtherActor);
 }

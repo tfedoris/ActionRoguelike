@@ -18,12 +18,6 @@ void ASHealthPotion::Interact_Implementation(APawn* InstigatorPawn)
 	HealActor(InstigatorPawn);
 }
 
-void ASHealthPotion::PostInitializeComponents()
-{
-	Super::PostInitializeComponents();
-	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASHealthPotion::OnActorBeginOverlap);
-}
-
 void ASHealthPotion::HealActor(AActor* ActorToHeal)
 {
 	if (ActorToHeal)
@@ -42,7 +36,7 @@ void ASHealthPotion::HealActor(AActor* ActorToHeal)
 		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(ActorToHeal->GetComponentByClass(USAttributeComponent::StaticClass()));
 		if (AttributeComp && AttributeComp->GetCurrentHealth() < AttributeComp->GetMaxHealth())
 		{
-			HandlePickUp();
+			HandlePickUp(ActorToHeal);
 			PlayerState->RemoveCredits(CreditsCost);
 			AttributeComp->ApplyHealthChange(this, HealingValue);
 		}
@@ -50,7 +44,7 @@ void ASHealthPotion::HealActor(AActor* ActorToHeal)
 }
 
 void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-                                         UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	// HealActor(OtherActor);
+	
 }

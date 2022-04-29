@@ -9,8 +9,7 @@
 void ASCoin::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
-
-	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASCoin::OnActorBeginOverlap);
+	
 	MeshComp->SetCollisionResponseToAllChannels(ECR_Ignore);
 
 	CreditValue = 50;
@@ -29,7 +28,8 @@ void ASCoin::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 	{
 		return;
 	}
-
-	HandlePickUp();
+	
 	PlayerState->AddCredits(CreditValue);
+
+	Super::OnActorBeginOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
 }

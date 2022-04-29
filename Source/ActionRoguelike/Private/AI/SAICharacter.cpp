@@ -46,8 +46,23 @@ void ASAICharacter::PostInitializeComponents()
 
 void ASAICharacter::OnPawnSeen(APawn* Pawn)
 {
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController)
+	{
+		const APawn* PreviousTargetActor = Cast<APawn>(AIController->GetBlackboardComponent()->GetValueAsObject("TargetActor"));
+		if (!PawnSeenIndicator && PreviousTargetActor != Pawn)
+		{
+			PawnSeenIndicator = CreateWidget<USWorldUserWidget>(GetWorld(), PawnSeenIndicatorClass);
+			if (PawnSeenIndicator)
+			{
+				PawnSeenIndicator->AttachedActor = this;
+				PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.0f);
+				PawnSeenIndicator->AddToViewport();
+			}
+		}
+	}
+	
 	SetTargetActor(Pawn);
-	DrawDebugString(GetWorld(), GetActorLocation(), "PLAYER SPOTTED", nullptr, FColor::White, 4.0f, true);
 }
 
 void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
@@ -68,6 +83,10 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 				ActiveHealthBar->AttachedActor = this;
 				ActiveHealthBar->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.5f);
 				ActiveHealthBar->AddToViewport();
+				if (PawnSeenIndicator)
+				{
+					PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.5f);
+				}
 			}	
 		}
 
@@ -97,6 +116,8 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 
 			GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 			GetCharacterMovement()->DisableMovement();
+
+			PawnSeenIndicator->RemoveFromParent();
 
 			// set lifespan
 			SetLifeSpan(10.0f);

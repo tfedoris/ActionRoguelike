@@ -26,11 +26,8 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
 	int32 CreditsCost;
-	
-	virtual void PostInitializeComponents() override;
 
 	void HealActor(AActor* ActorToHeal);
 
-	UFUNCTION()
 	virtual void OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
 };
