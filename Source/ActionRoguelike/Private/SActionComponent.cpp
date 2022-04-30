@@ -99,3 +99,14 @@ bool USActionComponent::StopActionByName(AActor* Instigator, FName ActionName)
 
 	return false;
 }
+
+bool USActionComponent::ContainsAction(TSubclassOf<USAction> ActionClass) const
+{
+	return Actions.ContainsByPredicate
+	(
+		[&](const USAction* Action)
+		{
+			return Action->GetClass() == ActionClass;
+		}
+	);
+}

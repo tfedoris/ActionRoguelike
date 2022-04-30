@@ -117,7 +117,10 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 			GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 			GetCharacterMovement()->DisableMovement();
 
-			PawnSeenIndicator->RemoveFromParent();
+			if (PawnSeenIndicator)
+			{
+				PawnSeenIndicator->RemoveFromParent();
+			}
 
 			// set lifespan
 			SetLifeSpan(10.0f);

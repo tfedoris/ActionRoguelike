@@ -22,6 +22,12 @@ public:
 	ASItemChest();
 
 protected:
+	UPROPERTY(ReplicatedUsing="OnRep_LidOpened", BlueprintReadOnly) // RepNotify - Whenever value changes, the function specified in ReplicatedUsing will be called
+	bool bLidOpened;
+
+	UFUNCTION()
+	void OnRep_LidOpened();
+	
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* BaseMesh;
 

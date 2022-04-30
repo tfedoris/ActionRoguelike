@@ -43,6 +43,11 @@ protected:
 
 	void FindBestInteractable();
 
+	// Reliable - Will always arrive, eventually. Request will be re-sent unless an acknowledgement was received
+	// Unreliable - Not guaranteed to arrive, packet can get lost and won't retry
+	UFUNCTION(Server, Reliable)
+	void ServerInteract(AActor* InFocus);
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
