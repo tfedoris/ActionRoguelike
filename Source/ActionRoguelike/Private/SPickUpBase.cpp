@@ -24,6 +24,8 @@ ASPickUpBase::ASPickUpBase()
 
 	RespawnDelay = 10.0f;
 	bCanRespawn = true;
+
+	SetReplicates(true);
 }
 
 void ASPickUpBase::HandlePickUp(AActor* OtherActor)

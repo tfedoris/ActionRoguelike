@@ -49,10 +49,10 @@ public:
 	bool Kill(AActor* InstigatorActor);
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Replicated, Category = "Attributes")
 	float Health;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Replicated, Category = "Attributes")
 	float MaxHealth;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
@@ -60,8 +60,12 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
 	float MaxRage;
-
-	// TODO: Stamina, Strength
+	
+	// UPROPERTY(ReplicatedUsing="")
+	// bool bIsAlive;
+	
+	UFUNCTION(NetMulticast, Reliable) // TODO: Mark as unreliable once we have moved the 'state' out of SCharacter (consider using the above commented-out code as a starting point)
+	void MulticastHealthChanged(AActor* InstigatorActor, float NewHealth, float ActualDelta, float Delta);
 
 public:
 	UFUNCTION(BlueprintCallable)
