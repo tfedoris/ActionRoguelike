@@ -88,15 +88,19 @@ bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delt
 	return ActualDelta != 0;
 }
 
-bool USAttributeComponent::ApplyRageChange(float Delta)
+bool USAttributeComponent::ApplyRageChange(AActor* InstigatorActor, float Delta)
 {
 	if (Rage + Delta < 0.0f )
 	{
 		return false;
 	}
+
+	float PrevRage = Rage;
 	
 	Rage = FMath::Clamp(Rage += Delta, 0.0f, MaxRage);
-	OnRageChanged.Broadcast(this, Rage);
+
+	float ActualDelta = Rage - PrevRage;
+	OnRageChanged.Broadcast(InstigatorActor, this, Rage, ActualDelta, Delta);
 
 	return true;
 }

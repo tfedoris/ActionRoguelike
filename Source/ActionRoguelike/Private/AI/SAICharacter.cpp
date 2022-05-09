@@ -46,19 +46,14 @@ void ASAICharacter::PostInitializeComponents()
 
 void ASAICharacter::OnPawnSeen(APawn* Pawn)
 {
-	AAIController* AIController = Cast<AAIController>(GetController());
-	if (AIController)
+	if (!PawnSeenIndicator && GetTargetActor() != Pawn)
 	{
-		const APawn* PreviousTargetActor = Cast<APawn>(AIController->GetBlackboardComponent()->GetValueAsObject("TargetActor"));
-		if (!PawnSeenIndicator && PreviousTargetActor != Pawn)
+		PawnSeenIndicator = CreateWidget<USWorldUserWidget>(GetWorld(), PawnSeenIndicatorClass);
+		if (PawnSeenIndicator)
 		{
-			PawnSeenIndicator = CreateWidget<USWorldUserWidget>(GetWorld(), PawnSeenIndicatorClass);
-			if (PawnSeenIndicator)
-			{
-				PawnSeenIndicator->AttachedActor = this;
-				PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.0f);
-				PawnSeenIndicator->AddToViewport();
-			}
+			PawnSeenIndicator->AttachedActor = this;
+			PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.0f);
+			PawnSeenIndicator->AddToViewport();
 		}
 	}
 	
@@ -126,6 +121,17 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 			SetLifeSpan(10.0f);
 		}
 	}
+}
+
+APawn* ASAICharacter::GetTargetActor()
+{
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController)
+	{
+		return Cast<APawn>(AIController->GetBlackboardComponent()->GetValueAsObject("TargetActor"));	
+	}
+
+	return nullptr;
 }
 
 void ASAICharacter::SetTargetActor(AActor* NewTarget)

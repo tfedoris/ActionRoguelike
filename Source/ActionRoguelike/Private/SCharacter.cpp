@@ -122,7 +122,7 @@ void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent*
 		GetMesh()->SetScalarParameterValueOnMaterials(TimeToHitParamName, GetWorld()->TimeSeconds);
 		GetMesh()->SetVectorParameterValueOnMaterials(HitFlashColorParamName, FVector(1.0f, 0.0f, 0.0f));
 
-		OwningComp->ApplyRageChange(FMath::Abs(ActualDelta) * RageMultiplier);
+		OwningComp->ApplyRageChange(InstigatorActor, FMath::Abs(ActualDelta) * RageMultiplier);
 	}
 	
 	if (NewHealth <= 0.0f && ActualDelta < 0.0f)

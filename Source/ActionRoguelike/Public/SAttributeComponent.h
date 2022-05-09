@@ -8,8 +8,7 @@
 
 class USAttributeComponent;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FOnHealthChanged, AActor*, InstigatorActor, USAttributeComponent*, OwningComp, float, NewHealth, float, ActualDelta, float, Delta);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnRageChanged, USAttributeComponent*, OwningComp, float, NewRage);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FOnAttributeChanged, AActor*, InstigatorActor, USAttributeComponent*, OwningComp, float, NewValue, float, ActualDelta, float, Delta);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ACTIONROGUELIKE_API USAttributeComponent : public UActorComponent
@@ -72,14 +71,14 @@ public:
 	bool IsAlive() const;
 	
 	UPROPERTY(BlueprintAssignable)
-	FOnHealthChanged OnHealthChanged;
+	FOnAttributeChanged OnHealthChanged;
 
 	UPROPERTY(BlueprintAssignable)
-	FOnRageChanged OnRageChanged;
+	FOnAttributeChanged OnRageChanged;
 	
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
 	bool ApplyHealthChange(AActor* InstigatorActor, float Delta);
 
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	bool ApplyRageChange(float Delta);
+	bool ApplyRageChange(AActor* InstigatorActor, float Delta);
 };

@@ -4,6 +4,7 @@
 #include "SAction_ProjectileAttack.h"
 
 #include "CollisionDebugDrawingPublic.h"
+#include "SActionComponent.h"
 #include "SAttributeComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
@@ -23,15 +24,6 @@ void USAction_ProjectileAttack::StartAction_Implementation(AActor* Instigator)
 	ACharacter* Character = Cast<ACharacter>(Instigator);
 	if (Character)
 	{
-		if (RageCost > 0.0f)
-		{
-			USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(Character);
-			if (!AttributeComp || !AttributeComp->ApplyRageChange(-RageCost))
-			{
-				return;
-			}
-		}
-
 		Super::StartAction_Implementation(Instigator);
 		
 		Character->PlayAnimMontage(AttackAnim);
@@ -104,4 +96,24 @@ void USAction_ProjectileAttack::GetTraceStartAndEnd(AController* Controller, FVe
 
 	Start = ViewPointLocation;
 	End = Target;
+}
+
+bool USAction_ProjectileAttack::CanStart_Implementation(AActor* Instigator)
+{
+	if (Super::CanStart_Implementation(Instigator))
+	{
+		if (RageCost > 0.0f)
+		{
+			ACharacter* Character = Cast<ACharacter>(Instigator);
+			if (Character)
+			{
+				USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(Character);
+				return (AttributeComp && AttributeComp->ApplyRageChange(GetOwningComponent()->GetOwner(), -RageCost));
+			}
+		}
+
+		return true;
+	}
+
+	return false;
 }

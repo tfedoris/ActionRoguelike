@@ -48,4 +48,6 @@ protected:
 	void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 
 	void GetTraceStartAndEnd(AController* Controller, FVector& Start, FVector& End);
+
+	virtual bool CanStart_Implementation(AActor* Instigator) override;
 };

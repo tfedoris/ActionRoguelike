@@ -9,10 +9,14 @@
 USActionEffect_Thorns::USActionEffect_Thorns()
 {
 	DamagePercent = 0.1;
+	Duration = 0.0f;
+	Period = 0.0f;
 }
 
 void USActionEffect_Thorns::StartAction_Implementation(AActor* Instigator)
 {
+	Super::StartAction_Implementation(Instigator);
+	
 	USAttributeComponent* OwningAttributeComponent = USAttributeComponent::GetAttributes(GetOwningComponent()->GetOwner());
 	if (OwningAttributeComponent)
 	{
@@ -22,6 +26,8 @@ void USActionEffect_Thorns::StartAction_Implementation(AActor* Instigator)
 
 void USActionEffect_Thorns::StopAction_Implementation(AActor* Instigator)
 {
+	Super::StopAction_Implementation(Instigator);
+	
 	USAttributeComponent* OwningAttributeComponent = USAttributeComponent::GetAttributes(GetOwningComponent()->GetOwner());
 	if (OwningAttributeComponent)
 	{

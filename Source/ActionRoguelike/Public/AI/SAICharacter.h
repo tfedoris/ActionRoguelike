@@ -56,5 +56,6 @@ protected:
 	UFUNCTION()
 	void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float ActualDelta, float Delta);
 
+	APawn* GetTargetActor();
 	void SetTargetActor(AActor* NewTarget);
 };
