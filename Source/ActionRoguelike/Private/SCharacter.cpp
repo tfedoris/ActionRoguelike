@@ -41,6 +41,10 @@ ASCharacter::ASCharacter()
 	TimeToHitParamName = "TimeToHit";
 	HitFlashColorParamName = "HitFlashColor";
 
+	PrimaryAttackActionName = "MagicProjectile";
+	SpecialAttackActionName = "BlackHoleProjectile";
+	MovementAbilityActionName = "TeleportProjectile";
+
 	RageMultiplier = 2.0f;
 }
 
@@ -93,17 +97,17 @@ void ASCharacter::SprintStop()
 
 void ASCharacter::PrimaryAttack()
 {
-	ActionComp->StartActionByName(this, "MagicProjectile");
+	ActionComp->StartActionByName(this, PrimaryAttackActionName);
 }
 
 void ASCharacter::SpecialAttack()
 {
-	ActionComp->StartActionByName(this, "BlackHoleProjectile");
+	ActionComp->StartActionByName(this, SpecialAttackActionName);
 }
 
 void ASCharacter::MovementAbility()
 {
-	ActionComp->StartActionByName(this, "TeleportProjectile");
+	ActionComp->StartActionByName(this, MovementAbilityActionName);
 }
 
 void ASCharacter::PrimaryInteract()

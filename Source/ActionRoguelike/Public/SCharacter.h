@@ -36,6 +36,15 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "Effects")
 	FName HitFlashColorParamName;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Actions")
+	FName PrimaryAttackActionName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Actions")
+	FName SpecialAttackActionName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Actions")
+	FName MovementAbilityActionName;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USAttributeComponent* AttributeComp;
 
