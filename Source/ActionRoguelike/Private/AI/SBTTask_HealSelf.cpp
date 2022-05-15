@@ -36,7 +36,7 @@ EBTNodeResult::Type USBTTask_HealSelf::ExecuteTask(UBehaviorTreeComponent& Owner
 	FBTHealSelfMemory* MyMemory = reinterpret_cast<FBTHealSelfMemory*>(NodeMemory);
 	MyMemory->bHasStartedHealing = true;
 	MyMemory->TimeElapsed = 0.f;
-	MyMemory->StartingHealth = AttributeComp->GetCurrentHealth();
+	MyMemory->StartingHealth = AttributeComp->GetHealth();
 
 	return EBTNodeResult::InProgress;
 }
@@ -66,7 +66,7 @@ void USBTTask_HealSelf::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
 	MyMemory->TimeElapsed += DeltaSeconds;
 	const float Alpha = MyMemory->TimeElapsed / HealDuration;
 	const float TargetHealth = FMath::Lerp(MyMemory->StartingHealth, AttributeComp->GetMaxHealth() * HealPercent, Alpha);
-	const float CurrentHealth = AttributeComp->GetCurrentHealth();
+	const float CurrentHealth = AttributeComp->GetHealth();
 	const float Delta = TargetHealth - CurrentHealth;
 	
 	AttributeComp->ApplyHealthChange(AIPawn, Delta);

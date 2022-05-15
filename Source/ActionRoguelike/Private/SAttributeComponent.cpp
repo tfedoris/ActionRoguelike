@@ -65,23 +65,29 @@ bool USAttributeComponent::ApplyHealthChange(AActor* InstigatorActor, float Delt
 	}
 
 	const float PrevHealth = Health;
+	
+	float NewHealth = FMath::Clamp(Health + Delta, 0.0f, MaxHealth);
+	
+	const float ActualDelta = NewHealth - PrevHealth;
 
-	Health = FMath::Clamp(Health += Delta, 0.0f, MaxHealth);
-
-	const float ActualDelta = Health - PrevHealth;
-
-	if (ActualDelta != 0.0f)
+	// Is Server?
+	if (GetOwner()->HasAuthority())
 	{
-		MulticastHealthChanged(InstigatorActor, Health, ActualDelta, Delta);
-	}
+		Health = NewHealth;
 
-	// Died
-	if (ActualDelta < 0.0f && Health == 0.0f)
-	{
-		ASGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
-		if (GameMode)
+		if (ActualDelta != 0.0f)
 		{
-			GameMode->OnActorKilled(GetOwner(), InstigatorActor);
+			MulticastHealthChanged(InstigatorActor, Health, ActualDelta, Delta);
+		}
+
+		// Died
+		if (ActualDelta < 0.0f && Health == 0.0f)
+		{
+			ASGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASGameModeBase>();
+			if (GameMode)
+			{
+				GameMode->OnActorKilled(GetOwner(), InstigatorActor);
+			}
 		}
 	}
 

@@ -29,7 +29,7 @@ void ASMagicProjectile::HandleImpactEffects(AActor* OtherActor, FVector HitLocat
 	}
 	
 	USActionComponent* ActionComp = USActionComponent::GetActionComponent(OtherActor);
-	if (BurningActionClass && ActionComp)
+	if (BurningActionClass && ActionComp && HasAuthority())
 	{
 		ActionComp->AddAction(GetInstigator(), BurningActionClass);
 	}

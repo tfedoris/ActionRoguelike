@@ -24,21 +24,25 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Attributes", meta = (DisplayName = "IsAlive"))
 	static bool IsActorAlive(AActor* Actor);
 
-	float GetCurrentHealth() const
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	float GetHealth() const
 	{
 		return Health;
 	}
 
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
 	float GetMaxHealth() const
 	{
 		return MaxHealth;
 	}
 
-	float GetCurrentRage() const
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	float GetRage() const
 	{
 		return Rage;
 	}
 
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
 	float GetMaxRage() const
 	{
 		return MaxRage;

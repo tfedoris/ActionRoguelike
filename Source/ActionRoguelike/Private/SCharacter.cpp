@@ -128,11 +128,14 @@ void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent*
 
 		OwningComp->ApplyRageChange(InstigatorActor, FMath::Abs(ActualDelta) * RageMultiplier);
 	}
-	
+
+	// Died
 	if (NewHealth <= 0.0f && ActualDelta < 0.0f)
 	{
 		APlayerController* PlayerController = Cast<APlayerController>(GetController());
 		DisableInput(PlayerController);
+
+		SetLifeSpan(5.0f);
 	}
 }
 

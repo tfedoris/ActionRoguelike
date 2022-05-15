@@ -34,7 +34,7 @@ void ASHealthPotion::HealActor(AActor* ActorToHeal)
 		}
 		
 		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(ActorToHeal->GetComponentByClass(USAttributeComponent::StaticClass()));
-		if (AttributeComp && AttributeComp->GetCurrentHealth() < AttributeComp->GetMaxHealth())
+		if (AttributeComp && AttributeComp->GetHealth() < AttributeComp->GetMaxHealth())
 		{
 			HandlePickUp(ActorToHeal);
 			PlayerState->RemoveCredits(CreditsCost);

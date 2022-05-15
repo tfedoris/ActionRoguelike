@@ -40,7 +40,7 @@ void USBTService_CheckHealth::TickNode(UBehaviorTreeComponent& OwnerComp, uint8*
 		return;
 	}
 
-	float CurrentHealth = AttributeComp->GetCurrentHealth();
+	float CurrentHealth = AttributeComp->GetHealth();
 	float MaxHealth = AttributeComp->GetMaxHealth();
 	BlackboardComp->SetValueAsBool(LowHealthKey.SelectedKeyName, (CurrentHealth <= MaxHealth * LowHealthThresholdPercent));
 }
