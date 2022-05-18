@@ -35,5 +35,6 @@ public:
 	FOnCreditsChanged OnCreditsChanged;
 
 protected:
+	UPROPERTY(Replicated)
 	int32 TotalCredits;
 };

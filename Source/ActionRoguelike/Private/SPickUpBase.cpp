@@ -30,6 +30,7 @@ ASPickUpBase::ASPickUpBase()
 
 void ASPickUpBase::HandlePickUp(AActor* OtherActor)
 {
+	SetActorEnableCollision(false);
 	SetActorHiddenInGame(true);
 	
 	if (PickUpEffect)
@@ -46,6 +47,7 @@ void ASPickUpBase::OnHiddenDurationElapsed()
 {
 	if (bCanRespawn)
 	{
+		SetActorEnableCollision(true);
 		SetActorHiddenInGame(false);
 	}
 	else

@@ -12,6 +12,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "SGameModeBase.h"
+#include "SPlayerState.h"
+#include "ActionRoguelike/ActionRoguelike.h"
 
 static TAutoConsoleVariable<bool> CVarDebugDrawCharacter(TEXT("su.CharacterDebugDraw"), false, TEXT("Enable Debug Lines for SCharacter."), ECVF_Cheat);
 
@@ -171,6 +173,13 @@ void ASCharacter::Tick(float DeltaTime)
 	if(CVarDebugDrawCharacter.GetValueOnGameThread())
 	{
 		VisualizePlayerRotation();
+	}
+
+	ASPlayerState* MyPlayerState = ASPlayerState::GetPlayerState(this);
+
+	if (MyPlayerState)
+	{
+		LogOnScreen(GetWorld(), FString::Printf(TEXT("Player: %s - Total Credits: %d"), *GetNameSafe(this), MyPlayerState->GetTotalCredits()), FColor::Yellow, 0.0f);
 	}
 }
 
