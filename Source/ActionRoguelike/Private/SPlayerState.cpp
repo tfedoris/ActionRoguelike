@@ -4,7 +4,6 @@
 #include "SPlayerState.h"
 
 #include "ActionRoguelike/ActionRoguelike.h"
-#include "Net/UnrealNetwork.h"
 
 ASPlayerState::ASPlayerState()
 {
@@ -27,7 +26,6 @@ void ASPlayerState::AddCredits(const int32 Credits)
 	{
 		TotalCredits += Credits;
 		MulticastCreditsChanged(TotalCredits, Credits);
-		LogOnScreen(GetWorld(), FString::Printf(TEXT("NewCreditsTotal: %d, Delta: %d, Player: %s"), TotalCredits, Credits, *GetNameSafe(GetOwner())));
 	}
 }
 
@@ -38,7 +36,6 @@ void ASPlayerState::RemoveCredits(const int32 Credits)
 		TotalCredits -= Credits;
 		TotalCredits = FMath::Max(0, TotalCredits);
 		MulticastCreditsChanged(TotalCredits, -Credits);
-		LogOnScreen(GetWorld(), FString::Printf(TEXT("NewCreditsTotal: %d, Delta: %d, Player: %s"), TotalCredits, -Credits, *GetNameSafe(GetOwner())));
 	}
 }
 

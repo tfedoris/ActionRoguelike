@@ -10,6 +10,7 @@
 #include "SAttributeComponent.h"
 #include "SPlayerState.h"
 #include "SWorldUserWidget.h"
+#include "SWorldHealthBarWidget.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/CapsuleComponent.h"
@@ -46,16 +47,7 @@ void ASAICharacter::PostInitializeComponents()
 
 void ASAICharacter::OnPawnSeen(APawn* Pawn)
 {
-	if (!PawnSeenIndicator && GetTargetActor() != Pawn)
-	{
-		PawnSeenIndicator = CreateWidget<USWorldUserWidget>(GetWorld(), PawnSeenIndicatorClass);
-		if (PawnSeenIndicator)
-		{
-			PawnSeenIndicator->AttachedActor = this;
-			PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.0f);
-			PawnSeenIndicator->AddToViewport();
-		}
-	}
+	MulticastPawnSeenIndicator(Pawn);
 	
 	SetTargetActor(Pawn);
 }
@@ -72,9 +64,10 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 
 		if (!ActiveHealthBar)
 		{
-			ActiveHealthBar = CreateWidget<USWorldUserWidget>(GetWorld(), HealthBarWidgetClass);
+			ActiveHealthBar = CreateWidget<USWorldHealthBarWidget>(GetWorld(), HealthBarWidgetClass);
 			if (ActiveHealthBar)
 			{
+				ActiveHealthBar->StartingHealth = NewHealth;
 				ActiveHealthBar->AttachedActor = this;
 				ActiveHealthBar->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.5f);
 				ActiveHealthBar->AddToViewport();
@@ -140,5 +133,19 @@ void ASAICharacter::SetTargetActor(AActor* NewTarget)
 	if (AIController)
 	{
 		AIController->GetBlackboardComponent()->SetValueAsObject("TargetActor", NewTarget);
+	}
+}
+
+void ASAICharacter::MulticastPawnSeenIndicator_Implementation(APawn* Pawn)
+{
+	if (!PawnSeenIndicator && GetTargetActor() != Pawn)
+	{
+		PawnSeenIndicator = CreateWidget<USWorldUserWidget>(GetWorld(), PawnSeenIndicatorClass);
+		if (PawnSeenIndicator)
+		{
+			PawnSeenIndicator->AttachedActor = this;
+			PawnSeenIndicator->WorldOffset = FVector(0.f, 0.f, BaseEyeHeight * 2.0f);
+			PawnSeenIndicator->AddToViewport();
+		}
 	}
 }

@@ -6,6 +6,7 @@
 #include "Blueprint/WidgetLayoutLibrary.h"
 #include "Components/SizeBox.h"
 #include "Kismet/GameplayStatics.h"
+#include "Net/UnrealNetwork.h"
 
 void USWorldUserWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 {

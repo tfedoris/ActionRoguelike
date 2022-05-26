@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "SAICharacter.generated.h"
 
+class USWorldHealthBarWidget;
 class UPawnSensingComponent;
 class USAttributeComponent;
 class UUserWidget;
@@ -45,7 +46,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Properties")
 	int32 CreditsValue;
 
-	USWorldUserWidget* ActiveHealthBar;
+	USWorldHealthBarWidget* ActiveHealthBar;
 	USWorldUserWidget* PawnSeenIndicator;
 
 	virtual void PostInitializeComponents() override;
@@ -58,4 +59,7 @@ protected:
 
 	APawn* GetTargetActor();
 	void SetTargetActor(AActor* NewTarget);
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastPawnSeenIndicator(APawn* Pawn);
 };

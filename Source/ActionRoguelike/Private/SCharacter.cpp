@@ -174,13 +174,6 @@ void ASCharacter::Tick(float DeltaTime)
 	{
 		VisualizePlayerRotation();
 	}
-
-	ASPlayerState* MyPlayerState = ASPlayerState::GetPlayerState(this);
-
-	if (MyPlayerState)
-	{
-		LogOnScreen(GetWorld(), FString::Printf(TEXT("Player: %s - Total Credits: %d"), *GetNameSafe(this), MyPlayerState->GetTotalCredits()), FColor::Yellow, 0.0f);
-	}
 }
 
 // Called to bind functionality to input
