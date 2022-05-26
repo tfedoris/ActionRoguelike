@@ -3,9 +3,11 @@
 
 #include "SPickUpBase.h"
 
+#include "ActionRoguelike/ActionRoguelike.h"
 #include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 ASPickUpBase::ASPickUpBase()
@@ -24,13 +26,15 @@ ASPickUpBase::ASPickUpBase()
 
 	RespawnDelay = 10.0f;
 	bCanRespawn = true;
+	bEnableCollision = true;
 
 	SetReplicates(true);
 }
 
 void ASPickUpBase::HandlePickUp(AActor* OtherActor)
 {
-	SetActorEnableCollision(false);
+	bEnableCollision = false;
+	OnRep_CollisionChanged();
 	SetActorHiddenInGame(true);
 	
 	if (PickUpEffect)
@@ -47,7 +51,8 @@ void ASPickUpBase::OnHiddenDurationElapsed()
 {
 	if (bCanRespawn)
 	{
-		SetActorEnableCollision(true);
+		bEnableCollision = true;
+		OnRep_CollisionChanged();
 		SetActorHiddenInGame(false);
 	}
 	else
@@ -63,8 +68,21 @@ void ASPickUpBase::PostInitializeComponents()
 	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASPickUpBase::OnActorBeginOverlap);
 }
 
+void ASPickUpBase::OnRep_CollisionChanged()
+{
+	SetActorEnableCollision(bEnableCollision);
+	LogOnScreen(GetWorld(), FString::Printf(TEXT("%s was picked up"), *GetNameSafe(this)));
+}
+
 void ASPickUpBase::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                        UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	HandlePickUp(OtherActor);
+}
+
+void ASPickUpBase::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ASPickUpBase, bEnableCollision);
 }

@@ -17,7 +17,7 @@ class ACTIONROGUELIKE_API ASPickUpBase : public AActor
 	
 public:	
 	// Sets default values for this actor's properties
-	ASPickUpBase();
+	ASPickUpBase(); //  poke someone tonight and get a boner 
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
@@ -35,6 +35,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
 	float bCanRespawn;
 
+	UPROPERTY(ReplicatedUsing="OnRep_CollisionChanged", BlueprintReadOnly)
+	bool bEnableCollision;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Effects")
 	UParticleSystem* PickUpEffect;
 
@@ -45,6 +48,9 @@ protected:
 	virtual void OnHiddenDurationElapsed();
 
 	virtual void PostInitializeComponents() override;
+
+	UFUNCTION()
+	void OnRep_CollisionChanged();
 
 	UFUNCTION()
 	virtual void OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
