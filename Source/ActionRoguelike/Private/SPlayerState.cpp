@@ -23,20 +23,26 @@ ASPlayerState* ASPlayerState::GetPlayerState(AActor* FromActor)
 
 void ASPlayerState::AddCredits(const int32 Credits)
 {
-	TotalCredits += Credits;
-	OnCreditsChanged.Broadcast(TotalCredits, Credits);
+	if (HasAuthority())
+	{
+		TotalCredits += Credits;
+		MulticastCreditsChanged(TotalCredits, Credits);
+		LogOnScreen(GetWorld(), FString::Printf(TEXT("NewCreditsTotal: %d, Delta: %d, Player: %s"), TotalCredits, Credits, *GetNameSafe(GetOwner())));
+	}
 }
 
 void ASPlayerState::RemoveCredits(const int32 Credits)
 {
-	TotalCredits -= Credits;
-	TotalCredits = FMath::Max(0, TotalCredits);
-	OnCreditsChanged.Broadcast(TotalCredits, -Credits);
+	if (HasAuthority())
+	{
+		TotalCredits -= Credits;
+		TotalCredits = FMath::Max(0, TotalCredits);
+		MulticastCreditsChanged(TotalCredits, -Credits);
+		LogOnScreen(GetWorld(), FString::Printf(TEXT("NewCreditsTotal: %d, Delta: %d, Player: %s"), TotalCredits, -Credits, *GetNameSafe(GetOwner())));
+	}
 }
 
-void ASPlayerState::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
+void ASPlayerState::MulticastCreditsChanged_Implementation(int32 NewCreditsTotal, int32 Delta)
 {
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(ASPlayerState, TotalCredits);
+	OnCreditsChanged.Broadcast(NewCreditsTotal, Delta);
 }

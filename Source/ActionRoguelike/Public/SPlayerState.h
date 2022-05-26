@@ -6,7 +6,7 @@
 #include "GameFramework/PlayerState.h"
 #include "SPlayerState.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCreditsChanged, float, NewCreditsTotal, float, Delta);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCreditsChanged, int32, NewCreditsTotal, int32, Delta);
 
 /**
  * 
@@ -35,6 +35,8 @@ public:
 	FOnCreditsChanged OnCreditsChanged;
 
 protected:
-	UPROPERTY(Replicated)
 	int32 TotalCredits;
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastCreditsChanged(int32 NewCreditsTotal, int32 Delta);
 };

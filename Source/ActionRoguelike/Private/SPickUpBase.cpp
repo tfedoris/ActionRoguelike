@@ -3,7 +3,6 @@
 
 #include "SPickUpBase.h"
 
-#include "ActionRoguelike/ActionRoguelike.h"
 #include "Components/AudioComponent.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -71,7 +70,6 @@ void ASPickUpBase::PostInitializeComponents()
 void ASPickUpBase::OnRep_CollisionChanged()
 {
 	SetActorEnableCollision(bEnableCollision);
-	LogOnScreen(GetWorld(), FString::Printf(TEXT("%s was picked up"), *GetNameSafe(this)));
 }
 
 void ASPickUpBase::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
