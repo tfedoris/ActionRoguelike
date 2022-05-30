@@ -3,6 +3,7 @@
 
 #include "SPlayerState.h"
 
+#include "SSaveGame.h"
 #include "ActionRoguelike/ActionRoguelike.h"
 
 ASPlayerState::ASPlayerState()
@@ -36,6 +37,22 @@ void ASPlayerState::RemoveCredits(const int32 Credits)
 		TotalCredits -= Credits;
 		TotalCredits = FMath::Max(0, TotalCredits);
 		MulticastCreditsChanged(TotalCredits, -Credits);
+	}
+}
+
+void ASPlayerState::LoadPlayerState_Implementation(USSaveGame* SaveObject)
+{
+	if (SaveObject)
+	{
+		TotalCredits = SaveObject->Credits;
+	}
+}
+
+void ASPlayerState::SavePlayerState_Implementation(USSaveGame* SaveObject)
+{
+	if (SaveObject)
+	{
+		SaveObject->Credits = TotalCredits;
 	}
 }
 

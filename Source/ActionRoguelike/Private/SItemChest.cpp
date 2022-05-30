@@ -25,10 +25,20 @@ void ASItemChest::Interact_Implementation(APawn* InstigatorPawn)
 	OnRep_LidOpened(); // Manually call for server
 }
 
-void ASItemChest::OnRep_LidOpened()
+void ASItemChest::OnActorLoaded_Implementation()
+{
+	OpenLid();
+}
+
+void ASItemChest::OpenLid()
 {
 	float CurrentPitch = bLidOpened ? TargetPitch : 0.0f;
 	LidMesh->SetRelativeRotation(FRotator(CurrentPitch, 0.f, 0.f));
+}
+
+void ASItemChest::OnRep_LidOpened()
+{
+	OpenLid();
 }
 
 void ASItemChest::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const

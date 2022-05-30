@@ -22,8 +22,10 @@ public:
 	ASItemChest();
 
 protected:
-	UPROPERTY(ReplicatedUsing="OnRep_LidOpened", BlueprintReadOnly) // RepNotify - Whenever value changes, the function specified in ReplicatedUsing will be called
+	UPROPERTY(ReplicatedUsing="OnRep_LidOpened", BlueprintReadOnly, SaveGame) // RepNotify - Whenever value changes, the function specified in ReplicatedUsing will be called
 	bool bLidOpened;
+
+	void OpenLid();
 
 	UFUNCTION()
 	void OnRep_LidOpened();
@@ -36,4 +38,6 @@ protected:
 
 public:	
 	virtual void Interact_Implementation(APawn* InstigatorPawn) override;
+
+	virtual void OnActorLoaded_Implementation() override;
 };
