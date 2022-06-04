@@ -60,6 +60,6 @@ protected:
 	APawn* GetTargetActor();
 	void SetTargetActor(AActor* NewTarget);
 
-	UFUNCTION(NetMulticast, Reliable)
+	UFUNCTION(NetMulticast, Unreliable)
 	void MulticastPawnSeenIndicator(APawn* Pawn);
 };

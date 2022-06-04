@@ -11,6 +11,11 @@
 void ASParryableProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                            UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	if (!OtherActor || OtherActor == GetInstigator())
+	{
+		return;
+	}
+	
 	USActionComponent* ActionComp = USActionComponent::GetActionComponent(OtherActor);
 	if (ActionComp && ActionComp->ActiveGameplayTags.HasTag(ParryTag))
 	{

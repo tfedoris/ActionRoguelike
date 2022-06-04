@@ -70,7 +70,7 @@ protected:
 	UFUNCTION(NetMulticast, Reliable) // TODO: Mark as unreliable once we have moved the 'state' out of SCharacter (consider using the above commented-out code as a starting point)
 	void MulticastHealthChanged(AActor* InstigatorActor, float NewHealth, float ActualDelta, float Delta);
 
-	UFUNCTION(NetMulticast, Reliable) // TODO: Mark as unreliable once we have moved the 'state' out of SCharacter (consider using the above commented-out code as a starting point)
+	UFUNCTION(NetMulticast, Unreliable)
 	void MulticastRageChanged(AActor* InstigatorActor, float NewRage, float ActualDelta, float Delta);
 
 public:

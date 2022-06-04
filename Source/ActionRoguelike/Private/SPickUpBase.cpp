@@ -25,38 +25,48 @@ ASPickUpBase::ASPickUpBase()
 
 	RespawnDelay = 10.0f;
 	bCanRespawn = true;
-	bEnableCollision = true;
+	bIsActive = true;
 
 	SetReplicates(true);
 }
 
 void ASPickUpBase::HandlePickUp(AActor* OtherActor)
 {
-	bEnableCollision = false;
-	OnRep_CollisionChanged();
-	SetActorHiddenInGame(true);
-	
+	ServerHandlePickup(OtherActor);
+	ClientHandlePickupEffects();
+}
+
+void ASPickUpBase::ServerHandlePickup_Implementation(AActor* OtherActor)
+{
+	bIsActive = false;
+	OnRep_IsActive();
+	GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASPickUpBase::OnHiddenDurationElapsed, RespawnDelay);
+}
+
+void ASPickUpBase::ClientHandlePickupEffects_Implementation()
+{
 	if (PickUpEffect)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), PickUpEffect, GetActorLocation());
 	}
 
 	AudioComp->Play();
-	
-	GetWorldTimerManager().SetTimer(TimerHandle_HiddenDuration, this, &ASPickUpBase::OnHiddenDurationElapsed, RespawnDelay);
 }
 
 void ASPickUpBase::OnHiddenDurationElapsed()
 {
+	if (!HasAuthority())
+	{
+		return;
+	}
 	if (bCanRespawn)
 	{
-		bEnableCollision = true;
-		OnRep_CollisionChanged();
-		SetActorHiddenInGame(false);
+		bIsActive = true;
+		OnRep_IsActive();
 	}
 	else
 	{
-		Destroy();
+		SetLifeSpan(2.0f);
 	}
 }
 
@@ -67,9 +77,12 @@ void ASPickUpBase::PostInitializeComponents()
 	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASPickUpBase::OnActorBeginOverlap);
 }
 
-void ASPickUpBase::OnRep_CollisionChanged()
+void ASPickUpBase::OnRep_IsActive()
 {
-	SetActorEnableCollision(bEnableCollision);
+	// Set visibility on root and all children
+	RootComponent->SetVisibility(bIsActive, true);
+	
+	SetActorEnableCollision(bIsActive);
 }
 
 void ASPickUpBase::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -82,5 +95,5 @@ void ASPickUpBase::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& O
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(ASPickUpBase, bEnableCollision);
+	DOREPLIFETIME(ASPickUpBase, bIsActive);
 }

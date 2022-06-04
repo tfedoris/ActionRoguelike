@@ -4,7 +4,7 @@
 #include "SPlayerState.h"
 
 #include "SSaveGame.h"
-#include "ActionRoguelike/ActionRoguelike.h"
+#include "Net/UnrealNetwork.h"
 
 ASPlayerState::ASPlayerState()
 {
@@ -25,8 +25,11 @@ void ASPlayerState::AddCredits(const int32 Credits)
 {
 	if (HasAuthority())
 	{
-		TotalCredits += Credits;
-		MulticastCreditsChanged(TotalCredits, Credits);
+		int32 OldTotalCredits = TotalCredits;
+		
+		TotalCredits = TotalCredits + Credits;
+
+		OnRep_TotalCredits(OldTotalCredits);
 	}
 }
 
@@ -34,10 +37,24 @@ void ASPlayerState::RemoveCredits(const int32 Credits)
 {
 	if (HasAuthority())
 	{
-		TotalCredits -= Credits;
+		int32 OldTotalCredits = TotalCredits;
+		
+		TotalCredits = TotalCredits - Credits;
 		TotalCredits = FMath::Max(0, TotalCredits);
-		MulticastCreditsChanged(TotalCredits, -Credits);
+		
+		OnRep_TotalCredits(OldTotalCredits);
 	}
+}
+
+void ASPlayerState::OnRep_TotalCredits(int32 OldTotalCredits)
+{
+	ForceNetUpdate();
+	OnCreditsChanged.Broadcast(this, TotalCredits, TotalCredits - OldTotalCredits);
+}
+
+void ASPlayerState::ServerSetCredits_Implementation(int32 NewTotalCredits)
+{
+	TotalCredits = NewTotalCredits;
 }
 
 void ASPlayerState::LoadPlayerState_Implementation(USSaveGame* SaveObject)
@@ -56,7 +73,9 @@ void ASPlayerState::SavePlayerState_Implementation(USSaveGame* SaveObject)
 	}
 }
 
-void ASPlayerState::MulticastCreditsChanged_Implementation(int32 NewCreditsTotal, int32 Delta)
+void ASPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-	OnCreditsChanged.Broadcast(NewCreditsTotal, Delta);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ASPlayerState, TotalCredits);
 }

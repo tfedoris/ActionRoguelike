@@ -18,6 +18,13 @@ void ASCoin::PostInitializeComponents()
 void ASCoin::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	ServerOnActorBeginOverlap(OtherActor);
+
+	Super::OnActorBeginOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+}
+
+void ASCoin::ServerOnActorBeginOverlap_Implementation(AActor* OtherActor)
+{
 	if (!OtherActor)
 	{
 		return;
@@ -30,6 +37,4 @@ void ASCoin::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 	}
 	
 	PlayerState->AddCredits(CreditValue);
-
-	Super::OnActorBeginOverlap(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
 }

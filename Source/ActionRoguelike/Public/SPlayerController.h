@@ -7,7 +7,7 @@
 #include "SPlayerController.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPawnChanged, APawn*, NewPawn);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerStateChanged, APlayerState*, PlayerState);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerStateReceived, APlayerState*, PlayerState);
 
 /**
  * 
@@ -22,7 +22,7 @@ protected:
 	FOnPawnChanged OnPawnChanged;
 
 	UPROPERTY(BlueprintAssignable)
-	FOnPlayerStateChanged OnPlayerStateChanged;
+	FOnPlayerStateReceived OnPlayerStateChanged;
 
 	virtual void SetPawn(APawn* InPawn) override;
 	virtual void OnRep_PlayerState() override;

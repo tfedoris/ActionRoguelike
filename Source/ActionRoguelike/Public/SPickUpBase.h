@@ -35,8 +35,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
 	float bCanRespawn;
 
-	UPROPERTY(ReplicatedUsing="OnRep_CollisionChanged", BlueprintReadOnly)
-	bool bEnableCollision;
+	UPROPERTY(ReplicatedUsing="OnRep_IsActive", BlueprintReadOnly)
+	bool bIsActive;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Effects")
 	UParticleSystem* PickUpEffect;
@@ -45,12 +45,18 @@ protected:
 
 	virtual void HandlePickUp(AActor* OtherActor);
 
+	UFUNCTION(Server, Reliable)
+	virtual void ServerHandlePickup(AActor* OtherActor);
+
+	UFUNCTION(Client, Unreliable)
+	virtual void ClientHandlePickupEffects();
+	
 	virtual void OnHiddenDurationElapsed();
 
 	virtual void PostInitializeComponents() override;
 
 	UFUNCTION()
-	void OnRep_CollisionChanged();
+	void OnRep_IsActive();
 
 	UFUNCTION()
 	virtual void OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);

@@ -7,7 +7,8 @@
 #include "SPlayerState.generated.h"
 
 class USSaveGame;
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCreditsChanged, int32, NewCreditsTotal, int32, Delta);
+class ASPlayerState;
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnCreditsChanged, ASPlayerState*, PlayerState, int32, NewCreditsTotal, int32, Delta);
 
 /**
  * 
@@ -42,8 +43,17 @@ public:
 	void LoadPlayerState(USSaveGame* SaveObject);
 
 protected:
+	UPROPERTY(EditDefaultsOnly, ReplicatedUsing="OnRep_TotalCredits", Category = "Credits")
 	int32 TotalCredits;
 
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastCreditsChanged(int32 NewCreditsTotal, int32 Delta);
+	UFUNCTION(Server, Reliable)
+	void ServerSetCredits(int32 NewTotalCredits);
+
+	// // Downside of using multicast here is that we send over more data over the net, since it's an RPS with two parameters. OnRep_ is "free" since Credits is already getting replicated anyway.
+	// UFUNCTION(NetMulticast, Unreliable)
+	// void MulticastCreditsChanged(int32 NewCreditsTotal, int32 Delta);
+
+	//OnRep_ functions can use a parameter containing the 'old value' of the variable it is bound to. Very useful in this case to figure out the 'delta'.
+	UFUNCTION()
+	void OnRep_TotalCredits(int32 OldTotalCredits);
 };
