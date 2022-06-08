@@ -11,6 +11,7 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "MatineeCameraShake.h"
 #include "SGameplayFunctionLibrary.h"
+#include "ActionRoguelike/ActionRoguelike.h"
 
 // Sets default values
 ASProjectile::ASProjectile()
@@ -55,6 +56,7 @@ void ASProjectile::PostInitializeComponents()
 void ASProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+	LogOnScreen(GetWorld(), FString::Printf(TEXT("Projectile Spawned at X:%f Y: %f Z: %f"), GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
 }
 
 void ASProjectile::ProjectileHit(AActor* OtherActor, FVector HitLocation)

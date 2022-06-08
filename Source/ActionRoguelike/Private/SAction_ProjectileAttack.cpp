@@ -25,7 +25,8 @@ void USAction_ProjectileAttack::StartAction_Implementation(AActor* Instigator)
 	if (Character)
 	{
 		Super::StartAction_Implementation(Instigator);
-		
+
+		Character->GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
 		Character->PlayAnimMontage(AttackAnim);
 		UGameplayStatics::SpawnEmitterAttached(CastingEffect, Character->GetMesh(), CastSocketName, FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::SnapToTarget);
 
@@ -86,7 +87,8 @@ void USAction_ProjectileAttack::AttackDelay_Elapsed(ACharacter* InstigatorCharac
 
 		InstigatorCharacter->MoveIgnoreActorAdd(SpawnedActor);
 	}
-
+	
+	InstigatorCharacter->GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::AlwaysTickPose;
 	StopAction(InstigatorCharacter);
 }
 
