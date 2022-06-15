@@ -26,8 +26,24 @@ ASPickUpBase::ASPickUpBase()
 	RespawnDelay = 10.0f;
 	bCanRespawn = true;
 	bIsActive = true;
+	bCanInteract = true;
 
 	SetReplicates(true);
+}
+
+void ASPickUpBase::Interact_Implementation(APawn* InstigatorPawn)
+{
+	// Logic implemented in derived classes...
+}
+
+FText ASPickUpBase::GetInteractText_Implementation(APawn* InstigatorPawn)
+{
+	return FText::GetEmpty();
+}
+
+bool ASPickUpBase::CanInteract_Implementation()
+{
+	return bCanInteract;
 }
 
 void ASPickUpBase::HandlePickUp(AActor* OtherActor)

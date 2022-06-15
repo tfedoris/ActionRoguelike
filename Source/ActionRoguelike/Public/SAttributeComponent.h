@@ -48,6 +48,12 @@ public:
 		return MaxRage;
 	}
 
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	float IsFullHealth() const
+	{
+		return Health == MaxHealth;
+	}
+
 	UFUNCTION(BlueprintCallable)
 	bool Kill(AActor* InstigatorActor);
 

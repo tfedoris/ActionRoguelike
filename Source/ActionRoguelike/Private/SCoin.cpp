@@ -6,13 +6,17 @@
 #include "SPlayerState.h"
 #include "Components/SphereComponent.h"
 
+ASCoin::ASCoin()
+{
+	CreditValue = 50;
+	bCanInteract = false;
+}
+
 void ASCoin::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 	
 	MeshComp->SetCollisionResponseToAllChannels(ECR_Ignore);
-
-	CreditValue = 50;
 }
 
 void ASCoin::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,

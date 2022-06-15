@@ -83,7 +83,7 @@ void USInteractionComponent::FindBestInteractable()
     	}
     }
 
-	if (FocusedActor && !FocusedActor->IsHidden())
+	if (FocusedActor && !FocusedActor->IsHidden() && ISGameplayInterface::Execute_CanInteract(FocusedActor))
 	{
 		if (DefaultWidgetInstance == nullptr && ensure(DefaultWidgetClass))
 		{

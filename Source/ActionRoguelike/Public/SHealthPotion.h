@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class ACTIONROGUELIKE_API ASHealthPotion : public ASPickUpBase, public ISGameplayInterface
+class ACTIONROGUELIKE_API ASHealthPotion : public ASPickUpBase
 {
 	GENERATED_BODY()
 
@@ -19,6 +19,8 @@ public:
 	ASHealthPotion();
 
 	virtual void Interact_Implementation(APawn* InstigatorPawn) override;
+
+	virtual FText GetInteractText_Implementation(APawn* InstigatorPawn) override;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")

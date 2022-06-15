@@ -7,6 +7,8 @@
 #include "SPlayerState.h"
 #include "Components/SphereComponent.h"
 
+#define LOCTEXT_NAMESPACE "InteractableActors"
+
 ASHealthPotion::ASHealthPotion()
 {
 	HealingValue = 50.0f;
@@ -16,6 +18,17 @@ ASHealthPotion::ASHealthPotion()
 void ASHealthPotion::Interact_Implementation(APawn* InstigatorPawn)
 {
 	HealActor(InstigatorPawn);
+}
+
+FText ASHealthPotion::GetInteractText_Implementation(APawn* InstigatorPawn)
+{
+	USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(InstigatorPawn);
+	if (AttributeComp && AttributeComp->IsFullHealth())
+	{
+		return LOCTEXT("HealthPotion_FullHealthWarning", "Already at full health.");
+	}
+
+	return FText::Format(LOCTEXT("HealthPotion_InteractMessage", "Costs {0} Credits. Restores health to maximum"), CreditsCost);
 }
 
 void ASHealthPotion::HealActor(AActor* ActorToHeal)
@@ -33,7 +46,7 @@ void ASHealthPotion::HealActor(AActor* ActorToHeal)
 			return;
 		}
 		
-		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(ActorToHeal->GetComponentByClass(USAttributeComponent::StaticClass()));
+		USAttributeComponent* AttributeComp = USAttributeComponent::GetAttributes(ActorToHeal);
 		if (AttributeComp && AttributeComp->GetHealth() < AttributeComp->GetMaxHealth())
 		{
 			HandlePickUp(ActorToHeal);
@@ -48,3 +61,5 @@ void ASHealthPotion::OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponen
 {
 	
 }
+
+#undef LOCTEXT_NAMESPACE

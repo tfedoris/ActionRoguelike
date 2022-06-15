@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SGameplayInterface.h"
 #include "GameFramework/Actor.h"
 #include "SPickUpBase.generated.h"
 
@@ -11,13 +12,19 @@ class UAudioComponent;
 class UParticleSystem;
 
 UCLASS(Abstract)
-class ACTIONROGUELIKE_API ASPickUpBase : public AActor
+class ACTIONROGUELIKE_API ASPickUpBase : public AActor, public ISGameplayInterface
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ASPickUpBase(); //  poke someone tonight and get a boner 
+	ASPickUpBase();
+
+	virtual void Interact_Implementation(APawn* InstigatorPawn) override;
+
+	virtual FText GetInteractText_Implementation(APawn* InstigatorPawn) override;
+
+	virtual bool CanInteract_Implementation() override;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
@@ -34,6 +41,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
 	float bCanRespawn;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Interact")
+	bool bCanInteract;
 
 	UPROPERTY(ReplicatedUsing="OnRep_IsActive", BlueprintReadOnly)
 	bool bIsActive;

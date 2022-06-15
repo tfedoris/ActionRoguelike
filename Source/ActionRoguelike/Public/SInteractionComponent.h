@@ -7,6 +7,7 @@
 #include "SInteractionComponent.generated.h"
 
 
+class USGameplayInterface;
 class USWorldUserWidget;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ACTIONROGUELIKE_API USInteractionComponent : public UActorComponent

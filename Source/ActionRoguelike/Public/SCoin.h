@@ -16,6 +16,9 @@ class ACTIONROGUELIKE_API ASCoin : public ASPickUpBase
 {
 	GENERATED_BODY()
 
+public:
+	ASCoin();
+
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Properties")
 	int32 CreditValue;
