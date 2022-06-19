@@ -5,13 +5,17 @@
 
 #include "DrawDebugHelpers.h"
 #include "EngineUtils.h"
+#include "SActionComponent.h"
 #include "SAttributeComponent.h"
 #include "SCharacter.h"
 #include "SCoin.h"
 #include "SHealthPotion.h"
+#include "SMonsterData.h"
 #include "SPlayerState.h"
 #include "SSaveGame.h"
+#include "ActionRoguelike/ActionRoguelike.h"
 #include "AI/SAICharacter.h"
+#include "Engine/AssetManager.h"
 #include "EnvironmentQuery/EnvQueryManager.h"
 #include "GameFramework/GameStateBase.h"
 #include "Kismet/GameplayStatics.h"
@@ -148,12 +152,71 @@ void ASGameModeBase::OnSpawnBotQueryCompleted(UEnvQueryInstanceBlueprintWrapper*
 
 	if (Locations.IsValidIndex(0))
 	{
-		GetWorld()->SpawnActor<AActor>(MinionClass, Locations[0], FRotator::ZeroRotator);
+		if (MonsterTable)
+		{
+			TArray<FMonsterInfoRow*> Rows;
+			MonsterTable->GetAllRows("", Rows);
+
+			// Get random enemy
+			int32 RandomIndex = FMath::RandRange(0, Rows.Num() - 1);
+			FMonsterInfoRow* SelectedRow = Rows[RandomIndex];
+
+			UAssetManager* Manager = UAssetManager::GetIfValid();
+			if (Manager)
+			{
+				LogOnScreen(this, "Loading Monster...", FColor::Green);
+				
+				TArray<FName> Bundles;
+				FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ASGameModeBase::OnMonsterLoaded, SelectedRow->MonsterId, Locations[0]);
+				Manager->LoadPrimaryAsset(SelectedRow->MonsterId, Bundles, Delegate);
+			}
+		}
 
 		if (CVarDebugDrawGameMode.GetValueOnGameThread())
 		{
 			DrawDebugSphere(GetWorld(), Locations[0], 50.0f, 20, FColor::Blue, false, 60.0f);
 		}
+	}
+}
+
+void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
+{
+	LogOnScreen(this, "...Monster loaded.", FColor::Green);
+	
+	UAssetManager* Manager = UAssetManager::GetIfValid();
+	if (!Manager)
+	{
+		LogOnScreen(this, "Manager null.", FColor::Red);
+		return;
+	}
+
+	USMonsterData* MonsterData = Cast<USMonsterData>(Manager->GetPrimaryAssetObject(LoadedId));
+	if (!MonsterData)
+	{
+		LogOnScreen(this, "MonsterData null.", FColor::Red);
+		return;
+	}
+
+	AActor* NewBot = GetWorld()->SpawnActor<AActor>(MonsterData->MonsterClass, SpawnLocation, FRotator::ZeroRotator);
+	if (!NewBot)
+	{
+		LogOnScreen(this, "NewBot null.", FColor::Red);
+		return;
+	}
+
+	LogOnScreen(this, FString::Printf(TEXT("Spawned enemy: %s (%s)"), *GetNameSafe(NewBot), *GetNameSafe(MonsterData)));
+	
+	USActionComponent* ActionComp = USActionComponent::GetActionComponent(NewBot);
+	if (!ActionComp)
+	{
+		LogOnScreen(this, "ActionComp null.", FColor::Red);
+		return;
+	}
+
+	// Grant special actions, buffs, etc.
+	for (TSubclassOf<USAction> ActionClass : MonsterData->Actions)
+	{
+		ActionComp->AddAction(NewBot, ActionClass);
 	}
 }
 

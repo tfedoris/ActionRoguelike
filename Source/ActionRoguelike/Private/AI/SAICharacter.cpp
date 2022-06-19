@@ -105,7 +105,7 @@ void ASAICharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponen
 			GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 			GetCharacterMovement()->DisableMovement();
 
-			if (PawnSeenIndicator)
+			if (IsValid(PawnSeenIndicator))
 			{
 				PawnSeenIndicator->RemoveFromParent();
 			}
