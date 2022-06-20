@@ -3,6 +3,7 @@
 
 #include "SAttributeComponent.h"
 
+#include "SAction.h"
 #include "SGameModeBase.h"
 #include "Net/UnrealNetwork.h"
 

@@ -40,7 +40,7 @@ protected:
 	float RespawnDelay;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Properties")
-	float bCanRespawn;
+	bool bCanRespawn;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Interact")
 	bool bCanInteract;

@@ -8,7 +8,6 @@
 #include "SActionComponent.h"
 #include "SAttributeComponent.h"
 #include "SCharacter.h"
-#include "SCoin.h"
 #include "SHealthPotion.h"
 #include "SMonsterData.h"
 #include "SPlayerState.h"
@@ -91,8 +90,6 @@ void ASGameModeBase::OnActorKilled(AActor* VictimActor, AActor* KillerActor)
 		
 		GetWorldTimerManager().SetTimer(TimerHandle_RespawnDelay, Delegate, RespawnDelay, false);
 	}
-
-	UE_LOG(LogTemp, Log, TEXT("OnActorKilled: Victim: %s, Killer: %s"), *GetNameSafe(VictimActor), *GetNameSafe(KillerActor));
 }
 
 void ASGameModeBase::SpawnBotTimerElapsed()
@@ -115,7 +112,7 @@ void ASGameModeBase::SpawnBotTimerElapsed()
 		}
 	}
 
-	UE_LOG(LogTemp, Log, TEXT("Found %i alive bots"), NumAliveBots);
+	// UE_LOG(LogTemp, Log, TEXT("Found %i alive bots"), NumAliveBots);
 
 	float MaxBotCount = 10.0f;
 
@@ -126,7 +123,7 @@ void ASGameModeBase::SpawnBotTimerElapsed()
 	
 	if (NumAliveBots >= MaxBotCount)
 	{
-		UE_LOG(LogTemp, Log, TEXT("At maximum bot capacity. Skipping bot spawn."));
+		// UE_LOG(LogTemp, Log, TEXT("At maximum bot capacity. Skipping bot spawn."));
 		return;
 	}
 	
@@ -164,7 +161,7 @@ void ASGameModeBase::OnSpawnBotQueryCompleted(UEnvQueryInstanceBlueprintWrapper*
 			UAssetManager* Manager = UAssetManager::GetIfValid();
 			if (Manager)
 			{
-				LogOnScreen(this, "Loading Monster...", FColor::Green);
+				// LogOnScreen(this, "Loading Monster...", FColor::Green);
 				
 				TArray<FName> Bundles;
 				FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ASGameModeBase::OnMonsterLoaded, SelectedRow->MonsterId, Locations[0]);
@@ -181,7 +178,7 @@ void ASGameModeBase::OnSpawnBotQueryCompleted(UEnvQueryInstanceBlueprintWrapper*
 
 void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 {
-	LogOnScreen(this, "...Monster loaded.", FColor::Green);
+	// LogOnScreen(this, "...Monster loaded.", FColor::Green);
 	
 	UAssetManager* Manager = UAssetManager::GetIfValid();
 	if (!Manager)
@@ -204,7 +201,7 @@ void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLoca
 		return;
 	}
 
-	LogOnScreen(this, FString::Printf(TEXT("Spawned enemy: %s (%s)"), *GetNameSafe(NewBot), *GetNameSafe(MonsterData)));
+	// LogOnScreen(this, FString::Printf(TEXT("Spawned enemy: %s (%s)"), *GetNameSafe(NewBot), *GetNameSafe(MonsterData)));
 	
 	USActionComponent* ActionComp = USActionComponent::GetActionComponent(NewBot);
 	if (!ActionComp)
@@ -347,7 +344,7 @@ void ASGameModeBase::LoadSaveGame()
 			return;
 		}
 
-		UE_LOG(LogTemp, Warning, TEXT("Loaded SaveGame data."));
+		// UE_LOG(LogTemp, Warning, TEXT("Loaded SaveGame data."));
 
 		// Iterate the entire world of actors
 		for (FActorIterator It(GetWorld()); It; ++It)
@@ -384,6 +381,6 @@ void ASGameModeBase::LoadSaveGame()
 	{
 		CurrentSaveGame = Cast<USSaveGame>(UGameplayStatics::CreateSaveGameObject(USSaveGame::StaticClass()));
 
-		UE_LOG(LogTemp, Warning, TEXT("Created new SaveGame data."));
+		// UE_LOG(LogTemp, Warning, TEXT("Created new SaveGame data."));
 	}
 }

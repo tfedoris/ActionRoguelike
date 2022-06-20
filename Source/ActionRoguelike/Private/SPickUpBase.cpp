@@ -28,7 +28,7 @@ ASPickUpBase::ASPickUpBase()
 	bIsActive = true;
 	bCanInteract = true;
 
-	SetReplicates(true);
+	bReplicates = true;
 }
 
 void ASPickUpBase::Interact_Implementation(APawn* InstigatorPawn)
