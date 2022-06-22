@@ -1,0 +1,1746 @@
+﻿Log file open, 06/20/22 11:02:24
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogPakFile: Display: Found Pak file ../../../ActionRoguelike/Content/Paks/ActionRoguelike-WindowsNoEditor.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../ActionRoguelike/Content/Paks/ActionRoguelike-WindowsNoEditor.pak.
+LogPakFile: PakFile PrimaryIndexSize=37654
+LogPakFile: PakFile PathHashIndexSize=49926
+LogPakFile: PakFile FullDirectoryIndexSize=80840
+LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile '../../../ActionRoguelike/Content/Paks/ActionRoguelike-WindowsNoEditor.pak' (chunk index -1, root '../../../') mounted
+LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:../../../ File:../../../ActionRoguelike/Content/Paks/ActionRoguelike-WindowsNoEditor.pak)
+LogPakFile: OnPakFileMounted2Time == 0.000032
+LogPlatformFile: Not using cached read wrapper
+LogTaskGraph: Started task graph with 5 named threads and 47 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.073021
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: -5:00, Platform Override: ''
+LogInit: Display: Loading text-based GConfig....
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin EnvironmentQueryEditor
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CameraShakePreviewer
+LogPluginManager: Mounting plugin GameplayCameras
+LogPluginManager: Mounting plugin TemplateSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin OodleData
+LogPluginManager: Mounting plugin OodleNetwork
+LogPluginManager: Mounting plugin AnimationSharing
+LogPluginManager: Mounting plugin SignificanceManager
+LogPluginManager: Mounting plugin PixWinPlugin
+LogPluginManager: Mounting plugin PluginUtils
+LogPluginManager: Mounting plugin PropertyAccessEditor
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GeometryMode
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin VariantManagerContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin AutomationUtils
+LogPluginManager: Mounting plugin ScreenshotTools
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin ChaosClothEditor
+LogPluginManager: Mounting plugin ChaosCloth
+LogPluginManager: Mounting plugin ChaosEditor
+LogPluginManager: Mounting plugin PlanarCut
+LogPluginManager: Mounting plugin GeometryProcessing
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin GeometryCollectionPlugin
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin ChaosSolverPlugin
+LogPluginManager: Mounting plugin ChaosNiagara
+LogPluginManager: Mounting plugin Niagara
+LogPluginManager: Mounting plugin PythonScriptPlugin
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin MotoSynth
+LogPluginManager: Mounting plugin OpenImageDenoise
+LogPluginManager: Mounting plugin PlatformCrypto
+LogPluginManager: Mounting plugin MagicLeapPassableWorld
+LogPluginManager: Mounting plugin MagicLeap
+LogPluginManager: Mounting plugin MLSDK
+LogPluginManager: Mounting plugin MagicLeapLightEstimation
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin MeshPainting
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin ActorLayerUtilities
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AssetTags
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin ChunkDownloader
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GooglePAD
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SoundFields
+LogPluginManager: Mounting plugin Synthesis
+LogPluginManager: Mounting plugin AudioSynesthesia
+LogPluginManager: Mounting plugin WebMMoviePlayer
+LogPluginManager: Mounting plugin WebMMedia
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogLuminAPIImpl: Warning: MLSDK not found.  This likely means the MLSDK environment variable is not set.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogOnline: OSS: Creating online subsystem instance for: NULL
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE4+Release-4.27-CL-18319896
+LogInit: Engine Version: 4.27.2-18319896+++UE4+Release-4.27
+LogInit: Compatible Engine Version: 4.27.0-17155196+++UE4+Release-4.27
+LogInit: Net CL: 17155196
+LogInit: OS: Windows 10 (Release 2009) (), CPU: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, GPU: NVIDIA GeForce RTX 3080 Ti
+LogInit: Compiled (64-bit): Nov 30 2021 07:26:28
+LogInit: Compiled with Visual C++: 19.16.27032.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.27
+LogInit: Command Line:  -trace=counters,cpu, frame,bookmark,loadtime -statnamedevents
+LogInit: Base Directory: D:/Projects/Unreal/ActionRoguelike/Packaged/WindowsNoEditor/ActionRoguelike/Binaries/Win64/
+LogInit: Allocator: binned2
+LogInit: Installed Engine Build: 0
+LogDevObjectVersion: Number of dev versions registered: 29
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 14
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 47
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 1
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogInit: Presizing for max 2097152 objects, including 1 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+LogStreaming: Display: Async Loading initialized: Event Driven Loader: true, Async Loading Thread: false, Async Post Load: true
+LogInit: Object subsystem initialized
+LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+LogConfig: Setting CVar [[r.setres:1280x720]]
+LogConfig: Setting CVar [[fx.NiagaraAllowRuntimeScalabilityChanges:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[r.setres:1280x720]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[fx.NiagaraAllowRuntimeScalabilityChanges:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:637][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
+[2022.06.20-15.02.24:637][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:659][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2022.06.20-15.02.24:659][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[fx.Niagara.QualityLevel:3]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2022.06.20-15.02.24:660][  0]LogInit: Selected Device Profile: [WindowsNoEditor]
+[2022.06.20-15.02.24:660][  0]LogInit: Applying CVar settings loaded from the selected device profile: [WindowsNoEditor]
+[2022.06.20-15.02.24:660][  0]LogHAL: Display: Platform has ~ 32 GB [34287190016 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2022.06.20-15.02.24:660][  0]LogInit: Going up to parent DeviceProfile [Windows]
+[2022.06.20-15.02.24:660][  0]LogInit: Going up to parent DeviceProfile []
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2022.06.20-15.02.24:660][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[fx.Niagara.QualityLevel:3]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Scalability.ini]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+[2022.06.20-15.02.24:661][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [../../../ActionRoguelike/Saved/Config/WindowsNoEditor/Engine.ini]
+[2022.06.20-15.02.24:661][  0]LogInit: Computer: DESKTOP-TQMRRMC
+[2022.06.20-15.02.24:661][  0]LogInit: User: tylerfedoris
+[2022.06.20-15.02.24:661][  0]LogInit: CPU Page size=4096, Cores=8
+[2022.06.20-15.02.24:661][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2022.06.20-15.02.24:661][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2022.06.20-15.02.24:661][  0]LogMemory: Platform Memory Stats for WindowsNoEditor
+[2022.06.20-15.02.24:661][  0]LogMemory: Process Physical Memory: 78.86 MB used, 78.86 MB peak
+[2022.06.20-15.02.24:661][  0]LogMemory: Process Virtual Memory: 82.43 MB used, 82.43 MB peak
+[2022.06.20-15.02.24:661][  0]LogMemory: Physical Memory: 14154.10 MB used,  18544.71 MB free, 32698.81 MB total
+[2022.06.20-15.02.24:661][  0]LogMemory: Virtual Memory: 134196936.00 MB used,  20791.16 MB free, 134217728.00 MB total
+[2022.06.20-15.02.24:665][  0]LogWindows: WindowsPlatformFeatures enabled
+[2022.06.20-15.02.24:763][  0]LogInit: Physics initialised using underlying interface: PhysX
+[2022.06.20-15.02.24:763][  0]LogInit: Using OS detected language (en-US).
+[2022.06.20-15.02.24:763][  0]LogInit: Using OS detected locale (en-US).
+[2022.06.20-15.02.24:764][  0]LogTextLocalizationManager: No specific localization for 'en-US' exists, so the 'en' localization will be used.
+[2022.06.20-15.02.24:783][  0]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.06.20-15.02.24:807][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2022.06.20-15.02.24:807][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2022.06.20-15.02.24:847][  0]LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+[2022.06.20-15.02.24:849][  0]LogD3D11RHI: D3D11 min allowed feature level: 11_0
+[2022.06.20-15.02.24:849][  0]LogD3D11RHI: D3D11 max allowed feature level: 11_0
+[2022.06.20-15.02.24:849][  0]LogD3D11RHI: D3D11 adapters:
+[2022.06.20-15.02.24:931][  0]LogD3D11RHI:    0. 'NVIDIA GeForce RTX 3080 Ti' (Feature Level 11_0)
+[2022.06.20-15.02.24:931][  0]LogD3D11RHI:       12108/0/16349 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:2, VendorId:0x10de
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:       0/0/16349 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI: Chosen D3D11 Adapter:
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 3080 Ti
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     VendorId    : 10de
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     DeviceId    : 2208
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     SubSysId    : 39673842
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     Revision    : 00a1
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     DedicatedVideoMemory : 12696158208 bytes
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     SharedSystemMemory : 17143595008 bytes
+[2022.06.20-15.02.24:933][  0]LogD3D11RHI:     AdapterLuid : 0 66852
+[2022.06.20-15.02.24:938][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2022.06.20-15.02.24:938][  0]LogD3D11RHI:     GPU DeviceId: 0x2208 (for the marketing name, search the web for "GPU Device Id")
+[2022.06.20-15.02.24:938][  0]LogWindows: EnumDisplayDevices:
+[2022.06.20-15.02.24:938][  0]LogWindows:    0. 'NVIDIA GeForce RTX 3080 Ti' (P:1 D:1)
+[2022.06.20-15.02.24:938][  0]LogWindows:    1. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:1)
+[2022.06.20-15.02.24:939][  0]LogWindows:    2. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:0)
+[2022.06.20-15.02.24:939][  0]LogWindows:    3. 'NVIDIA GeForce RTX 3080 Ti' (P:0 D:0)
+[2022.06.20-15.02.24:939][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce RTX 3080 Ti
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:   Driver Version: 516.40 (internal:31.0.15.1640, unified:516.40)
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:      Driver Date: 6-6-2022
+[2022.06.20-15.02.24:939][  0]LogRHI: Texture pool is 8475 MB (70% of 12108 MB)
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI: Creating D3DDevice using adapter:
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 3080 Ti
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     VendorId    : 10de
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     DeviceId    : 2208
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     SubSysId    : 39673842
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     Revision    : 00a1
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     DedicatedVideoMemory : 12696158208 bytes
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     SharedSystemMemory : 17143595008 bytes
+[2022.06.20-15.02.24:939][  0]LogD3D11RHI:     AdapterLuid : 0 66852
+[2022.06.20-15.02.24:988][  0]LogD3D11RHI: RHI has support for 64 bit atomics
+[2022.06.20-15.02.24:988][  0]LogD3D11RHI: Async texture creation enabled
+[2022.06.20-15.02.24:988][  0]LogD3D11RHI: Array index from any shader is supported
+[2022.06.20-15.02.25:006][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2022.06.20-15.02.25:067][  0]LogRHI: GeForceNow SDK initialized: 1
+[2022.06.20-15.02.25:067][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2022.06.20-15.02.25:069][  0]LogShaderLibrary: Display: Using ../../../ActionRoguelike/Content/ShaderArchive-Global-PCD3D_SM5.ushaderbytecode for material shader code. Total 1951 unique shaders.
+[2022.06.20-15.02.25:069][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library Global
+[2022.06.20-15.02.25:069][  0]LogShaderLibrary: Display: Logical shader library 'Global' has been created, components 1
+[2022.06.20-15.02.25:069][  0]LogTemp: Warning: Clearing the OS Cache
+[2022.06.20-15.02.25:069][  0]LogODSC: ODSC Thread active.
+[2022.06.20-15.02.25:071][  0]LogPakFile: New pak file ../../../ActionRoguelike/Content/Paks/ActionRoguelike-WindowsNoEditor.pak added to pak precacher.
+[2022.06.20-15.02.25:086][  0]LogSlate: Using FreeType 2.10.0
+[2022.06.20-15.02.25:086][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2022.06.20-15.02.25:113][  0]LogShaderLibrary: Display: Using ../../../ActionRoguelike/Content/ShaderArchive-ActionRoguelike-PCD3D_SM5.ushaderbytecode for material shader code. Total 2590 unique shaders.
+[2022.06.20-15.02.25:113][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library ActionRoguelike
+[2022.06.20-15.02.25:113][  0]LogShaderLibrary: Display: Logical shader library 'ActionRoguelike' has been created, components 1
+[2022.06.20-15.02.25:113][  0]LogRHI: Display: Opened pipeline cache after state change and enqueued 0 of 0 tasks for precompile.
+[2022.06.20-15.02.25:113][  0]LogShaderLibrary: Display: Using ../../../ActionRoguelike/Content/ShaderArchive-ActionRoguelike-PCD3D_SM5.ushaderbytecode for material shader code. Total 2590 unique shaders.
+[2022.06.20-15.02.25:113][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library ActionRoguelike
+[2022.06.20-15.02.25:113][  0]LogRHI: Display: Opened pipeline cache after state change and enqueued 0 of 0 tasks for precompile.
+[2022.06.20-15.02.25:113][  0]LogRHI: Display: Failed to open default shader pipeline cache for ActionRoguelike using shader platform 0.
+[2022.06.20-15.02.25:114][  0]LogInit: Using OS detected language (en-US).
+[2022.06.20-15.02.25:114][  0]LogInit: Using OS detected locale (en-US).
+[2022.06.20-15.02.25:114][  0]LogTextLocalizationManager: No localization for 'en-US' exists, so 'en' will be used for the language.
+[2022.06.20-15.02.25:114][  0]LogTextLocalizationManager: No localization for 'en-US' exists, so 'en' will be used for the locale.
+[2022.06.20-15.02.25:114][  0]LogSlate: FontCache flush requested. Reason: Culture for localization was changed
+[2022.06.20-15.02.25:114][  0]LogSlate: FontCache flush requested. Reason: Culture for localization was changed
+[2022.06.20-15.02.25:114][  0]LogTextLocalizationManager: Compacting localization data took   0.50ms
+[2022.06.20-15.02.25:114][  0]LogAssetRegistry: FAssetRegistry took 0.0005 seconds to start up
+[2022.06.20-15.02.25:164][  0]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.06.20-15.02.25:164][  0]LogPackageLocalizationCache: Processed 20 localized package path(s) for 1 prioritized culture(s) in 0.000043 seconds
+[2022.06.20-15.02.25:169][  0]LogSerialization: Display: AllowBulkDataInIoStore: 'true'
+[2022.06.20-15.02.25:169][  0]LogInit: Selected Device Profile: [WindowsNoEditor]
+[2022.06.20-15.02.25:169][  0]LogInit: Active device profile: [0000018C4A5FB980][0000018C39AC0010 49] WindowsNoEditor
+[2022.06.20-15.02.25:169][  0]LogInit: Profiles: [0000018C4A5FBC80][0000018C459D9250 49] Windows, [0000018C4A5FB980][0000018C39AC0010 49] WindowsNoEditor, 
+[2022.06.20-15.02.25:204][  0]LogNetVersion: ActionRoguelike 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 1099936942)
+[2022.06.20-15.02.25:235][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.06.20-15.02.25:235][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SProjectile. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SBlackHoleProjectile. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SPickUpBase. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SCoin. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SHealthPotion. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SItemChest. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SParryableProjectile. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SMagicProjectile. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__SPickUpAction. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:237][  0]LogActor: Warning: SetReplicates called on non-initialized actor Default__STeleportProjectile. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.25:261][  0]LogMoviePlayer: Initializing movie player
+[2022.06.20-15.02.25:262][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: B9B330A64781E0B2CAA566A70A50A15A | Instance: BE5CFD7C4AE1226AF62215BC27324256 (DESKTOP-TQMRRMC-19280).
+[2022.06.20-15.02.25:263][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2022.06.20-15.02.25:266][  0]LogUObjectArray: 15622 objects as part of root set at end of initial load.
+[2022.06.20-15.02.25:266][  0]LogUObjectArray: 2 objects are not in the root set, but can never be destroyed because they are in the DisregardForGC set.
+[2022.06.20-15.02.25:266][  0]LogUObjectAllocator: 3238424 out of 0 bytes used by permanent object pool.
+[2022.06.20-15.02.25:266][  0]LogUObjectArray: CloseDisregardForGC: 15622/15622 objects in disregard for GC pool
+[2022.06.20-15.02.25:267][  0]LogEngine: Initializing Engine...
+[2022.06.20-15.02.25:268][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2022.06.20-15.02.25:304][  0]LogInit: Initializing FReadOnlyCVARCache
+[2022.06.20-15.02.25:304][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2022.06.20-15.02.25:305][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: Audio Device Manager Initialized
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.06.20-15.02.25:306][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.06.20-15.02.25:306][  0]LogAudioMixer: Display: Initializing audio mixer.
+[2022.06.20-15.02.25:357][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2022.06.20-15.02.25:363][  0]LogAudioMixer: Display: 0: FrontLeft
+[2022.06.20-15.02.25:363][  0]LogAudioMixer: Display: 1: FrontRight
+[2022.06.20-15.02.25:379][  0]LogAudioMixer: Display: Using Audio Device Speakers (Realtek(R) Audio)
+[2022.06.20-15.02.25:379][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.06.20-15.02.25:380][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.06.20-15.02.25:380][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.06.20-15.02.25:380][  0]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2022.06.20-15.02.25:381][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2022.06.20-15.02.25:381][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2022.06.20-15.02.25:381][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2022.06.20-15.02.25:381][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2022.06.20-15.02.25:381][  0]LogInit: FAudioDevice initialized.
+[2022.06.20-15.02.25:381][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2022.06.20-15.02.25:381][  0]LogInit: Texture streaming: Enabled
+[2022.06.20-15.02.25:385][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2022.06.20-15.02.25:386][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.06.20-15.02.25:386][  0]LogInit: Display: Game Engine Initialized.
+[2022.06.20-15.02.25:386][  0]LogInit: Display: Starting Game.
+[2022.06.20-15.02.25:387][  0]LogNet: Browse: /Game/ActionRoguelike/Maps/MainMenu_Entry?Name=Player
+[2022.06.20-15.02.25:387][  0]LogLoad: LoadMap: /Game/ActionRoguelike/Maps/MainMenu_Entry?Name=Player
+[2022.06.20-15.02.25:387][  0]LogWorld: BeginTearingDown for /Temp/Untitled_0
+[2022.06.20-15.02.25:388][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2022.06.20-15.02.25:388][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.20-15.02.25:390][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.06.20-15.02.25:391][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2022.06.20-15.02.25:398][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'MainMenu_Entry'.
+[2022.06.20-15.02.25:399][  0]LogAIModule: Creating AISystem for world MainMenu_Entry
+[2022.06.20-15.02.25:399][  0]LogLoad: Game class is 'BP_MainMenuGameMode_C'
+[2022.06.20-15.02.25:400][  0]LogWorld: Bringing World /Game/ActionRoguelike/Maps/MainMenu_Entry.MainMenu_Entry up for play (max tick rate 0) at 2022.06.20-11.02.25
+[2022.06.20-15.02.25:400][  0]LogWorld: Bringing up level for play took: 0.000379
+[2022.06.20-15.02.25:401][  0]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2022.06.20-15.02.25:402][  0]LogPlayerController: Error: InputMode:UIOnly - Attempting to focus Non-Focusable widget SObjectWidget [Widget.cpp(799)]!
+[2022.06.20-15.02.25:402][  0]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockInFullscreen
+[2022.06.20-15.02.25:402][  0]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> NoCapture
+[2022.06.20-15.02.25:403][  0]LogLoad: Took 0.015894 seconds to LoadMap(/Game/ActionRoguelike/Maps/MainMenu_Entry)
+[2022.06.20-15.02.25:403][  0]LogSlate: Took 0.000122 seconds to synchronously load lazily loaded font '../../../ActionRoguelike/Content/ExampleContent/UI/Fonts/Cinzel/Cinzel-Bold.ufont' (84K)
+[2022.06.20-15.02.25:403][  0]LogSlate: Took 0.000261 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.06.20-15.02.25:515][  0]LogRenderer: Reallocating scene render targets to support 3440x1440 Format 10 NumSamples 1 (Frame:1).
+[2022.06.20-15.02.25:515][  0]LogRHI: Display: ShaderPipelineCache: Paused Batching. 1
+[2022.06.20-15.02.25:515][  0]LogPakFile: AllPaks IndexSizes: DirectoryHashSize=272276, PathHashSize=16, EntriesSize=40960, TotalSize=313252
+[2022.06.20-15.02.25:515][  0]LogRHI: Display: ShaderPipelineCache: Resumed Batching. 0
+[2022.06.20-15.02.25:515][  0]LogRHI: Display: ShaderPipelineCache: Batching Resumed.
+[2022.06.20-15.02.25:515][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2022.06.20-15.02.25:515][  0]LogLoad: (Engine Initialization) Total time: 1.08 seconds
+[2022.06.20-15.02.25:516][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2022.06.20-15.02.25:518][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.20-15.02.25:525][  0]LogSlate: Slate font cache was flushed
+[2022.06.20-15.02.25:526][  1]LogSlate: Took 0.000181 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.06.20-15.02.25:527][  1]LogSlate: Took 0.000100 seconds to synchronously load lazily loaded font '../../../ActionRoguelike/Content/ExampleContent/UI/Fonts/Cinzel/Cinzel-Bold.ufont' (84K)
+[2022.06.20-15.02.27:299][213]LogNet: Browse: /Game/ActionRoguelike/Maps/TestLevel??listen
+[2022.06.20-15.02.27:299][213]LogLoad: LoadMap: /Game/ActionRoguelike/Maps/TestLevel??listen
+[2022.06.20-15.02.27:299][213]LogWorld: BeginTearingDown for /Game/ActionRoguelike/Maps/MainMenu_Entry
+[2022.06.20-15.02.27:299][213]LogWorld: UWorld::CleanupWorld for MainMenu_Entry, bSessionEnded=true, bCleanupResources=true
+[2022.06.20-15.02.27:299][213]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.20-15.02.27:345][213]LogAudio: Display: Waited 45.098400 ms for audio thread.
+[2022.06.20-15.02.27:346][213]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.06.20-15.02.27:347][213]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2022.06.20-15.02.27:349][213]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.06.20-15.02.27:375][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_TeleportProjectile_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:386][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_MagicProjectile_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:397][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_HealthPotion_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:397][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_Coin_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:402][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_ItemChest_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:403][213]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_PickUp_Dash_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:403][213]LogActor: Warning: SetReplicates called on non-initialized actor BP_ItemChest2. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:403][213]LogActor: Warning: SetReplicates called on non-initialized actor BP_ItemChest3_2. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:403][213]LogActor: Warning: SetReplicates called on non-initialized actor BP_ItemChest_2. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:403][213]LogActor: Warning: SetReplicates called on non-initialized actor BP_PickUp_Dash_2. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:418][213]LogAudio: Display: Audio Device (ID: 1) registered with world 'TestLevel'.
+[2022.06.20-15.02.27:419][213]LogAIModule: Creating AISystem for world TestLevel
+[2022.06.20-15.02.27:419][213]LogLoad: Game class is 'BP_GameMode_C'
+[2022.06.20-15.02.27:420][213]LogNet: ReplicationDriverClass is null! Not using ReplicationDriver.
+[2022.06.20-15.02.27:420][213]LogNetCore: DDoS detection status: detection enabled: 0 analytics enabled: 0
+[2022.06.20-15.02.27:420][213]LogInit: WinSock: Socket queue. Rx: 131072 (config 131072) Tx: 131072 (config 131072)
+[2022.06.20-15.02.27:420][213]LogNet: Created socket for bind address: 0.0.0.0 on port 7777
+[2022.06.20-15.02.27:420][213]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
+[2022.06.20-15.02.27:420][213]LogNet: GameNetDriver IpNetDriver_2147482517 IpNetDriver listening on port 7777
+[2022.06.20-15.02.27:425][213]LogWorld: Bringing World /Game/ActionRoguelike/Maps/TestLevel.TestLevel up for play (max tick rate 0) at 2022.06.20-11.02.27
+[2022.06.20-15.02.27:425][213]LogTemp: Warning: Created new SaveGame data.
+[2022.06.20-15.02.27:426][213]LogWorld: Bringing up level for play took: 0.005091
+[2022.06.20-15.02.27:427][213]LogOnlineSession: Warning: OSS: No game present to join for session (GameSession)
+[2022.06.20-15.02.27:428][213]LogScript: Warning: Script Msg: Divide by zero detected: -170.000153 / 0
+Script call stack:
+	Function /Game/ParagonGideon/Characters/Heroes/Gideon/Gideon_AnimBlueprint.Gideon_AnimBlueprint_C:BlueprintUpdateAnimation
+	Function /Game/ParagonGideon/Characters/Heroes/Gideon/Gideon_AnimBlueprint.Gideon_AnimBlueprint_C:ExecuteUbergraph_Gideon_AnimBlueprint
+
+[2022.06.20-15.02.27:433][213]LogViewport: Display: Viewport MouseLockMode Changed, LockInFullscreen -> LockOnCapture
+[2022.06.20-15.02.27:433][213]LogViewport: Display: Viewport MouseCaptureMode Changed, NoCapture -> CapturePermanently
+[2022.06.20-15.02.27:434][213]LogLoad: Took 0.134402 seconds to LoadMap(/Game/ActionRoguelike/Maps/TestLevel)
+[2022.06.20-15.02.27:449][213]LogSlate: Took 0.000303 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont' (160K)
+[2022.06.20-15.02.27:450][213]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.20-15.02.27:463][214]LogSlate: Took 0.000180 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.06.20-15.02.27:464][214]LogSlate: Took 0.000157 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont' (160K)
+[2022.06.20-15.02.27:499][215]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482459. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:499][215]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482457. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:499][215]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482456. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:499][215]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482455. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:500][215]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482454. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:512][216]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482453. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:512][216]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482452. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:512][216]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482451. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:525][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482450. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:525][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_Coin_C_2147482449. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:525][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_HealthPotion_C_2147482448. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:526][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_HealthPotion_C_2147482446. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:530][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_HealthPotion_C_2147482445. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:530][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_HealthPotion_C_2147482444. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.27:530][217]LogActor: Warning: SetReplicates called on non-initialized actor BP_HealthPotion_C_2147482443. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.28:681][357]LogTemp: Running: Action_Sprint_C_2147482481
+[2022.06.20-15.02.29:312][432]LogTemp: Found 0 alive bots
+[2022.06.20-15.02.29:323][434]LogActor: Warning: SetReplicates called on non-initialized actor Default__BP_MagicProjectile_AI_C. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.29:334][435]LogTemp: Running: Effect_Burning_C_2147482425
+[2022.06.20-15.02.29:969][505]LogTemp: Stopped: Action_Sprint_C_2147482481
+[2022.06.20-15.02.30:412][556]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.30:613][581]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482413. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.30:613][581]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.30:796][603]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.31:005][628]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482407. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.31:005][628]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.31:251][657]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.31:305][663]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.31:305][663]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.31:455][681]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482400. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.31:455][681]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.31:650][703]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.31:858][726]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482397. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.31:859][726]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.32:073][749]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.32:276][770]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482394. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.32:276][770]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.32:336][776]LogTemp: Stopped: Effect_Burning_C_2147482425
+[2022.06.20-15.02.33:301][883]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.33:301][883]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.33:746][936]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.33:812][944]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482387. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.33:946][960]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482385. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.33:946][960]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.34:130][982]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.34:320][  5]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482382. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.34:330][  6]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482381. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.34:330][  6]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.34:550][ 31]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.34:754][ 55]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482359. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.34:754][ 55]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.34:829][ 65]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482358. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.34:838][ 66]LogTemp: Running: Effect_Burning_C_2147482353
+[2022.06.20-15.02.34:988][ 84]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.35:189][108]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482348. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.35:189][108]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.35:286][120]LogTemp: Running: Effect_Burning_C_2147482343
+[2022.06.20-15.02.35:303][122]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.35:303][122]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.35:465][140]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.35:669][162]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482338. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.35:670][162]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.35:810][177]LogTemp: Running: Effect_Burning_C_2147482333
+[2022.06.20-15.02.35:895][186]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.36:099][207]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482325. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.36:099][207]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.36:239][221]LogTemp: OnActorKilled: Victim: BP_MinionRanged_C_2147482436, Killer: BP_PlayerCharacter_C_2147482487
+[2022.06.20-15.02.36:239][221]LogTemp: Running: Effect_Burning_C_2147482322
+[2022.06.20-15.02.36:504][244]LogTemp: Running: Action_Sprint_C_2147482481
+[2022.06.20-15.02.37:306][340]LogTemp: Found 0 alive bots
+[2022.06.20-15.02.37:308][340]LogTemp: Running: Effect_Burning_C_2147482315
+[2022.06.20-15.02.37:845][404]LogTemp: Stopped: Effect_Burning_C_2147482353
+[2022.06.20-15.02.38:291][458]LogTemp: Stopped: Effect_Burning_C_2147482343
+[2022.06.20-15.02.38:818][521]LogTemp: Stopped: Effect_Burning_C_2147482333
+[2022.06.20-15.02.39:244][572]LogTemp: Stopped: Effect_Burning_C_2147482322
+[2022.06.20-15.02.39:302][579]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.39:302][579]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.40:314][699]LogTemp: Stopped: Effect_Burning_C_2147482315
+[2022.06.20-15.02.40:823][761]LogTemp: Stopped: Action_Sprint_C_2147482481
+[2022.06.20-15.02.40:857][765]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.40:915][772]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482295. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.41:064][789]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482294. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.41:065][789]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.41:198][806]LogTemp: Running: Effect_Burning_C_2147482288
+[2022.06.20-15.02.41:281][816]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.41:307][819]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.41:307][819]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.41:424][833]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482283. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.41:483][840]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482282. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.41:483][840]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.41:641][859]LogTemp: Running: Effect_Burning_C_2147482276
+[2022.06.20-15.02.41:693][865]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.41:899][888]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482271. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.41:899][888]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.41:941][892]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482270. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.42:142][909]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.42:350][924]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482263. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.42:351][924]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.42:806][964]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.43:011][987]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482257. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.43:011][987]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.43:106][999]LogTemp: Running: Effect_Burning_C_2147482248
+[2022.06.20-15.02.43:307][ 23]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.43:307][ 23]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.43:482][ 44]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.43:648][ 64]LogTemp: OnActorKilled: Victim: BP_MinionRanged_C_2147482318, Killer: BP_PlayerCharacter_C_2147482487
+[2022.06.20-15.02.43:682][ 68]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482239. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.43:682][ 68]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.43:731][ 74]LogTemp: Running: Effect_Burning_C_2147482237
+[2022.06.20-15.02.43:965][102]LogTemp: Running: Action_Sprint_C_2147482481
+[2022.06.20-15.02.44:199][130]LogTemp: Stopped: Effect_Burning_C_2147482288
+[2022.06.20-15.02.44:645][183]LogTemp: Stopped: Effect_Burning_C_2147482276
+[2022.06.20-15.02.45:302][262]LogTemp: Found 0 alive bots
+[2022.06.20-15.02.45:320][264]LogTemp: Running: Effect_Thorns_C_2147482230
+[2022.06.20-15.02.46:112][359]LogTemp: Stopped: Effect_Burning_C_2147482248
+[2022.06.20-15.02.46:146][363]LogTemp: Stopped: Action_Sprint_C_2147482481
+[2022.06.20-15.02.46:739][434]LogTemp: Stopped: Effect_Burning_C_2147482237
+[2022.06.20-15.02.47:307][502]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.47:307][502]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.47:598][537]LogTemp: Running: Action_Sprint_C_2147482481
+[2022.06.20-15.02.48:759][675]LogTemp: Stopped: Action_Sprint_C_2147482481
+[2022.06.20-15.02.48:869][689]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:071][713]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482226. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.49:071][713]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:212][730]LogStreamableManager: Error: RequestAsyncLoad called with empty or only null assets!
+[2022.06.20-15.02.49:212][730]LogTemp: Running: Effect_Burning_C_2147482214
+[2022.06.20-15.02.49:214][730]LogScript: Warning: Script Msg: Divide by zero detected: -3.894079 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:222][731]LogScript: Warning: Script Msg: Divide by zero detected: -3.902719 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:230][732]LogScript: Warning: Script Msg: Divide by zero detected: -3.911058 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:239][733]LogScript: Warning: Script Msg: Divide by zero detected: -3.919924 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:245][734]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:247][734]LogScript: Warning: Script Msg: Divide by zero detected: -3.927404 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:255][735]LogScript: Warning: Script Msg: Divide by zero detected: -3.935570 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:263][736]LogScript: Warning: Script Msg: Divide by zero detected: -3.944204 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:272][737]LogScript: Warning: Script Msg: Divide by zero detected: -3.952490 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:280][738]LogScript: Warning: Script Msg: Divide by zero detected: -3.960785 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:288][739]LogScript: Warning: Script Msg: Divide by zero detected: -3.969070 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:297][740]LogScript: Warning: Script Msg: Divide by zero detected: -3.977633 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:304][741]LogTemp: Found 1 alive bots
+[2022.06.20-15.02.49:304][741]LogTemp: At maximum bot capacity. Skipping bot spawn.
+[2022.06.20-15.02.49:305][741]LogScript: Warning: Script Msg: Divide by zero detected: -3.985964 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:313][742]LogScript: Warning: Script Msg: Divide by zero detected: -3.994301 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:322][743]LogScript: Warning: Script Msg: Divide by zero detected: -4.003025 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:330][744]LogScript: Warning: Script Msg: Divide by zero detected: -4.011000 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:339][745]LogScript: Warning: Script Msg: Divide by zero detected: -4.019482 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:347][746]LogScript: Warning: Script Msg: Divide by zero detected: -4.027887 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:356][747]LogScript: Warning: Script Msg: Divide by zero detected: -4.036327 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:364][748]LogScript: Warning: Script Msg: Divide by zero detected: -4.044411 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:372][749]LogScript: Warning: Script Msg: Divide by zero detected: -4.052992 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:381][750]LogScript: Warning: Script Msg: Divide by zero detected: -4.061096 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:389][751]LogScript: Warning: Script Msg: Divide by zero detected: -4.069700 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:398][752]LogScript: Warning: Script Msg: Divide by zero detected: -4.077963 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:406][753]LogScript: Warning: Script Msg: Divide by zero detected: -4.086329 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:414][754]LogScript: Warning: Script Msg: Divide by zero detected: -4.094707 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:423][755]LogScript: Warning: Script Msg: Divide by zero detected: -4.103001 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:431][756]LogScript: Warning: Script Msg: Divide by zero detected: -4.111500 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:439][757]LogScript: Warning: Script Msg: Divide by zero detected: -4.119713 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:447][758]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482208. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.49:447][758]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:448][758]LogScript: Warning: Script Msg: Divide by zero detected: -4.128149 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:456][759]LogScript: Warning: Script Msg: Divide by zero detected: -4.136538 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:466][760]LogScript: Warning: Script Msg: Divide by zero detected: -4.146711 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:474][761]LogScript: Warning: Script Msg: Divide by zero detected: -4.154554 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:481][762]LogScript: Warning: Script Msg: Divide by zero detected: -4.161823 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:490][763]LogScript: Warning: Script Msg: Divide by zero detected: -4.170284 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:498][764]LogScript: Warning: Script Msg: Divide by zero detected: -4.178679 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:505][765]LogScript: Warning: Script Msg: Divide by zero detected: -4.185747 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:512][766]LogScript: Warning: Script Msg: Divide by zero detected: -4.192797 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:523][767]LogScript: Warning: Script Msg: Divide by zero detected: -4.203491 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:532][768]LogScript: Warning: Script Msg: Divide by zero detected: -4.212793 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:540][769]LogScript: Warning: Script Msg: Divide by zero detected: -4.220913 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:548][770]LogScript: Warning: Script Msg: Divide by zero detected: -4.228792 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:556][771]LogScript: Warning: Script Msg: Divide by zero detected: -4.236496 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:564][772]LogScript: Warning: Script Msg: Divide by zero detected: -4.244301 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:572][773]LogScript: Warning: Script Msg: Divide by zero detected: -4.251869 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:578][774]LogTemp: Running: Effect_Burning_C_2147482201
+[2022.06.20-15.02.49:580][774]LogScript: Warning: Script Msg: Divide by zero detected: -4.259624 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:591][775]LogScript: Warning: Script Msg: Divide by zero detected: -4.270992 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:599][776]LogScript: Warning: Script Msg: Divide by zero detected: -4.278858 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:607][777]LogScript: Warning: Script Msg: Divide by zero detected: -4.286890 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:614][778]LogScript: Warning: Script Msg: Divide by zero detected: -4.294325 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:622][779]LogScript: Warning: Script Msg: Divide by zero detected: -4.302080 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:629][780]LogScript: Warning: Script Msg: Divide by zero detected: -4.309769 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:637][781]LogScript: Warning: Script Msg: Divide by zero detected: -4.317457 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:645][782]LogScript: Warning: Script Msg: Divide by zero detected: -4.325674 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:652][783]LogScript: Warning: Script Msg: Divide by zero detected: -4.333601 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:660][784]LogScript: Warning: Script Msg: Divide by zero detected: -4.341288 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:668][785]LogScript: Warning: Script Msg: Divide by zero detected: -4.349409 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:676][786]LogScript: Warning: Script Msg: Divide by zero detected: -4.357035 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:685][787]LogScript: Warning: Script Msg: Divide by zero detected: -4.365705 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:692][788]LogScript: Warning: Script Msg: Divide by zero detected: -4.373413 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:702][789]LogScript: Warning: Script Msg: Divide by zero detected: -4.382540 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:709][790]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:710][790]LogScript: Warning: Script Msg: Divide by zero detected: -4.390831 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:718][791]LogScript: Warning: Script Msg: Divide by zero detected: -4.398657 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:726][792]LogScript: Warning: Script Msg: Divide by zero detected: -4.407070 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:734][793]LogScript: Warning: Script Msg: Divide by zero detected: -4.415052 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:742][794]LogScript: Warning: Script Msg: Divide by zero detected: -4.423088 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:751][795]LogScript: Warning: Script Msg: Divide by zero detected: -4.431812 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:759][796]LogScript: Warning: Script Msg: Divide by zero detected: -4.439814 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:768][797]LogScript: Warning: Script Msg: Divide by zero detected: -4.448549 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:776][798]LogScript: Warning: Script Msg: Divide by zero detected: -4.456701 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:785][799]LogScript: Warning: Script Msg: Divide by zero detected: -4.465883 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:793][800]LogScript: Warning: Script Msg: Divide by zero detected: -4.473867 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:801][801]LogScript: Warning: Script Msg: Divide by zero detected: -4.481970 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:809][802]LogScript: Warning: Script Msg: Divide by zero detected: -4.489952 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:817][803]LogScript: Warning: Script Msg: Divide by zero detected: -4.498274 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:826][804]LogScript: Warning: Script Msg: Divide by zero detected: -4.507189 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:835][805]LogScript: Warning: Script Msg: Divide by zero detected: -4.515306 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:843][806]LogScript: Warning: Script Msg: Divide by zero detected: -4.523577 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:852][807]LogScript: Warning: Script Msg: Divide by zero detected: -4.532000 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:861][808]LogScript: Warning: Script Msg: Divide by zero detected: -4.540926 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:870][809]LogScript: Warning: Script Msg: Divide by zero detected: -4.550720 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:879][810]LogScript: Warning: Script Msg: Divide by zero detected: -4.559507 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:887][811]LogScript: Warning: Script Msg: Divide by zero detected: -4.567698 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:896][812]LogScript: Warning: Script Msg: Divide by zero detected: -4.576172 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:904][813]LogScript: Warning: Script Msg: Divide by zero detected: -4.584175 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:911][814]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482196. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.49:911][814]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.49:912][814]LogScript: Warning: Script Msg: Divide by zero detected: -4.592386 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:920][815]LogScript: Warning: Script Msg: Divide by zero detected: -4.600533 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:928][816]LogScript: Warning: Script Msg: Divide by zero detected: -4.608778 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:937][817]LogScript: Warning: Script Msg: Divide by zero detected: -4.616957 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:945][818]LogScript: Warning: Script Msg: Divide by zero detected: -4.625313 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:953][819]LogScript: Warning: Script Msg: Divide by zero detected: -4.633652 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:962][820]LogScript: Warning: Script Msg: Divide by zero detected: -4.642073 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:971][821]LogScript: Warning: Script Msg: Divide by zero detected: -4.650869 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:979][822]LogScript: Warning: Script Msg: Divide by zero detected: -4.659224 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:987][823]LogScript: Warning: Script Msg: Divide by zero detected: -4.667347 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.49:996][824]LogScript: Warning: Script Msg: Divide by zero detected: -4.675808 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:002][825]LogTemp: Running: Effect_Burning_C_2147482189
+[2022.06.20-15.02.50:004][825]LogScript: Warning: Script Msg: Divide by zero detected: -4.683975 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:012][826]LogScript: Warning: Script Msg: Divide by zero detected: -4.692118 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:019][827]LogScript: Warning: Script Msg: Divide by zero detected: -4.700842 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:028][828]LogScript: Warning: Script Msg: Divide by zero detected: -4.709257 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:036][829]LogScript: Warning: Script Msg: Divide by zero detected: -4.717466 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:048][830]LogScript: Warning: Script Msg: Divide by zero detected: -4.728830 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:058][831]LogScript: Warning: Script Msg: Divide by zero detected: -4.738747 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:066][832]LogScript: Warning: Script Msg: Divide by zero detected: -4.747307 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:075][833]LogScript: Warning: Script Msg: Divide by zero detected: -4.755625 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:083][834]LogScript: Warning: Script Msg: Divide by zero detected: -4.763866 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:091][835]LogScript: Warning: Script Msg: Divide by zero detected: -4.772083 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:100][836]LogScript: Warning: Script Msg: Divide by zero detected: -4.780735 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:108][837]LogScript: Warning: Script Msg: Divide by zero detected: -4.789026 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:117][838]LogScript: Warning: Script Msg: Divide by zero detected: -4.797430 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:126][839]LogScript: Warning: Script Msg: Divide by zero detected: -4.805880 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:132][840]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_AI_C_2147482185. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.50:134][840]LogScript: Warning: Script Msg: Divide by zero detected: -4.814430 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:143][841]LogScript: Warning: Script Msg: Divide by zero detected: -4.823719 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:152][842]LogScript: Warning: Script Msg: Divide by zero detected: -4.832401 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:160][843]LogScript: Warning: Script Msg: Divide by zero detected: -4.841043 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:169][844]LogScript: Warning: Script Msg: Divide by zero detected: -4.849941 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:178][845]LogScript: Warning: Script Msg: Divide by zero detected: -4.858988 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:187][846]LogScript: Warning: Script Msg: Divide by zero detected: -4.867596 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:199][847]LogScript: Warning: Script Msg: Divide by zero detected: -4.878185 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:208][848]LogScript: Warning: Script Msg: Divide by zero detected: -4.887655 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:216][849]LogScript: Warning: Script Msg: Divide by zero detected: -4.896515 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:225][850]LogScript: Warning: Script Msg: Divide by zero detected: -4.905371 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:233][851]LogTemp: Running: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.50:234][851]LogScript: Warning: Script Msg: Divide by zero detected: -4.914576 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:243][852]LogScript: Warning: Script Msg: Divide by zero detected: -4.923380 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:252][853]LogScript: Warning: Script Msg: Divide by zero detected: -4.932478 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:261][854]LogScript: Warning: Script Msg: Divide by zero detected: -4.941360 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:270][855]LogScript: Warning: Script Msg: Divide by zero detected: -4.950281 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:279][856]LogScript: Warning: Script Msg: Divide by zero detected: -4.959471 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:288][857]LogScript: Warning: Script Msg: Divide by zero detected: -4.968517 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:298][858]LogScript: Warning: Script Msg: Divide by zero detected: -4.978134 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:307][859]LogScript: Warning: Script Msg: Divide by zero detected: -4.987574 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:317][860]LogScript: Warning: Script Msg: Divide by zero detected: -4.997057 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:327][861]LogScript: Warning: Script Msg: Divide by zero detected: -5.007212 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:336][862]LogScript: Warning: Script Msg: Divide by zero detected: -5.016769 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:347][863]LogScript: Warning: Script Msg: Divide by zero detected: -5.027271 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:358][864]LogScript: Warning: Script Msg: Divide by zero detected: -5.038143 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:368][865]LogScript: Warning: Script Msg: Divide by zero detected: -5.048376 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:378][866]LogScript: Warning: Script Msg: Divide by zero detected: -5.058369 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:389][867]LogScript: Warning: Script Msg: Divide by zero detected: -5.068832 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:398][868]LogScript: Warning: Script Msg: Divide by zero detected: -5.078947 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:408][869]LogScript: Warning: Script Msg: Divide by zero detected: -5.089437 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:419][870]LogScript: Warning: Script Msg: Divide by zero detected: -5.099884 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:429][871]LogScript: Warning: Script Msg: Divide by zero detected: -5.110336 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:439][872]LogActor: Warning: SetReplicates called on non-initialized actor BP_MagicProjectile_C_2147482179. Directly setting bReplicates is the correct procedure for pre-init actors.
+[2022.06.20-15.02.50:439][872]LogTemp: Stopped: Action_MagicProjectile_C_2147482482
+[2022.06.20-15.02.50:440][872]LogScript: Warning: Script Msg: Divide by zero detected: -5.120974 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:450][873]LogScript: Warning: Script Msg: Divide by zero detected: -5.131277 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:460][874]LogScript: Warning: Script Msg: Divide by zero detected: -5.141539 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:471][875]LogScript: Warning: Script Msg: Divide by zero detected: -5.152088 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:482][876]LogScript: Warning: Script Msg: Divide by zero detected: -5.162899 / 0
+Script call stack:
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:Tick
+	Function /Game/ActionRoguelike/UI/WBP_EffectSlot.WBP_EffectSlot_C:ExecuteUbergraph_WBP_EffectSlot
+
+[2022.06.20-15.02.50:491][877]LogTemp: OnActorKilled: Victim: BP_MinionRanged_C_2147482233, Killer: BP_PlayerCharacter_C_2147482487
+[2022.06.20-15.02.50:491][877]LogTemp: Running: Effect_Burning_C_2147482176
+[2022.06.20-15.02.51:265][952]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockInFullscreen
+[2022.06.20-15.02.51:265][952]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> NoCapture
+[2022.06.20-15.02.51:267][952]LogSlate: Took 0.000161 seconds to synchronously load lazily loaded font '../../../ActionRoguelike/Content/ExampleContent/UI/Fonts/Cinzel/Cinzel-Bold.ufont' (84K)
+[2022.06.20-15.02.51:305][956]LogTemp: Found 0 alive bots
+[2022.06.20-15.02.51:307][956]LogTemp: Running: Effect_Burning_C_2147482168
+[2022.06.20-15.02.52:216][ 45]LogTemp: Stopped: Effect_Burning_C_2147482214
+[2022.06.20-15.02.52:568][ 80]Closing by request
+[2022.06.20-15.02.52:568][ 80]LogWindows: FPlatformMisc::RequestExit(0)
+[2022.06.20-15.02.52:568][ 80]LogWindows: FPlatformMisc::RequestExitWithStatus(0, 0)
+[2022.06.20-15.02.52:568][ 80]LogCore: Engine exit requested (reason: Win RequestExit)
+[2022.06.20-15.02.52:578][ 81]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2022.06.20-15.02.52:578][ 81]LogInit: Display: PreExit Game.
+[2022.06.20-15.02.52:583][ 81]LogWorld: BeginTearingDown for /Game/ActionRoguelike/Maps/TestLevel
+[2022.06.20-15.02.52:583][ 81]LogNet: World NetDriver shutdown IpNetDriver_2147482517 [GameNetDriver]
+[2022.06.20-15.02.52:583][ 81]LogNet: DestroyNamedNetDriver IpNetDriver_2147482517 [GameNetDriver]
+[2022.06.20-15.02.52:583][ 81]LogExit: GameNetDriver IpNetDriver_2147482517 shut down
+[2022.06.20-15.02.52:583][ 81]LogWorld: UWorld::CleanupWorld for TestLevel, bSessionEnded=true, bCleanupResources=true
+[2022.06.20-15.02.52:585][ 81]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.20-15.02.53:287][ 81]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2022.06.20-15.02.53:287][ 81]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2022.06.20-15.02.53:287][ 81]LogAudio: Display: Audio Device unregistered from world 'TestLevel'.
+[2022.06.20-15.02.53:325][ 81]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.06.20-15.02.53:326][ 81]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.06.20-15.02.53:343][ 81]LogAudio: Display: Audio Device Manager Shutdown
+[2022.06.20-15.02.53:343][ 81]LogSlate: Request Window 'ActionRoguelike (64-bit Development PCD3D_SM5) ' being destroyed
+[2022.06.20-15.02.53:353][ 81]LogSlate: Window 'ActionRoguelike (64-bit Development PCD3D_SM5) ' being destroyed
+[2022.06.20-15.02.53:356][ 81]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.06.20-15.02.53:366][ 81]LogExit: Preparing to exit.
+[2022.06.20-15.02.53:366][ 81]LogMoviePlayer: Shutting down movie player
+[2022.06.20-15.02.53:370][ 81]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.06.20-15.02.53:380][ 81]LogDemo: Cleaned up 0 splitscreen connections with owner deletion
+[2022.06.20-15.02.53:381][ 81]LogExit: Game engine shut down
+[2022.06.20-15.02.53:397][ 81]LogExit: Object subsystem successfully closed.
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AutomationController (330)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AutomationWorker (328)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module Voice (326)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AIModule (324)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module GameplayDebugger (323)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module NavigationSystem (321)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module WebMMediaFactory (318)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module WebMMedia (316)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (314)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (312)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (310)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (308)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module CharacterAI (306)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module PlanarCut (304)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module SessionServices (302)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module LiveCoding (300)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module LevelSequence (298)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (296)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module MovieScene (294)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (292)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AudioMixerXAudio2 (290)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module AudioMixerCore (289)
+[2022.06.20-15.02.53:404][ 81]LogModuleManager: Shutting down and abandoning module ImageWriteQueue (286)
+[2022.06.20-15.02.53:406][ 81]LogModuleManager: Shutting down and abandoning module ProfilerService (284)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module TaskGraph (282)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module Synthesis (280)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (278)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GooglePAD (276)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (274)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module CableComponent (272)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AudioCapture (270)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AudioCaptureRtAudio (269)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AssetTags (266)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (264)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AppleImageUtils (262)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AndroidPermission (260)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ActorLayerUtilities (258)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MediaCompositing (256)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ImgMedia (254)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapLightEstimation (252)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapHelperVulkan (250)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapHelperOpenGL (248)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapAudio (246)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapSharedWorld (244)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module OpenImageDenoise (242)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MotoSynth (240)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ChaosNiagara (238)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (236)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GeometryCollectionTracks (234)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module EditableMesh (232)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MeshConversion (230)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module DynamicMesh (228)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GeometryAlgorithms (226)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GeometricObjects (224)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module BackChannel (222)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AutomationUtils (220)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (218)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GeometryCache (216)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module UObjectPlugin (214)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module OodleNetworkHandlerComponent (212)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module TemplateSequence (210)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ActionRoguelike (208)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AudioSynesthesia (206)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaCore (204)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module SoundFields (202)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (200)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (196)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ActorSequence (194)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module UdpMessaging (192)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module TcpMessaging (190)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module ImgMediaEngine (188)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapHandMeshing (186)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapSecureStorage (184)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapPrivileges (182)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapPlanes (180)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapImageTracker (178)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapIdentity (176)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapHandTracking (174)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapEyeTracker (172)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapController (170)
+[2022.06.20-15.02.53:569][ 81]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapARPinImpl (168)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapAR (166)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AugmentedReality (165)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module MagicLeapARPin (162)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module NiagaraAnimNotifies (160)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module Niagara (158)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module SignalProcessing (157)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module NiagaraCore (154)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module FacialAnimation (152)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module SignificanceManager (150)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module AnimationSharing (148)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module GameplayCameras (146)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (144)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module Paper2D (142)
+[2022.06.20-15.02.53:569][ 81]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (140)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module WebMMoviePlayer (138)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module NetworkReplayStreaming (136)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module PacketHandler (134)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntimeNv (132)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module MediaAssets (130)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Overlay (128)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module FunctionalTesting (126)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module MessageLog (124)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module UMG (122)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module SlateReflector (120)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Slate (118)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module SlateCore (116)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module MRMesh (114)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Messaging (112)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (110)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module XAudio2 (108)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Networking (106)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Core (104)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module FieldSystemEngine (102)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module ImageWrapper (98)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module D3D11RHI (96)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module InputCore (94)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Settings (92)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module PhysXCooking (90)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module Chaos (88)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module WindowsPlatformFeatures (86)
+[2022.06.20-15.02.53:570][ 81]LogModuleManager: Shutting down and abandoning module GameplayMediaEncoder (85)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module AVEncoder (84)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (80)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module ChunkDownloader (78)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (76)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (72)
+[2022.06.20-15.02.53:571][ 81]LogModuleManager: Shutting down and abandoning module HTTP (67)
+[2022.06.20-15.02.53:571][ 81]LogHttp: Display: cleaning up 0 outstanding Http requests.
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module SSL (66)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module WmfMedia (62)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module Media (61)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module MediaInfo (60)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module ExrReaderGpu (56)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module MLSDK (54)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module MagicLeap (52)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module NiagaraVertexFactories (50)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module NiagaraShader (48)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module ChaosCloth (46)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module VariantManagerContent (44)
+[2022.06.20-15.02.53:573][ 81]LogModuleManager: Shutting down and abandoning module DatasmithContent (42)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PixWinPlugin (40)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module AISupportModule (38)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PlatformCryptoOpenSSL (36)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PlatformCryptoTypes (34)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PlatformCrypto (32)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PythonScriptPluginPreload (30)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module OodleDataCompressionFormat (28)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module RenderCore (26)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module Landscape (24)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (22)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (20)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module Renderer (18)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module Engine (16)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module CoreUObject (14)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module NetworkFile (12)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (10)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module StreamingFile (8)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module SandboxFile (6)
+[2022.06.20-15.02.53:574][ 81]LogModuleManager: Shutting down and abandoning module PakFile (4)
+[2022.06.20-15.02.53:575][ 81]LogModuleManager: Shutting down and abandoning module RSA (3)
+[2022.06.20-15.02.53:575][ 81]LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2022.06.20-15.02.53:579][ 81]LogD3D11RHI: Shutdown
+[2022.06.20-15.02.53:579][ 81]LogD3D11RHI: CleanupD3DDevice
+[2022.06.20-15.02.53:580][ 81]LogExit: Exiting.
+[2022.06.20-15.02.53:583][ 81]Log file closed, 06/20/22 11:02:53
