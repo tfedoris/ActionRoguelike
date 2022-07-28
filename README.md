@@ -1,4 +1,4 @@
-# Third-Person Action Game Demo
+# Third-Person Action Game
 A demonstration project created while taking the "Professional Game Development in C++ and Unreal Engine" course taught online by Tom Looman at Stanford University.
 
 ## Topics Learned and Exercised in this Project:
