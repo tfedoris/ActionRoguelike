@@ -1,4 +1,4 @@
-# ActionRoguelike
+# Third-Person Action Game Demo
 
 ## Topics Learned and Exercised in this Project:
 - Unreal C++ (such as macros and 'unrealisms' not seen in regular C++)
